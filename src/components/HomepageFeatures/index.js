@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    Svg: require('@site/static/img/fast.svg').default,
+    Svg: require('@site/static/img/rapido.svg').default,
     
     title: 'Rápida implementación',
     
@@ -16,7 +16,7 @@ const FeatureList = [
     
   },
   {
-    Svg: require('@site/static/img/important.svg').default,
+    Svg: require('@site/static/img/importante.svg').default,
     title: 'Focalizado en lo importante',
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList = [
     
   },
   {
-    Svg: require('@site/static/img/flex.svg').default,
+    Svg: require('@site/static/img/flexible.svg').default,
     title: 'Flexible',
     description: (
       <>

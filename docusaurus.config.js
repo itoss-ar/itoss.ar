@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ITOSS Operating IT Services',
-  tagline: 'The tool to manage datacenter services',
+  title: ' ',
+  tagline: '',
   url: 'https://fmalaspina.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -74,7 +74,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Itoss Site Logo',
-          src: 'img/logo_itoss.png',
+          src: 'img/ITOSS-01-bl+Aqua.png',
         },
         items: [
           {

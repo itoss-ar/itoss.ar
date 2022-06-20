@@ -6,7 +6,12 @@
 
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+.navbar--fixed-top {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(45deg, #006699, #006699, #00CC99); 
+  z-index: var(--ifm-z-index-fixed);
+}
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
