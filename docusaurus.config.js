@@ -74,7 +74,7 @@ const config = {
         title: '',
         logo: {
           alt: 'Itoss Site Logo',
-          src: 'img/ITOSS-01-bl+Aqua.png',
+          src: 'img/ITOSS-01-bl.png',
         },
         items: [
           {

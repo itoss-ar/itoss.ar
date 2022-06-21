@@ -6,6 +6,9 @@
 
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
 .navbar--fixed-top {
   position: sticky;
   top: 0;
@@ -23,8 +26,17 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-font-family-base: 'Roboto';
+  --ifm-navbar-link-color: white;
+  --ifm-navbar-link-hover-color: white;
+  
 }
 
+
+
+.navbar__link--active {
+  color: var(--ifm-navbar-link-hover-color);
+  text-decoration: underline;
+}
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
@@ -36,4 +48,7 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+
 
