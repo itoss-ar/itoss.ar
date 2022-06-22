@@ -15,11 +15,11 @@ Esta guía corresponde a la instalación de ITOSS y pre-requisitos en sistemas b
 * Fedora 34
 * Fedora 35
 
-## Instalar ITOSS 
+## Instalar prerequisitos 
 
 ### 1. Instalar postgres
 
-```sh
+```shell
 yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(rpm -E %{rhel})-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```
 
@@ -27,7 +27,7 @@ yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(rpm -E %
 
 #### 1. Crear repositorio timescaledb
 
-```sh
+```shell
 tee /etc/yum.repos.d/timescale_timescaledb.repo <<EOL
 [timescale_timescaledb]
 name=timescale_timescaledb
@@ -44,13 +44,13 @@ EOL
 
 #### 2. Actualizar repositorios
 
-```sh
+```shell
 yum update
 ```
 
 #### 3. Instalar TimescaleDB
 
-```sh
+```shell
 yum install timescaledb-2-postgresql-14
 ```
 
@@ -68,7 +68,7 @@ yum install timescaledb-2-postgresql-14
 
 Iniciada la sesión como usuario postgres y correriendo el cliente psql.
 
-```sh
+```sql
 CREATE DATABASE itossdb;
 \c itossdb
 CREATE EXTENSION IF NOT EXISTS timescaledb;
@@ -79,19 +79,19 @@ SELECT timescaledb_post_restore();
 
 
 
-## Backup y restore de la base de configuración ITOSS
+## Backup y restore de la base de datos de ITOSS
 
-### 1. Backup de la base de configuración
+### 1. Backup 
 
-```sh
+```shell
 pg_dump -Fc -f itossdb.sql itossdb
 ```
 
-### 2. Restore de la base de configuración
+### 2. Restore 
 
 Iniciada la sesión como usuario postgres y correriendo el cliente psql.
 
-```sh
+```sql
 CREATE DATABASE itossdb;
 \c itossdb
 CREATE EXTENSION IF NOT EXISTS timescaledb;
@@ -101,27 +101,35 @@ SELECT timescaledb_pre_restore();
 SELECT timescaledb_post_restore();
 ```
 
-## Backup y restore de la base de métricas ITOSS
+## Instalar ITOSS 
+
+### 1. Descargar paquete del producto
+
+**[itoss-v4.0.0.tar](https://github.com/fmalaspina/itoss-releases/releases/download/v4.0.0/itoss-v4.0.0.tar)**
 
 
-### 1. Backup de la base de métricas
+### 2. Descompactar el paquete
 
-```sh
-pg_dump -Fc -f metrics.sql metrics
-```
 
-### 2. Restore de la base de métricas
-
-Iniciada la sesión como usuario postgres y correriendo el cliente psql.
-
-```sh
-CREATE DATABASE metrics;
-\c metrics
-CREATE EXTENSION IF NOT EXISTS timescaledb;
-SELECT timescaledb_pre_restore();
-
-\! pg_restore -Fc -d metrics metrics.sql
-SELECT timescaledb_post_restore();
+```shell
+cd /var
+tar xvf itoss-v4.0.0.tar
 ```
 
 
+### 3. Ejecutar scripts de instalación
+
+Crear un symbolic link en el dir raíz "/app" que apunte al folder app que se descompactó en el paso anterior.
+
+```shell
+ln -s /var/app /app
+```
+
+Ejecutar lo siguiente:
+
+```shell
+cd /app/setup
+./pwsh-setup.sh
+./nginx-setup.sh
+./itoss-setup.sh
+```

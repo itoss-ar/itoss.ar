@@ -127,8 +127,16 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} ITOSS Project.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+      
+        theme: require('prism-react-renderer/themes/vsDark'),
+        /*darkTheme: require('prism-react-renderer/themes/dracula'),*/
+        /*theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,*/
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
       },
     }),
     themes: [

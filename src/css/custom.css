@@ -28,6 +28,7 @@
   --ifm-font-family-base: 'Roboto';
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: white;
+
   
 }
 
@@ -49,6 +50,11 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.hero img {
+  max-width: 50%;
+}
 
-
+svg {
+  max-width: 50%;
+}
 
