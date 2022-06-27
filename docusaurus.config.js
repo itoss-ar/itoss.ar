@@ -75,7 +75,7 @@ const config = {
         logo: {
           alt: 'Itoss Site Logo',
           src: 'img/ITOSS-01-bl.png',
-        },
+          },
         items: [
           {
             type: 'doc',

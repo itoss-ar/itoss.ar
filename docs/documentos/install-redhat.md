@@ -1,7 +1,8 @@
 ---
-id: instalacion
-title: Guía de instalación ITOSS
+id: "instalacion redhat"
+title: Guía de instalación ITOSS (sistemas basados en red hat)
 ---
+
 
 # Guía de instalación ITOSS para sistemas basados en red hat
 
@@ -14,18 +15,29 @@ Esta guía corresponde a la instalación de ITOSS y pre-requisitos en sistemas b
 * Fedora 33
 * Fedora 34
 * Fedora 35
-
+***
 ## Instalar prerequisitos 
 
-### 1. Instalar postgres
+Para ejecutar ITOSS se requieren los siguientes productos:
+- PostgresSQL 14
+- TimescaleDB (opcional para guardado y reporte de métricas colectadas)
+- Nginx (*)
+- PowerShell Core (*)
+- OpenJDK 17 (*)
+- SAP JCO Netweaver connector (*)
+- Sapcontrol tool (*)
+
+##### * Incluidos en paquete de instalación
+
+### Instalar PostgreSQL
 
 ```shell
 yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(rpm -E %{rhel})-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 ```
 
-### 2. Instalar TimescaleDB
+### Instalar TimescaleDB
 
-#### 1. Crear repositorio timescaledb
+#### Crear repositorio timescaledb
 
 ```shell
 tee /etc/yum.repos.d/timescale_timescaledb.repo <<EOL
@@ -42,29 +54,26 @@ metadata_expire=300
 EOL
 ```
 
-#### 2. Actualizar repositorios
+#### Actualizar repositorios
 
 ```shell
 yum update
 ```
 
-#### 3. Instalar TimescaleDB
+#### Instalar TimescaleDB
 
 ```shell
 yum install timescaledb-2-postgresql-14
 ```
 
 
+### Importar la base inicial de ITOSS
 
-
-
-### 3. Importar la base inicial de ITOSS
-
-#### 1. Descargar la base de datos de configuración de ITOSS del siguiente link:
+#### Descargar la base de datos de configuración de ITOSS del siguiente link:
 
 **[itossdb-initial.sql](https://github.com/fmalaspina/itoss-releases/releases/download/v4.0.0/itossdb-initial.sql)**
 
-#### 2. Importar la base con pg_restore
+#### Importar la base 
 
 Iniciada la sesión como usuario postgres y correriendo el cliente psql.
 
@@ -79,36 +88,14 @@ SELECT timescaledb_post_restore();
 
 
 
-## Backup y restore de la base de datos de ITOSS
-
-### 1. Backup 
-
-```shell
-pg_dump -Fc -f itossdb.sql itossdb
-```
-
-### 2. Restore 
-
-Iniciada la sesión como usuario postgres y correriendo el cliente psql.
-
-```sql
-CREATE DATABASE itossdb;
-\c itossdb
-CREATE EXTENSION IF NOT EXISTS timescaledb;
-SELECT timescaledb_pre_restore();
-
-\! pg_restore -Fc -d itossdb itossdb.sql
-SELECT timescaledb_post_restore();
-```
-
 ## Instalar ITOSS 
 
-### 1. Descargar paquete del producto
+### Descargar paquete del producto
 
 **[itoss-v4.0.0.tar](https://github.com/fmalaspina/itoss-releases/releases/download/v4.0.0/itoss-v4.0.0.tar)**
 
 
-### 2. Descompactar el paquete
+### Descompactar el paquete
 
 
 ```shell
@@ -117,7 +104,7 @@ tar xvf itoss-v4.0.0.tar
 ```
 
 
-### 3. Ejecutar scripts de instalación
+### Ejecutar scripts de instalación
 
 Crear un symbolic link en el dir raíz "/app" que apunte al folder app que se descompactó en el paso anterior.
 
@@ -132,4 +119,28 @@ cd /app/setup
 ./pwsh-setup.sh
 ./nginx-setup.sh
 ./itoss-setup.sh
+```
+
+***
+
+## Backup y restore de la base de datos de ITOSS
+
+### Backup 
+
+```shell
+pg_dump -Fc -f itossdb.sql itossdb
+```
+
+### Restore 
+
+Iniciada la sesión como usuario postgres y correriendo el cliente psql.
+
+```sql
+CREATE DATABASE itossdb;
+\c itossdb
+CREATE EXTENSION IF NOT EXISTS timescaledb;
+SELECT timescaledb_pre_restore();
+
+\! pg_restore -Fc -d itossdb itossdb.sql
+SELECT timescaledb_post_restore();
 ```
