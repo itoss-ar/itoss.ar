@@ -1,10 +1,8 @@
 ﻿---
-id: conceptos
-title: Guía de conceptos
+id: 'conceptos'
+title: 'Conceptos'
 
 ---
-# Guía de conceptos
-
 
 # **Desafío de la operación TI**
 En la actualidad, y desde hace varios años, la tendencia es que la operación y administración de sistemas informáticos sea tercerizado en compañías dedicadas a ofrecer estos servicios, típicamente Centro de datos u otras grandes empresas del sector de TI.   Esta situación genera un desafío para éstas compañías con cientos de clientes, múltiples centros de operaciones y un escenario constantemente cambiante por nuevos proyectos y tecnologías.

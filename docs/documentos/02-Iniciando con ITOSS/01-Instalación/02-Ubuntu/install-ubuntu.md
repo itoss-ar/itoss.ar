@@ -103,44 +103,48 @@ Realizar los siguientes pasos:
 
 1. Descargar el software en el directorio "/"
 
-Enlace  descarga: itossbasic-ubuntu2204-v4.0.0.tar
+    Enlace  descarga: itossbasic-ubuntu2204-v4.0.0.tar
 
 2. Descomprimir el archive itossbasic-v4-ubuntu.tar
 
-```shell
-cd /
-tar xvf itoss-v4.0.0.tar
-```
+    ```shell
+    cd /
+    tar xvf itoss-v4.0.0.tar
+    ```
 
-3. Configurar itoss (crear un script)
+3. Configurar ngnix  
 
-```shell
-cp -rf default.conf /etc/nginx/conf.d/default.conf 2>/dev/null
-sudo systemctl enable nginx
-sudo systemctl start nginx
-su – postgres
-$ psql -U
-```
-```sql
-postgres=# CREATE USER itoss WITH PASSWORD 'admin';
-postgres=# CREATE DATABASE itossdb;
-postgres=# \c itossdb;
-itossdb=# ALTER DATABASE itossdb OWNER TO itoss;
-itossdb=# ALTER SCHEMA public OWNER TO itoss;
-itossdb=# CREATE EXTENSION IF NOT EXISTS timescaledb;
-itossdb=# SELECT timescaledb_pre_restore();
-itossdb=# \! pg_restore -Fc -d itossdb /app/setup/itossdb-initial.sql
-itossdb=# SELECT timescaledb_post_restore();
-itossdb=# exit
-Use \q to quit.
-```
+    ```shell
+    sudo cp -rf /app/setup/default.conf /etc/nginx/conf.d/default.conf 2>/dev/null 
+    sudo systemctl enable nginx 
+    sudo systemctl start nginx 
+    ```
 
-```shell
-chmod 744 /app/setup/itoss-setup.sh
-/app/setup/itoss-setup.sh
-systemctl start itoss-manager
-systemctl start itoss-collector.service
-```
+4. Crear de base datos y carga de datos inicial. 
+
+    ```shell
+    sudo su – postgres 
+    $ psql 
+    CREATE USER itoss WITH PASSWORD 'admin'; 
+    CREATE DATABASE itossdb; 
+    \c itossdb; 
+    ALTER DATABASE itossdb OWNER TO itoss; 
+    ALTER SCHEMA public OWNER TO itoss; 
+    CREATE EXTENSION IF NOT EXISTS timescaledb; 
+    SELECT timescaledb_pre_restore(); 
+    \! pg_restore -Fc -d itossdb /app/setup/itossdb-initial.sql 
+    SELECT timescaledb_post_restore(); 
+    ```
+
+5. Crear servicios de ITOSS e iniciar la aplicación 
+
+    ```shell
+    cp /app/setup/*.service /etc/systemd/system/ 
+    sudo systemctl enable itoss-manager.service 
+    sudo systemctl enable itoss-collector.service 
+    sudo systemctl start itoss-manager 
+    sudo systemctl start itoss-collector.service 
+    ```
 
 ***
 
@@ -150,7 +154,6 @@ En los casos que requiera gestionar componentes a través de Powershell ( por ej
 
 _Para más información:
 [https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2](https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2)_
-
 
 ```shell
 sudo apt-get install -y wget apt-transport-https software-properties-common
