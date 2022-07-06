@@ -7,7 +7,9 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
+input {
+  border-radius: 0px !important;
+}
 
 .navbar--fixed-top {
   position: sticky;
@@ -28,6 +30,7 @@
   --ifm-font-family-base: 'Roboto';
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: white;
+  
 
   
 }
@@ -48,14 +51,43 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    
 }
 
-.hero img {
+.hero__title {
+  color:  #006699;
+}
+.hero__subtitle {
+  color:  #006699;
+  font-size: 2em;
   
-  max-width: 50%;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+
 }
 
 svg {
   max-width: 50%;
 }
+
+.heroBanner_src-pages-index-module  {
+  background: linear-gradient(0deg,white,#CCCCCC) !important; 
+
+}
+.medium_buttom_a {
+  border-radius: 2em ;
+  padding: 0.4em 2em ;
+  background-color: #006699;
+  color:#FFFFFF !important;
+  font-size: 20px;
+  
+}
+
+
+.medium_buttom_div { 
+  margin: 30px 0;
+  
+ }
 

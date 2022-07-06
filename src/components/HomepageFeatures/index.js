@@ -3,43 +3,22 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 
 const FeatureList = [
+  
   {
-    Svg: require('@site/static/img/rapido.svg').default,
-    
-    title: 'Rápida implementación',
-    
+    Svg: require('@site/static/img/Software Integration System Development & Deployment.svg').default,
+    title: 'Una amplia variedad de instrumentaciones para colección y análisis de métricas',
     description: (
       <>
-        Pensada para cubrir rápidamente la necesidad del negocio
+        Jdbc, SAP (RFC), API Rest, PowerShell, SSH, y más.  
       </>
     ),
     
-  },
-  {
-    Svg: require('@site/static/img/importante.svg').default,
-    title: 'Focalizado en lo importante',
-    description: (
-      <>
-        Con el énfasis puesto en las métricas de vital importancia para la operación de los servicios
-      </>
-    ),
-    
-  },
-  {
-    Svg: require('@site/static/img/flexible.svg').default,
-    title: 'Flexible',
-    description: (
-      <>
-         Cualquier dispositivo o tecnología puede ser monitoreada en muy pocos pasos
-      </>
-    ),
-    
-  },
+  }
 ];
 
 function Feature({Svg,title, description}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--12')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
@@ -65,8 +44,4 @@ export default function HomepageFeatures() {
       </div>
     </section>
   );
-
-
-
-  
 }

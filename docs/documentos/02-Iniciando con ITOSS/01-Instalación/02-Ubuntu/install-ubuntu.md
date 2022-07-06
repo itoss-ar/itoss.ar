@@ -54,7 +54,7 @@ sudo  systemctl restart postgresql
 
 ### Instalación WEB Server (NGINX)
 
-_Para más información: https://nginx.org/en/linux_packages.html#Ubuntu_
+_Para más información: _https://nginx.org/en/linux_packages.html#Ubuntu_
 
 1. Instalar paquetes requeridos
 
@@ -103,7 +103,8 @@ Realizar los siguientes pasos:
 
 1. Descargar el software en el directorio "/"
 
-    Enlace  descarga: itossbasic-ubuntu2204-v4.0.0.tar
+    **[Ir a Descargas](/descargas)**
+
 
 2. Descomprimir el archive itossbasic-v4-ubuntu.tar
 

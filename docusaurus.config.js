@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: ' ',
-  tagline: '',
+  title: 'Una herramienta de última generación para la gestión de Data Centers',
+  tagline: 'La solución de monitoreo remoto para cualquier tecnología',
   url: 'https://fmalaspina.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -85,6 +85,7 @@ const config = {
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {to: '/contact', label: 'Contacto', position: 'left'},
+          {to: '/descargas', label: 'Descargas', position: 'left'},
           {to: '/nosotros', label: 'Nosotros', position: 'left'},
           
          /* {
@@ -144,6 +145,7 @@ const config = {
       [
         require.resolve("@easyops-cn/docusaurus-search-local"),
         {
+          
           // ... Your options.
           // `hashed` is recommended as long-term-cache of index file is possible.
           hashed: true,

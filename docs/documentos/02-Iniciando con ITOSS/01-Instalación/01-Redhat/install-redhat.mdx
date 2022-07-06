@@ -1,0 +1,234 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+# Instalación básica de ITOSS en Linux basados en Redhat
+
+La instalación básica, todas las funciones esenciales son instaladas en un mismo servidor, tiene como objeto utilizarse para demostraciones, pruebas o ambientes pequeños de hasta 100 componentes gestionados (número orientativo para una operación estándar).
+
+Este guía incluye la instalación de las siguientes funciones y/o paquetes de software:
+
+* Base de datos -  Postgresql 14 + Timescale
+* Web Server - ngnix
+* ITOSS Manager
+* ITOSS Collector
+
+## Requisitos de hardware
+
+Los requerimientos de hardware mínimos para ejecutar todas las funciones centrales de ITOSS en un servidor virtual son:
+
+* 8 CPU  
+* 16 RAM
+* 50 GB de disco.
+
+## Sistema operativo
+
+Esta guía esta orientada y probada sobre Linux basados en Redhat, recomendamos un servidor dedicado para ITOSS y sobre una instalación limpia.  
+
+***
+
+## Pasos previos
+
+### Instalación de Postgres + TimeScaleDB
+
+1. Configurar repositorios de TI
+
+<Tabs groupId="operating-systems">
+  <TabItem value="redhat" label="Red Hat">
+
+```shell
+yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(rpm -E %{rhel})-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+```
+  </TabItem>
+  <TabItem value="fedora" label="Fedora">
+
+```shell
+yum install https://download.postgresql.org/pub/repos/yum/reporpms/F-$(rpm -E %{fedora})-x86_64/pgdg-fedora-repo-latest.noarch.rpm
+```    
+  </TabItem>
+   <TabItem value="centos" label="CentOS">
+
+```shell
+yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(rpm -E %{centos})-x86_64/pgdg-redhat-repo-latest.noarch.rpm```    
+```  
+  
+  </TabItem>
+</Tabs>
+
+2. Crear el repositorio Timescale
+
+<Tabs groupId="operating-systems">
+  <TabItem value="redhat" label="Red Hat">
+
+```shell
+tee /etc/yum.repos.d/timescale_timescaledb.repo <<EOL
+[timescale_timescaledb]
+name=timescale_timescaledb
+baseurl=https://packagecloud.io/timescale/timescaledb/el/$(rpm -E %{rhel})/\$basearch
+repo_gpgcheck=1
+gpgcheck=0
+enabled=1
+gpgkey=https://packagecloud.io/timescale/timescaledb/gpgkey
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+metadata_expire=300
+EOL
+```
+
+</TabItem>
+<TabItem value="fedora" label="Fedora">
+
+```shell
+tee /etc/yum.repos.d/timescale_timescaledb.repo <<EOL
+[timescale_timescaledb]
+name=timescale_timescaledb
+baseurl=https://packagecloud.io/timescale/timescaledb/el/8/$basearch
+repo_gpgcheck=1
+gpgcheck=0
+enabled=1
+gpgkey=https://packagecloud.io/timescale/timescaledb/gpgkey
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+metadata_expire=300
+EOL
+```    
+
+</TabItem>
+   <TabItem value="centos" label="CentOS">
+
+```shell
+tee /etc/yum.repos.d/timescale_timescaledb.repo <<EOL
+[timescale_timescaledb]
+name=timescale_timescaledb
+baseurl=https://packagecloud.io/timescale/timescaledb/el/$(rpm -E %{rhel})/\$basearch
+repo_gpgcheck=1
+gpgcheck=0
+enabled=1
+gpgkey=https://packagecloud.io/timescale/timescaledb/gpgkey
+sslverify=1
+sslcacert=/etc/pki/tls/certs/ca-bundle.crt
+metadata_expire=300
+EOL
+```  
+  
+  </TabItem>
+</Tabs>
+
+3. Actualizar repositorios  
+
+```shell
+yum update 
+```
+
+4. Instalar postgres + timeScaleDB
+
+```shell
+yum install timescaledb-2-postgresql-14
+```
+
+### Instalación WEB Server (NGINX)
+
+_Para más información: https://nginx.org/en/linux_packages.html##RHEL-CentOS_
+
+1. Instalar paquetes requeridos
+
+```shell
+sudo yum install yum-utils
+```
+2. Crear un archivo llamado /etc/yum.repos.d/nginx.repo con el siguiente contenido:
+
+```shell
+[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+```
+
+3. Por defecto la versión estable es utilizada. Si desea la última versión ejecutar:
+
+```shell
+sudo yum-config-manager --enable nginx-mainline
+```
+
+4. Instalar nginx
+
+```shell
+sudo yum install nginx
+```
+
+5. Verficar clave (opcional)
+Cuando se le pida aceptar la GPG key, verifique que coincide con: 573B FD6B 3D8F BC64 1079 A6AB ABF5 BD82 7BD9 BF62, si es así, acéptela.
+
+***
+
+## Instalación y configuración de ITOSS
+
+### Instalar ITOSS
+
+Realizar los siguientes pasos:
+
+1. Descargar el software en el directorio "/"
+
+    **[Ir a descargas](/descargas)**
+
+2. Descomprimir el archive en directorio "/"
+
+    ```shell
+    cd /
+    tar xvf itoss-linux-x86-64-v4.0.0.tar.gz
+    ```
+
+3. Crear de base datos y carga de datos inicial. 
+
+    ```shell
+    sudo su – postgres 
+    $ psql 
+    CREATE USER itoss WITH PASSWORD 'admin'; 
+    CREATE DATABASE itossdb; 
+    \c itossdb; 
+    ALTER DATABASE itossdb OWNER TO itoss; 
+    ALTER SCHEMA public OWNER TO itoss; 
+    CREATE EXTENSION IF NOT EXISTS timescaledb; 
+    SELECT timescaledb_pre_restore(); 
+    \! pg_restore -Fc -d itossdb /app/setup/itossdb-initial.sql 
+    SELECT timescaledb_post_restore(); 
+    ```
+
+4. Crear servicios de ITOSS e iniciar la aplicación 
+
+    ```shell
+    cp /app/setup/*.service /etc/systemd/system/ 
+    sudo systemctl enable itoss-manager.service 
+    sudo systemctl enable itoss-collector.service 
+    sudo systemctl start itoss-manager 
+    sudo systemctl start itoss-collector.service 
+    ```
+
+***
+
+### Instalación de Powershell (opcional)
+
+En los casos que requiera gestionar componentes a través de Powershell ( por ejemplo  del ecosistema Microsoft) .
+
+_Para más información:
+[https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2](https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2)_
+
+```shell
+sudo apt-get install -y wget apt-transport-https software-properties-common
+wget -q[ <https://packages.microsoft.com/config/ubuntu/>$(lsb_release -rs)/packages-microsoft-prod.deb](https://packages.microsoft.com/config/ubuntu/$(lsb_release%20-rs)/packages-microsoft-prod.deb)
+sudo dpkg -i packages-microsoft-prod.deb
+sudo apt-get update
+sudo apt-get install -y powershell
+sudo apt-get install -y gss-ntlmssp
+```
