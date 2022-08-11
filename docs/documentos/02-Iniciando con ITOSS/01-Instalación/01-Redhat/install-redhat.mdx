@@ -201,7 +201,10 @@ Realizar los siguientes pasos:
     ALTER SCHEMA public OWNER TO itoss; 
     CREATE EXTENSION IF NOT EXISTS timescaledb; 
     SELECT timescaledb_pre_restore(); 
-    \! pg_restore -Fc -d itossdb /app/setup/itossdb-initial.sql 
+    \q
+    psql -U itoss -d itossdb < /app/setup/itossdb-initial.sql
+    psql 
+    \c itossdb
     SELECT timescaledb_post_restore(); 
     ```
 
