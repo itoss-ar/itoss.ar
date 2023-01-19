@@ -52,6 +52,7 @@ sudo  echo "shared_preload_libraries = 'timescaledb'" >> /etc/postgresql/14/main
 sudo  systemctl restart postgresql 
 ```
 
+
 ### Instalación WEB Server (NGINX)
 
 _Para más información: _https://nginx.org/en/linux_packages.html#Ubuntu_
@@ -110,7 +111,7 @@ Realizar los siguientes pasos:
 
     ```shell
     cd /
-    tar xvf itoss-v4.0.0.tar
+    tar xvf itoss-v5.1.0.tar
     ```
 
 3. Configurar ngnix  
@@ -134,8 +135,8 @@ Realizar los siguientes pasos:
     CREATE EXTENSION IF NOT EXISTS timescaledb; 
     SELECT timescaledb_pre_restore(); 
     \q
-    psql -U itoss -d itossdb /app/setup/itossdb-initial.sql
-    psql 
+    psql -d itossdb -f /app/setup/itossdb-initial.sql
+    psql
     SELECT timescaledb_post_restore(); 
     ```
 
@@ -145,8 +146,10 @@ Realizar los siguientes pasos:
     cp /app/setup/*.service /etc/systemd/system/ 
     sudo systemctl enable itoss-manager.service 
     sudo systemctl enable itoss-collector.service 
+    sudo systemctl enable itoss-reporting.service
     sudo systemctl start itoss-manager 
     sudo systemctl start itoss-collector.service 
+    sudo systemctl start itoss-reporting.service 
     ```
 
 ***

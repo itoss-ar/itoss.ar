@@ -126,6 +126,7 @@ yum update
 yum install timescaledb-2-postgresql-14
 ```
 
+
 ### Instalación WEB Server (NGINX)
 
 _Para más información: https://nginx.org/en/linux_packages.html##RHEL-CentOS_
@@ -186,7 +187,7 @@ Realizar los siguientes pasos:
 
     ```shell
     cd /
-    tar xvf itoss-linux-x86-64-v4.0.0.tar.gz
+    tar xvf itoss-linux-x86-64-v5.1.0.tar.gz
     ```
 
 3. Crear de base datos y carga de datos inicial. 
@@ -202,8 +203,8 @@ Realizar los siguientes pasos:
     CREATE EXTENSION IF NOT EXISTS timescaledb; 
     SELECT timescaledb_pre_restore(); 
     \q
-    psql -U itoss -d itossdb < /app/setup/itossdb-initial.sql
-    psql 
+    psql -d itossdb -f /app/setup/itossdb-initial.sql
+    psql
     \c itossdb
     SELECT timescaledb_post_restore(); 
     ```
@@ -214,8 +215,10 @@ Realizar los siguientes pasos:
     cp /app/setup/*.service /etc/systemd/system/ 
     sudo systemctl enable itoss-manager.service 
     sudo systemctl enable itoss-collector.service 
+    sudo systemctl enable itoss-reporting.service 
     sudo systemctl start itoss-manager 
     sudo systemctl start itoss-collector.service 
+    sudo systemctl start itoss-reporting.service 
     ```
 
 ***
