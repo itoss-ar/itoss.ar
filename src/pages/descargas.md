@@ -3,7 +3,6 @@ id: descargas
 title: Descargas
 ---
 
-# Descargas
 
 | Tipo de instalación | Archivo | Plataforma | Arquitectura |   Fecha   |
 |  :---  |  :---  |  :---  |  :---  |  :---  |
