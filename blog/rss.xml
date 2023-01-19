@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Una herramienta de última generación para la gestión de Data Centers Blog</title>
+        <link>https://fmalaspina.github.io/blog</link>
+        <description>Una herramienta de última generación para la gestión de Data Centers Blog</description>
+        <lastBuildDate>Thu, 16 Jun 2022 12:14:01 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Post example]]></title>
+            <link>https://fmalaspina.github.io/blog/08-06-2022-post</link>
+            <guid>/08-06-2022-post</guid>
+            <pubDate>Thu, 16 Jun 2022 12:14:01 GMT</pubDate>
+            <description><![CDATA[Post example]]></description>
+            <content:encoded><![CDATA[<p>Post example</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
