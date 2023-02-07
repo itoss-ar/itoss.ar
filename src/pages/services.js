@@ -1,6 +1,7 @@
-import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import React from 'react';
+import Servicepage from '../components/servicepage';
 
 export default function Services() {
     const {siteConfig} = useDocusaurusContext();
@@ -8,7 +9,9 @@ export default function Services() {
     return (
       <Layout title={`${siteConfig.title}`} description="The Tool for Datacenter Service Management.">
         <main>
-          <div>services</div>
+          <div>
+            <Servicepage />
+          </div>
         </main>
       </Layout>
     );

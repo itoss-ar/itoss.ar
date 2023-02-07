@@ -2,7 +2,6 @@ import React from 'react';
 import { Banner } from './banner.view';
 import { Brands } from './brands.view';
 import { Features } from './features.view';
-import { Instumentation } from './instrumentation.view';
 
 export default function Homepage() {
   return (

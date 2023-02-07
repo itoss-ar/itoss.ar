@@ -19,6 +19,7 @@
 /******** COMMON ********/
 /************************/
 
+h1 { font-size: 2rem !important; }
 input { border-radius: 0px !important; }
 .footer { background-color: #006699 !important; color: white !important; }
   .footer .footer__link-item { color: white !important; }

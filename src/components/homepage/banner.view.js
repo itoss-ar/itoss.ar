@@ -15,10 +15,7 @@ export const Banner = () => {
                 <div className={clsx('col col--5')}>
                   <div className="text--left">
                     <h1 className="hero-title">Operate IT products with ease</h1>
-                    <p className="hero-subtitle">Complete customer visibility into infrastructure performance with effortless deployment and agentless</p>
-                    <div className="hero-more-info">
-                      <a href="/docs/documentos/Introducci%C3%B3n/conceptos">more info</a>
-                    </div>
+                    <p className="hero-subtitle">Complete customer visibility into infrastructure performance with effortless deployment and agentless</p>                    
                   </div>
                 </div>
                 <div className={clsx('col col--7')}>
