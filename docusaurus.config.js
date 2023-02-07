@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Una herramienta de última generación para la gestión de Data Centers',
+  title: 'ITOSS: Operate IT products with ease',
   tagline: 'La solución de monitoreo remoto para cualquier tecnología',
   url: 'https://fmalaspina.github.io',
   baseUrl: '/',
@@ -53,14 +53,12 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          
         },
-        
         blog: {
           showReadingTime: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/global.css'),
         },
       }),
     ],
@@ -81,12 +79,13 @@ const config = {
             type: 'doc',
             docId: 'documentos/Introducción/conceptos',
             position: 'left',
-            label: 'Documentos',
+            label: 'Documents',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          {to: '/contact', label: 'Contacto', position: 'left'},
-          {to: '/descargas', label: 'Descargas', position: 'left'},
-          {to: '/nosotros', label: 'Nosotros', position: 'left'},
+          {to: '/services', label: 'Services', position: 'left'},
+          {to: '/descargas', label: 'Resources', position: 'left'},
+          {to: '/contact', label: 'Contact', position: 'left'},
+          {to: '/try', label: 'Try', position: 'left'},
           
          /* {
             type: 'localeDropdown',
@@ -96,39 +95,50 @@ const config = {
       },
       footer: {
         style: 'light',
-        links: [
+        links: [          
           {
             title: 'Docs',
             items: [
               {
-                label: 'Documentos',
+                label: 'Introduction',
                 to: '/docs/documentos/Introducción/conceptos',
+              },
+              {
+                label: 'Installation on Redhat',
+                to: '/docs/documentos/Iniciando%20con%20ITOSS/Instalación/Redhat/install-redhat',
+              },
+              {
+                label: 'Installation on Ubuntu',
+                to: '/docs/documentos/Iniciando%20con%20ITOSS/Instalación/Redhat/install-redhat',
               },
             ],
           },
           {
-            title: 'More',
+            title: 'Explore',
             items: [
              /* {
                 label: 'Blog',
                 to: '/blog',
               },*/
               {
-                label: 'Contacto',
-                to: '/contact',
+                label: 'Services',
+                to: '/services',
               },
               {
-                label: 'Nosotros',
-                to: '/nosotros',
-              }
+                label: 'Support',
+                to: '/support',
+              },
+              {
+                label: 'Contact us',
+                to: '/contact',
+              },
             ],
           },
           
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ITOSS Project.`,
+        copyright: `© ${new Date().getFullYear()} ITOSS Project. All rights reserved.`,
       },
       prism: {
-      
         theme: require('prism-react-renderer/themes/vsDark'),
         /*darkTheme: require('prism-react-renderer/themes/dracula'),*/
         /*theme: lightCodeTheme,
