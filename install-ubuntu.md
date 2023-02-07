@@ -48,8 +48,25 @@ sudo apt update
 
 ```shell
 sudo apt install timescaledb-2-postgresql-14 
-sudo  echo "shared_preload_libraries = 'timescaledb'" >> /etc/postgresql/14/main/postgresql.conf 
-sudo  systemctl restart postgresql 
+```
+4. Configurar postgres + timescaleDB
+   
+#### Como user root o postgres:
+Agregar esta línea al archivo /etc/postgresql/14/main/postgresql.conf:
+
+```shell
+shared_preload_libraries = 'timescaledb'
+```
+
+En el archivo /etc/postgresql/14/main/pg_hba.conf editar la línea:
+```shell
+local all all peer
+```
+Reemplazar "peer" por "trust"
+
+Reiniciar el servicio postgresql:
+```shell
+sudo systemctl restart postgresql 
 ```
 
 
@@ -104,14 +121,14 @@ Realizar los siguientes pasos:
 
 1. Descargar el software en el directorio "/"
 
-    **[Ir a Descargas](/descargas)**
+    **[Ir a Descargas](/Download)**
 
 
-2. Descomprimir el archive itossbasic-v4-ubuntu.tar
+2. Descomprimir el archive itoss-v5.2.tar.gz
 
     ```shell
     cd /
-    tar xvf itoss-v5.1.0.tar
+    tar xvf itoss-v5.2.tar.gz
     ```
 
 3. Configurar ngnix  
@@ -122,7 +139,7 @@ Realizar los siguientes pasos:
     sudo systemctl start nginx 
     ```
 
-4. Crear de base datos y carga de datos inicial. 
+4. Crear de base datos y carga de datos inicial.
 
     ```shell
     sudo su – postgres 
@@ -132,12 +149,8 @@ Realizar los siguientes pasos:
     \c itossdb; 
     ALTER DATABASE itossdb OWNER TO itoss; 
     ALTER SCHEMA public OWNER TO itoss; 
-    CREATE EXTENSION IF NOT EXISTS timescaledb; 
-    SELECT timescaledb_pre_restore(); 
     \q
     psql -d itossdb -f /app/setup/itossdb-initial.sql
-    psql
-    SELECT timescaledb_post_restore(); 
     ```
 
 5. Crear servicios de ITOSS e iniciar la aplicación 

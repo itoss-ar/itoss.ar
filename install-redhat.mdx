@@ -54,12 +54,9 @@ yum install https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(rpm -E %
   
   </TabItem>
 </Tabs>
-
 2. Crear el repositorio Timescale
-
 <Tabs groupId="operating-systems">
   <TabItem value="redhat" label="Red Hat">
-
 ```shell
 tee /etc/yum.repos.d/timescale_timescaledb.repo <<EOL
 [timescale_timescaledb]
@@ -124,6 +121,7 @@ yum update
 
 ```shell
 yum install timescaledb-2-postgresql-14
+
 ```
 
 
@@ -181,13 +179,13 @@ Realizar los siguientes pasos:
 
 1. Descargar el software en el directorio "/"
 
-    **[Ir a descargas](/descargas)**
+    **[Ir a descargas](/download)**
 
 2. Descomprimir el archive en directorio "/"
 
     ```shell
     cd /
-    tar xvf itoss-linux-x86-64-v5.1.0.tar.gz
+    tar xvf itoss-v5.2.tar.gz
     ```
 
 3. Crear de base datos y carga de datos inicial. 
@@ -200,7 +198,10 @@ Realizar los siguientes pasos:
     \c itossdb; 
     ALTER DATABASE itossdb OWNER TO itoss; 
     ALTER SCHEMA public OWNER TO itoss; 
-    CREATE EXTENSION IF NOT EXISTS timescaledb; 
+    \q
+    psql -U itoss -d itossdb
+    CREATE EXTENSION IF NOT EXISTS timescaledb;
+
     SELECT timescaledb_pre_restore(); 
     \q
     psql -d itossdb -f /app/setup/itossdb-initial.sql

@@ -46,9 +46,6 @@ El tablero de estado general (General Status) permite entender el estado de los 
 
 El tablero permite aplicar filtros por ambiente y sobre las compañías que el usuario de soporte tiene bajo su responsabilidad directa (Only my companies).
 
-
-
-
 Imagen de tablero de estado, resaltado en amarillo las opciones de vistas por diferentes tipos de agrupación.
 
 Imagen de tablero de estado, resaltado en amarillo el acceso al menú de filtros por ambiente y compañías responsabilidad de usuario de soporte conectado.
@@ -126,7 +123,7 @@ Imagen de la vista general del tablero de compañía
 
 - DE Overview: información organizada por tipo de componente y perfil de gestión para análisis resumido del comportamiento del ambiente del cliente.
 
-`	`Imagen del análisis de estado y DE de todos los componentes de la compañía agrupados por 	tipo y perfile de gestión.
+Imagen del análisis de estado y DE de todos los componentes de la compañía agrupados por 	tipo y perfile de gestión.
 
 #### *Reportes y tableros de monitores*
 Desde el menú disponible en el tablero de compañías podemos acceder a visualizar o crear tableros de monitores y reportes analíticos.
@@ -202,10 +199,6 @@ Según el perfil de gestión asociado al componente, es la información disponib
 
 Generalmente en otras sesiones se muestran datos referidos a rendimiento, almacenamiento, configuración para tener un análisis total de las métricas claves del componente. Algunos ejemplos.
 
-
-
-
-
 ## Gestión de DE y notificaciones
 La gestión de DE y notificaciones es clave para una eficiente operación del componente, mejorando la disponibilidad y calidad de los servicios informáticos.
 ### Gestión de DE
@@ -225,7 +218,7 @@ El icono de estilo “campana” en el margen superior derecho indica la cantida
 
 Imagen que muestra el icono para acceso a las notificaciones en ITOSS.
 
-`	`Imagen muestra el icono para eliminar de manera puntual y general.
+Imagen muestra el icono para eliminar de manera puntual y general.
 
 Desde una notificación puede acceder a al tablero de componente, es muy útil para validar la situación actual del componente de manera ágil. 
 
@@ -239,8 +232,3 @@ En el menú de operaciones esta la sección para gestionar el ciclo de vida de l
 En la sección de “Report” del menú “Explore” están los reportes por demanda de ITOSS, los cuales son armados y publicados por los administradores de la aplicación.
 
 Los reportes están agrupados por tipo de componente y permiten genera información de todo el ambiente, por cliente o ubicación.
-
-
-
-27
-

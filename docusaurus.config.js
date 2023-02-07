@@ -14,7 +14,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
   deploymentBranch: 'main',
-  
+
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -26,7 +26,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en','es','pt'],
+    locales: ['en', 'es', 'pt'],
     localeConfigs: {
       en: {
         label: 'English',
@@ -53,9 +53,9 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          
+
         },
-        
+
         blog: {
           showReadingTime: true,
         },
@@ -69,29 +69,29 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-    
+
       navbar: {
         title: '',
         logo: {
           alt: 'Itoss Site Logo',
           src: 'img/ITOSS-01-bl.png',
-          },
+        },
         items: [
           {
             type: 'doc',
-            docId: 'documentos/Introducción/conceptos',
+            docId: 'documents/concepts',
             position: 'left',
-            label: 'Documentos',
+            label: 'Documents',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          {to: '/contact', label: 'Contacto', position: 'left'},
-          {to: '/descargas', label: 'Descargas', position: 'left'},
-          {to: '/nosotros', label: 'Nosotros', position: 'left'},
-          
-         /* {
-            type: 'localeDropdown',
-            position: 'left',
-          },*/
+          { to: '/services', label: 'Services', position: 'left' },
+          { to: '/resources', label: 'Resources', position: 'left' },
+          { to: '/try', label: 'try', position: 'left' },
+
+          /* {
+             type: 'localeDropdown',
+             position: 'left',
+           },*/
         ],
       },
       footer: {
@@ -101,34 +101,34 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentos',
-                to: '/docs/documentos/Introducción/conceptos',
+                label: 'Documents',
+                to: '/docs/documents/concepts',
               },
             ],
           },
           {
             title: 'More',
             items: [
-             /* {
-                label: 'Blog',
-                to: '/blog',
-              },*/
+              /* {
+                 label: 'Blog',
+                 to: '/blog',
+               },*/
               {
-                label: 'Contacto',
-                to: '/contact',
+                label: 'Services',
+                to: '/services',
               },
               {
-                label: 'Nosotros',
-                to: '/nosotros',
+                label: 'Try',
+                to: '/try',
               }
             ],
           },
-          
+
         ],
         copyright: `Copyright © ${new Date().getFullYear()} ITOSS Project.`,
       },
       prism: {
-      
+
         theme: require('prism-react-renderer/themes/vsDark'),
         /*darkTheme: require('prism-react-renderer/themes/dracula'),*/
         /*theme: lightCodeTheme,
@@ -140,28 +140,28 @@ const config = {
         respectPrefersColorScheme: false,
       },
     }),
-    themes: [
-      // ... Your other themes.
-      [
-        require.resolve("@easyops-cn/docusaurus-search-local"),
-        {
-          
-          // ... Your options.
-          // `hashed` is recommended as long-term-cache of index file is possible.
-          hashed: true,
-          // For Docs using Chinese, The `language` is recommended to set to:
-          // ```
-          // language: ["en", "zh"],
-          indexDocs: true,
-          indexPages: true,
-          language: ["en", "es"],
+  themes: [
+    // ... Your other themes.
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
 
-          // ```
-        },
-      ],
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // For Docs using Chinese, The `language` is recommended to set to:
+        // ```
+        // language: ["en", "zh"],
+        indexDocs: true,
+        indexPages: true,
+        language: ["en", "es"],
+
+        // ```
+      },
     ],
-    
-    
+  ],
+
+
 };
 
 module.exports = config;

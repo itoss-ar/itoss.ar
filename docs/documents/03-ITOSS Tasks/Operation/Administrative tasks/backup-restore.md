@@ -1,6 +1,6 @@
 ---
-id: "backup y restore"
-title: Backup y restore ITOSS 
+id: "backup-restore"
+title: ITOSS Backup and restore
 ---
 # Backup y restore de la base de datos de ITOSS
 
