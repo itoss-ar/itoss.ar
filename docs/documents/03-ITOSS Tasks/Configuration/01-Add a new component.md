@@ -3,7 +3,9 @@ id: 'add component'
 title: Add a new Component
 ---
 
-1. Configuration -> Component -> Click plus icon.
+1. Configuration -> Component -> Click plus sign icon <span class="material-symbols-outlined">
+add_box
+</span>
 2. Select the component type on the dialog.
 3. Fill up the component fields.
 4. Click plus icon.
