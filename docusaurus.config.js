@@ -84,9 +84,9 @@ const config = {
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           { to: '/services', label: 'Services', position: 'left' },
-          { to: '/descargas', label: 'Resources', position: 'left' },
+          { to: '/resources', label: 'Resources', position: 'left' },
           { to: '/contact', label: 'Contact', position: 'left' },
-          { to: '/try', label: 'Try', position: 'left' },
+          /*{ to: '/try', label: 'Try', position: 'left' },*/
 
           /* {
              type: 'localeDropdown',
@@ -101,16 +101,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documents',
+                label: 'Concepts',
                 to: '/docs/documents/concepts',
               },
               {
                 label: 'Installation on Redhat',
-                to: '/docs/documentos/Iniciando%20con%20ITOSS/Instalación/Redhat/install-redhat',
+                to: '/docs/documents/Install/Redhat/install-redhat',
               },
               {
                 label: 'Installation on Ubuntu',
-                to: '/docs/documentos/Iniciando%20con%20ITOSS/Instalación/Redhat/install-redhat',
+                to: '/docs/documents/Install/Ubuntu/ubuntu-installation',
               },
             ],
           },
@@ -125,10 +125,10 @@ const config = {
                 label: 'Services',
                 to: '/services',
               },
-              {
+              /*{
                 label: 'Support',
                 to: '/support',
-              },
+              },*/
               {
                 label: 'Contact us',
                 to: '/contact',

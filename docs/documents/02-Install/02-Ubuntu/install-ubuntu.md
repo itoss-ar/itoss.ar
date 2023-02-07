@@ -1,5 +1,5 @@
 ---
-id: "ubuntu instalation"
+id: "ubuntu-installation"
 title: ITOSS installation (ubuntu 22.04 LTS)
 ---
 # Basic ITOSS Installation on Ubuntu Server 22.04 LTS"

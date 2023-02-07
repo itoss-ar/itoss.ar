@@ -43,7 +43,7 @@ export const Features = () => {
             <FeatureView key={idx} {...props} />
         ))}      
       </div>
-      <p className='try text--center'><a className='btn-try' href="/try">TRY ITOSS</a></p>
+      <p className='try text--center'><a className='btn-try' href="/resources">TRY ITOSS</a></p>
     </section>
   )
 }
