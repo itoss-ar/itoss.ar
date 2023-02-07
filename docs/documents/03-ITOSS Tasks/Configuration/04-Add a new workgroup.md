@@ -1,5 +1,5 @@
 ---
-id: 'add contact'
+id: 'add workgroup'
 title: Add a new Workgroup
 ---
 
