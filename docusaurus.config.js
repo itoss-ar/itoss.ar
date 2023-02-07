@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Una herramienta de última generación para la gestión de Data Centers',
+  title: 'ITOSS: Operate IT products with ease',
   tagline: 'La solución de monitoreo remoto para cualquier tecnología',
   url: 'https://fmalaspina.github.io',
   baseUrl: '/',
@@ -53,14 +53,12 @@ const config = {
         },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-
         },
-
         blog: {
           showReadingTime: true,
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/global.css'),
         },
       }),
     ],
@@ -82,11 +80,13 @@ const config = {
             docId: 'documents/concepts',
             position: 'left',
             label: 'Documents',
+
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           { to: '/services', label: 'Services', position: 'left' },
-          { to: '/resources', label: 'Resources', position: 'left' },
-          { to: '/try', label: 'try', position: 'left' },
+          { to: '/descargas', label: 'Resources', position: 'left' },
+          { to: '/contact', label: 'Contact', position: 'left' },
+          { to: '/try', label: 'Try', position: 'left' },
 
           /* {
              type: 'localeDropdown',
@@ -104,10 +104,18 @@ const config = {
                 label: 'Documents',
                 to: '/docs/documents/concepts',
               },
+              {
+                label: 'Installation on Redhat',
+                to: '/docs/documentos/Iniciando%20con%20ITOSS/Instalación/Redhat/install-redhat',
+              },
+              {
+                label: 'Installation on Ubuntu',
+                to: '/docs/documentos/Iniciando%20con%20ITOSS/Instalación/Redhat/install-redhat',
+              },
             ],
           },
           {
-            title: 'More',
+            title: 'Explore',
             items: [
               /* {
                  label: 'Blog',
@@ -118,17 +126,20 @@ const config = {
                 to: '/services',
               },
               {
-                label: 'Try',
-                to: '/try',
-              }
+                label: 'Support',
+                to: '/support',
+              },
+              {
+                label: 'Contact us',
+                to: '/contact',
+              },
             ],
           },
 
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} ITOSS Project.`,
+        copyright: `© ${new Date().getFullYear()} ITOSS Project. All rights reserved.`,
       },
       prism: {
-
         theme: require('prism-react-renderer/themes/vsDark'),
         /*darkTheme: require('prism-react-renderer/themes/dracula'),*/
         /*theme: lightCodeTheme,
