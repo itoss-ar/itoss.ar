@@ -1,6 +1,6 @@
 ---
-id: 'services'
-title: 'Contact form'
+id: 'contact'
+title: 'Contact us'
 
 ---
 

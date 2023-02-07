@@ -3,6 +3,7 @@ id: resources
 title: Resources
 ---
 
+## Downloads
 
 | Installation type | File | Platform | Architecture |   Date   |
 |  :---  |  :---  |  :---  |  :---  |  :---  |
