@@ -104,10 +104,7 @@ const config = {
                 label: 'Concepts',
                 to: '/docs/documents/concepts',
               },
-              {
-                label: 'Installation on Redhat',
-                to: '/docs/documents/Install/Redhat/install-redhat',
-              },
+
               {
                 label: 'Installation on Ubuntu',
                 to: '/docs/documents/Install/Ubuntu/ubuntu-installation',

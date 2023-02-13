@@ -3,9 +3,15 @@ id: 'add company'
 title: Add a new Company
 ---
 
-1. Configuration -> Company -> Click plus icon.
-2. Select the company type on the dialog.
-3. Fill up the company fields.
-4. Click plus icon.
-5. Click on the save icon.
+1. Configuration -> Company -> Click <span class="material-symbols-outlined">
+add_box
+</span> icon.
+1. Select the company type on the dialog.
+2. Fill up the company fields.
+3. Click <span class="material-symbols-outlined">
+add_box
+</span>
+1. Click on the  <span class="material-symbols-outlined">
+save
+</span> icon.
 
