@@ -1,6 +1,6 @@
 ---
-id: 'create a new component and start monitoring'
-title: Create a new Linux Component and start monitoring
+id: 'create a new component and start managing'
+title: Create a new Linux Component and start managing
 ---
 >#### Requirements: 
 >Monitoring of linux systems is done through ssh (22 default port unless changed). SSHD daemon >must be up and running on the target system, and 22 port connection allowed between the >collector and the linux host.
