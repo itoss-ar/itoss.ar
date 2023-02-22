@@ -83,7 +83,7 @@ const config = {
 
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          { to: '/services', label: 'Services', position: 'left' },
+          //{ to: '/services', label: 'Services', position: 'left' },
           { to: '/resources', label: 'Resources', position: 'left' },
           { to: '/contact', label: 'Contact', position: 'left' },
           /*{ to: '/try', label: 'Try', position: 'left' },*/
@@ -118,10 +118,10 @@ const config = {
                  label: 'Blog',
                  to: '/blog',
                },*/
-              {
-                label: 'Services',
-                to: '/services',
-              },
+              /*  {
+                  label: 'Services',
+                  to: '/services',
+                },*/
               /*{
                 label: 'Support',
                 to: '/support',
