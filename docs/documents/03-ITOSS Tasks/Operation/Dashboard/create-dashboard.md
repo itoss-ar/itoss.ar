@@ -16,10 +16,11 @@ To create a dashboard, follow these steps:
 
 The new dashboard will be located on the last tab, position yourself on the dashboard menu to add the desired containers. 4. 
 
-4. Click on the vertical button icon and press "Edit dashboard" to change the layout.
+4. Click on the vertical button icon and press "Add container".
 
 ![create-dashboard-4](/img/create-dashboard-4.png)
 
-5. Add one by one the containers that will be part of the new dashboard. Click on the vertical button icon and press "Add container" to change the layout.
+5. Click on the vertical button icon and press "Edit dashboard" to change the layout.
    
+
 ![create-dashboard-5](/img/create-dashboard-5.png)
