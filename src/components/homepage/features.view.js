@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Features = () => { 
   const featureList = [
-    { title: "Focused on IT Service Providers", description: "More than just monitoring, a comprehensive solution for managing your multi- client technology environment from start to finish" },
+    { title: "Focused on IT Service Providers", description: "Processing key metrics, automatizes notifications, corrective actions, reporting and other operation tasks" },
     { title: "Framework for developing IT tasks", description: "Automatizes notifications, corrective actions, reporting and other operation tasks" },
     { title: "License free", description: "No hidden licensing costs, no usage limits" },
     { title: "Simple implementation, flexible, and scalable", description: "Microservices-based architecture, ready to use in just minutes" },
@@ -32,8 +32,6 @@ export const Features = () => {
         <div className="container">
           <h2 className="text--center">
             <strong>Operate IT products with ease</strong>
-            <br/>
-            <span style={{fontWeight: 300, fontSize: "18px"}}>Modern management & monitoring</span>
           </h2>
         </div>        
       </div>

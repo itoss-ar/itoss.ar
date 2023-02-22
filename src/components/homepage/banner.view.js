@@ -15,12 +15,12 @@ export const Banner = () => {
                 <div className={clsx('col col--5')}>
                   <div className="text--left">
                     <h1 className="hero-title">Operate IT products with ease</h1>
-                    <p className="hero-subtitle">Complete customer visibility into infrastructure performance with effortless deployment and agentless</p>                    
+                    <p className="hero-subtitle">Complete customer visibility into infrastructure performance with effortless deployment.</p>                    
                   </div>
                 </div>
                 <div className={clsx('col col--7')}>
                   <div className="text--right">
-                    <img className="hero-img" src="img/dashboard.png" alt="ITOSS logo" /> 
+                    <img className="hero-img" src="img/banner-itoss-ar.png" alt="ITOSS: Operate IT products with ease" /> 
                   </div>
                 </div>
               </div>  

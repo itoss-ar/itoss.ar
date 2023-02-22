@@ -3,23 +3,20 @@ import React from 'react';
 
 export const Brands = () => {
     const brands = [{
-      logo: '/brands/oracle-logo.png',
-      brand: 'Oracle'
+      logo: '/brands/logo-java.jpg',
+      brand: 'Java'
     },{
-      logo: '/brands/sap-logo.png',
-      brand: 'SAP'
+      logo: '/brands/logo-spring.png',
+      brand: 'Spring'
     },{
-      logo: '/brands/redhat-logo.png',
-      brand: 'Red Hat'
+      logo: '/brands/logo-postgresql.png',
+      brand: 'PostgreSQL'
     },{
-      logo: '/brands/sql-server-logo.png',
-      brand: 'MS SQL Server'
+      logo: '/brands/logo-timescale.png',
+      brand: 'TimescaleDB'
     },{
-      logo: '/brands/sybase-logo.jpeg',
-      brand: 'Sybase'
-    },{
-      logo: '/brands/fortinet-logo.png',
-      brand: 'Fortinet'
+      logo: '/brands/logo-angular.png',
+      brand: 'Angular'
     }];
   
     const BrandView = ({logo, brand}) => {
@@ -33,9 +30,7 @@ export const Brands = () => {
         <div className="row justify-content-center">
           <div className={clsx('col col--12')}>
             <h2 className="text--center">
-              <strong>Designed to operate efficiently and securely</strong>
-              <br/>
-              <span style={{fontWeight: 300, fontSize: "18px"}}>many enterprises systems</span>
+              <strong>Built on based on open and modern technologies.</strong>              
             </h2>
           </div>          
           <div className={clsx('col col--12 col--sm-10')}>
