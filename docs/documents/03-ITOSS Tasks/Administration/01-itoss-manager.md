@@ -45,7 +45,7 @@ Configuration file:
 Statistics:
 
 ```shell
-curl <http://189.125.185.222:8080/stats> |python -m json.tool
+curl http://<manager_endpoint>/stats |python -m json.tool
 ```
 
 ### Status, Start, and Stop

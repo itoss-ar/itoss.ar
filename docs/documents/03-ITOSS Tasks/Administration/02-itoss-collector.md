@@ -22,25 +22,25 @@ Binary directory:
 Log file:
 
 ```shell
-/app/itoss/itoss-collector-00/logs/itoss-collector.log
+/app/itoss/itoss-collector/logs/itoss-collector.log
 ```
 
 Configuration file:
 
 ```shell
-/app/itoss/itoss-collector-00/config/application.properties
+/app/itoss/itoss-collector/config/application.properties
 ```
 
 Alert integration file:
 
 ```shell
-/app/itoss/itoss-collector-00/logs/itoss-alert.log
+/app/itoss/itoss-collector/logs/itoss-alert.log
 ```
 
 Statistics:
 
 ```shell
-curl http://<endpoint_collector>/stats |python -m json.tool
+curl http://<collector_endpoint>/stats |python -m json.tool
 ```
 
 ### Status, Start, and Stop

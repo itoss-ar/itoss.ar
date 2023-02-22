@@ -30,6 +30,12 @@ Configuration file:
 /app/itoss/itoss-reporting/config/application.properties
 ```
 
+Statistics:
+
+```shell
+curl http://<reporting_endpoint>/stats |python -m json.tool
+```
+
 ### Status, Start, and Stop
 
 ITOSS Reporting status:
