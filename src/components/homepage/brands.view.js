@@ -3,7 +3,7 @@ import React from 'react';
 
 export const Brands = () => {
     const brands = [{
-      logo: '/brands/logo-java.jpg',
+      logo: '/brands/logo-java.png',
       brand: 'Java'
     },{
       logo: '/brands/logo-spring.png',
