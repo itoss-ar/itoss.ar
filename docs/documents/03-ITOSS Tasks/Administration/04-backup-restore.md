@@ -2,17 +2,17 @@
 id: "backup-restore"
 title: ITOSS Backup and restore
 ---
-# Backup y restore de la base de datos de ITOSS
+# ITOSS Database Backup and Restore
 
-## Backup 
+## Backup
 
 ```shell
 pg_dump -Fc -f itossdb.sql itossdb
 ```
 
-## Restore 
+## Restore
 
-Iniciada la sesión como usuario postgres y correriendo el cliente psql.
+Session started as user "postgres" and running the "psql" client.
 
 ```sql
 CREATE DATABASE itossdb;
