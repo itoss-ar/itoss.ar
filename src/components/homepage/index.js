@@ -1,14 +1,18 @@
 import React from 'react';
 import { Banner } from './banner.view';
 import { Brands } from './brands.view';
+import { CompleteOperation } from './complete-operation.view';
 import { Features } from './features.view';
+import { Services } from './services.view';
 
 export default function Homepage() {
   return (
     <>
       <Banner />
       <Features />
-      <section className="features">
+      <CompleteOperation />
+      <Services />
+      <section className="home-brands">
         <div className="container">
           <div className="row">
             <Brands />
