@@ -81,8 +81,8 @@ export const Features = () => {
         
         <p className='try text--center'><a className='btn-try' href="/resources">TRY ITOSS</a></p>
       </section>
-      <OperationView />
-      <div style={{paddingTop: '20px'}}><hr className="separator-more" /></div>
+
+
     </>
   )
 }
