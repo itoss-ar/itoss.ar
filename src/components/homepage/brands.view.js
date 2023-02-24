@@ -29,7 +29,7 @@ export const Brands = () => {
       <div className="container" style={{marginTop: "10px", marginBottom: "20px"}}>
         <div className="row justify-content-center">
           <div className={clsx('col col--12')}>
-            <h2 className="text--center">
+            <h2 className="text--center" style={{color: "#222222"}}>
               <strong>Built on based on open and modern technologies.</strong>              
             </h2>
           </div>          

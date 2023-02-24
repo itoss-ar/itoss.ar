@@ -4,14 +4,14 @@ import React from 'react';
 export const CompleteOperation = () => { 
     return (
       <>        
-        <div className="features" style={{paddingBottom: 0}}>
+        <div className="features" style={{paddingBottom: 0, backgroundColor: "#ffffff", color: "#222222"}}>
           <div className="container">
             <h2 className="text--center">
               <strong>Complete operation</strong>
             </h2>
           </div>        
         </div>
-        <div className={clsx('features col col--12 container-box home-complete-operation')}> 
+        <div className={clsx('features col col--12 container-box home-complete-operation')} style={{backgroundColor: "#ffffff", color: "#222222"}}> 
           <div className={clsx('col col--3')}>
             <ul>
               <li>Operational state</li>
@@ -31,7 +31,7 @@ export const CompleteOperation = () => {
             </ul>
           </div>
         </div>
-        <div style={{paddingTop: '20px'}}><hr className="separator-more" /></div>
+        <div style={{backgroundColor: "white", paddingTop: '20px'}}><hr className="separator-more" /></div>
       </>
     )
 }

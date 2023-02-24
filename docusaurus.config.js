@@ -83,7 +83,7 @@ const config = {
 
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          //{ to: '/services', label: 'Services', position: 'left' },
+          { to: '/services', label: 'Services', position: 'left' },
           { to: '/resources', label: 'Resources', position: 'left' },
           { to: '/contact', label: 'Contact', position: 'left' },
           /*{ to: '/try', label: 'Try', position: 'left' },*/
@@ -118,10 +118,10 @@ const config = {
                  label: 'Blog',
                  to: '/blog',
                },*/
-              /*  {
+              {
                   label: 'Services',
                   to: '/services',
-                },*/
+              },
               /*{
                 label: 'Support',
                 to: '/support',
@@ -137,13 +137,13 @@ const config = {
         copyright: `© ${new Date().getFullYear()} ITOSS Project. All rights reserved.`,
       },
       prism: {
-        theme: require('prism-react-renderer/themes/vsDark'),
-        /*darkTheme: require('prism-react-renderer/themes/dracula'),*/
-        /*theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,*/
+        //theme: require('prism-react-renderer/themes/vsDark'),
+        theme: require('prism-react-renderer/themes/oceanicNext'),
+        //theme: lightCodeTheme,
+        //darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },

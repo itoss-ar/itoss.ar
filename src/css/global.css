@@ -14,10 +14,11 @@
   --ifm-font-family-base: 'Roboto';
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: white;
-  --ifm-link-color: #006699;
-  --ifm-menu-color-active: #006699;
-  --ifm-tabs-color-active: #006699;
-  --ifm-breadcrumb-color-active: #006699;
+  --ifm-link-color: #00CC99 !important;
+  --ifm-menu-color-active: #00CC99;
+  --ifm-tabs-color-active: #00CC99;
+  --ifm-breadcrumb-color-active: #00CC99;
+  --ifm-background-color: #303030 !important;
 }
 
 /************************/

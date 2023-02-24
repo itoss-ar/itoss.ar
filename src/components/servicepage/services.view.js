@@ -1,10 +1,8 @@
 import clsx from 'clsx';
 import React from 'react';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 export const Services = () => { 
-  const tabs = [
+  const serviceList = [
     { title: "Software Support", 
       items: [
         "Our basic support package provides you with 24/7 technical support to ensure your software runs smoothly.",
@@ -32,30 +30,44 @@ export const Services = () => {
     },
   ]
 
-  return (
-    <section className="home-services">
-      <div className="services">
-        <div className="container">
-          <h2 className="text--center">
-            <strong>Services</strong>
-          </h2>
-        </div>        
-      </div>
-      <div className={clsx('services col col--12 container-box')}> 
-        
-          <Tabs>
-            {tabs.map((props, idx) => (
-                <TabItem value={idx} label={props.title}>
-                    <ul className='items'>
-                      {props.items.map((item) => (
-                          <li className='item'>{item}</li>
-                      ))}
-                    </ul>
-                </TabItem>
-            ))}   
-          </Tabs>
+  const ServiceView = ({title, items}) => {
+    return (
+        <div className={clsx('col col--3')}>
+          <div className='box text--center'>
+            <div>
+              <p><strong>{title}</strong></p>
+            </div>
+            <div>
+              <ul className='items' style={{ fontSize: "14px", textAlign: "left"}}>
+                  {items.map((item, idx) => (
+                      <li key={idx} className='item' style={{paddingBottom: "15px"}}>{item}</li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+    );
+  }
 
-      </div>
-    </section>
+  return (
+    <>
+      <section className="home-features" style={{paddingTop: "0px", backgroundImage: "none"}}>
+        <div className="features">
+          <div className="container">
+            <h2 className="text--center">
+              <strong>Services</strong>
+            </h2>
+          </div>        
+        </div>
+        <div><hr className="separator" /></div>
+        <div className={clsx('features col col--12 container-box')}> 
+          {serviceList.map((props, idx) => (
+              <ServiceView key={idx} {...props} />
+          ))}   
+        </div>
+      </section>
+
+
+    </>
   )
 }
