@@ -6,12 +6,14 @@ Authentication of each user in the tool can be done in one of two ways: Internal
 
 ### LDAP Integration Parameters
 
-1. For integration with the LDAP service, first, it is necessary to configure a the LDAP servers. In the ITOSS Manager, **go to Security -> LDAP Servers, and click the <span class="material-symbols-outlined">
+1. For integration with the LDAP service, first, it is necessary to configure a the LDAP servers. In the ITOSS Manager, go to Security -> LDAP Servers, and click the <span class="material-symbols-outlined">
 add_box
-</span> icon**.
+</span> icon.
 
 ![ldap-1](/img/ldap-1.png)
+
 2. Fill up the LDAP fields:
+
 ![ldap-2](/img/ldap-2.png)
 
 ### Enabling Users for LDAP Authentication
@@ -19,6 +21,6 @@ add_box
 To authenticate a user with the LDAP server, it is necessary to access the user manager and select Authenticator: LDAP. This way the authentication of the user will be delegated to the LDAP authenticator.
 However, if INTERNAL is selected, the tool ITOSS will authenticate and validate the password.
 
-3. ** Go to Security / Users, edit the user and select "LDAP" in the Authenticator field:
+3. Go to Security / Users, edit the user and select "LDAP" in the Authenticator field:
 
 ![ldap-3](/img/ldap-3.png)
