@@ -1,8 +1,75 @@
 ---
-title: "Rule and condition actions"
+title: "Condition and action fields"
 ---
 
-These are the list of actions for use in monitor configuration:
+These are the fields that can be accessed within the context of monitor actions and conditions:
+
+### `lastMetric`
+
+Contains the mapped field values of the last metric read, to be used for comparison purposes.
+
+- `.tags` (Map): *See description and use case below.*
+- `.fields`(Map): *See description and use case below.*
+- `.time` (Text): UTC timestamp of the last metric read.
+- `.ruleApplied` (Text): Name of the rule applied on last metric collection.
+
+### `metric`
+
+It has the attributes of the metric being read:
+
+- `.tags` (Map): It is a map to access the tags defined within the metric.
+
+```java
+if (metric.tags.dirName == 'C:\temp') {
+    // ignoring
+}
+```
+
+- `.fields` (Map): It is a map to access the fields defined within the metric.
+
+```java
+if (metric.fields.fsutil > 95) {
+    action.createDashEntry('RED');
+}
+```
+
+- `.metricName` (Text): Name of the metric being read.
+- `.phase` (Text): Processing phase, wheather it is *Detail* or *Aggregate*.
+- `.metricId` (Number): Internal ID of the metric.
+- `.ctId` (Number): Internal ID of the monitored component.
+- `.monitorId` (Number): Internal monitor ID.
+- `.rawResult` (Text): Raw result of the metric just being read.
+- `.time` (Text): UTC timestamp of the metric data collection.
+
+### ct
+
+- `.getAttribute('attribute name')`: This is a method to access any of the ct attributes.
+
+Use:
+
+```java
+action.log(ct.ctName + ' is down - Notify to: ' + ct.getAttribute('NotifyTo'))
+```
+
+These are the ct fields to be used within the condition or action context:
+
+- `.ctName` (Text): Name of the component.
+- `.ctType` (Text): Component type.
+- `.environment` (Text): Component environment (PRODUCTION, DEVELOPMENT, QA, PILOT, TEST).
+- `.workgroup` (Text): Support workgroup of the CT.
+- `.supportUser` (Text): Support user name.
+- `.company` (Text): Owner company of the component.
+- `.companyId` : Internal company ID.
+- `.ctAttributes` (List): Attribute list of the CT.
+- `.companyAttributes` (List): Company attributes.
+- `.typeAttributes` (List): Type attributes.
+- `.profileName` (Text): Name of the management profile assigned to the CT.
+- `.profileId` (Number): Internal profile ID.
+- `.ctInstrumParamValues` (List): CT instrumentation parameter values.
+
+### action
+
+These are the list of actions methods for use in monitor configuration:
 
 | Action | Description | Return value  | Parameters | Use |
 | :--- | :--- | :--- | :--- | :--- |
@@ -26,3 +93,15 @@ These are the list of actions for use in monitor configuration:
 |`action.secsBetweenNowAnd('date_time_field', 'date format')`| Returns seconds between now and date_time_field being passed. | None |<ul><li>Date string</li><li>Format</li></ul> |`if (action.secsBetweenNowAnd(typejob.fields.STRTDATE + typejob.fields.STRTTIME, 'yyyyMMddHHmmss')> 86400){countJobsRuntime1d++;}`|
 |`action.notifyTo('ct list attribute with receivers', 'message',toolId)`| Sends a mail to the selected receivers. If tool ID was set, the mail will have the tool output attached. | None |<ul><li>Date string</li><li>Format</li><li>(Optional) Tool ID: ID of the tool to be executed.</li></ul> |`action.notifyTo(ct.getAttribute('NotifyTo'),'ITOSS notification - '+ct.ctName +' - '+ct.ctType +' - '+ action.monitor.monitorName +' - '+ action.ruleEvaluated.getDescription());`|
 |`action.sendNotification({'receiver',...},'message')`| Sends a notification to the dashboard of the user whose tennant is same as CT, or to selected receivers, if receivers were sent. | None | <ul><li>Receivers: the reciever of the message (possible values are MANAGER,SUPPORTUSER,WORKGROUP and CONTACT)</li><li>Text: message string.</li></ul>|`action.sendNotification({'MANAGER','SUPPORTUSER','WORKGROUP'},'Ct is down.');`|
+
+Within action there is a couple of field + method to be accessed as well:
+
+- `.ruleEvaluated.getDescription()` (Text): Name of the rule being evaluated.
+  
+### `.monitor`
+
+Monitor configuration data. Has the following sub fields:
+
+- `.monitorName`: Name of the monitor.
+- `.metricName`: Name of the metric.
+- `.profileName`: Name of the management profile.

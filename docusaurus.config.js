@@ -141,6 +141,7 @@ const config = {
         theme: require('prism-react-renderer/themes/oceanicNext'),
         //theme: lightCodeTheme,
         //darkTheme: darkCodeTheme,
+        additionalLanguages: ['powershell','java']
       },
       colorMode: {
         defaultMode: 'dark',
