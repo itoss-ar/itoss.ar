@@ -1,8 +1,11 @@
 ---
-title: "Condition and action fields"
+title: "Condition and action fields and methods"
 ---
 
-These are the fields that can be accessed within the context of monitor actions and conditions:
+Every monitor has rules that are evaluated against the metric payload data. If a rule condition is evaluated as true, i.e., matches the condition, then the action of that rule gets executed.
+For every rule condition and rule action there are a couple of fileds and methods available to get data or execute some actions.
+
+These are fields and methos that can be accessed within the context of monitor actions and conditions:
 
 ### `lastMetric`
 
