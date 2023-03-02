@@ -102,6 +102,6 @@ Within action there is a couple of field + method to be accessed as well:
 
 Monitor configuration data. Has the following sub fields:
 
-- `.monitorName`: Name of the monitor.
-- `.metricName`: Name of the metric.
-- `.profileName`: Name of the management profile.
+- `.monitorName` (Text): Name of the monitor.
+- `.metricName` (Text): Name of the metric.
+- `.profileName` (Text): Name of the management profile.
