@@ -3,7 +3,7 @@ id: resources
 title: Resources
 ---
 
-## Downloads
+# Downloads
 
 | Installation type | File | Platform | Architecture |   Date   |
 |  :---  |  :---  |  :---  |  :---  |  :---  |
@@ -12,7 +12,7 @@ title: Resources
 
 ---
 
-## Docker instructions
+# Docker instructions
 
 
 The easiest way to get itoss up and running is using our docker compose image.

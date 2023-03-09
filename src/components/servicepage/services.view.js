@@ -25,7 +25,7 @@ export const Services = () => {
       items: [
         "Our administration services are designed to help you manage your IT infrastructure and products more effectively.",
         "Our team of experts will work with you to develop a customized solution that meets your unique needs.",
-        "Choose ITOSS for all your IT management needs and experience a more efficient and effective way of managing your infrastructure and products. Contact us today to learn more about our services."
+        "Choose ITOSS for all your IT management needs and experience a more efficient and effective way of managing your infrastructure and products."
       ] 
     },
   ]
@@ -54,9 +54,9 @@ export const Services = () => {
       <section className="home-features" style={{paddingTop: "0px", backgroundImage: "none"}}>
         <div className="features">
           <div className="container">
-            <h2 className="text--center">
+            <h1 className="text--center">
               <strong>Services</strong>
-            </h2>
+            </h1>
           </div>        
         </div>
         <div><hr className="separator" /></div>
