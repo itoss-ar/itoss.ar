@@ -13,7 +13,8 @@ export default function Contactpage() {
             </h1>
           </div>        
         </div>
-        <div className={clsx('features col col--12 container-box home-complete-operation')}> 
+        <div><hr className="separator" /></div>
+        <div className={clsx('features col col--12 container-box')}> 
           <div className={clsx('col col--3')}></div>
           <div className={clsx('col col--6')}>
             <ContactUs />

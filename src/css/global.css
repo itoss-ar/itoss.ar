@@ -349,3 +349,7 @@ svg {
   .contact-us .label { font-size: 16px; line-height: 1.75; margin: 0px 0px 5px 0px; }
   .contact-us .field input, textarea { border: var(--ifm-table-border-width) solid var(--ifm-table-border-color); width: 100% !important; padding: 10px }
   .contact-us .btn-submit { background-color: #00CC99; border: solid 1px #00CC99; padding: 10px 15px 10px 15px; }
+  .contact-us .thank-you-message { text-align: center; }
+    .contact-us .thank-you-message .title { font-size: 2rem; margin-top: 30px; margin-bottom: 20px; }
+    .contact-us h2 { font-weight: 300; }
+  .contact-us .error { padding: 5px 0 0 0; font-size: 13px; color: #ff8d8d; }

@@ -1,54 +1,87 @@
-import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from 'react';
+import { useForm } from "react-hook-form";
 
 export const ContactUs = () => {
+    const [showThankYou, setShowThankYou] = useState(false);  
+    const [errorMessage, setErrorMessage] = useState(null);  
+
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const form = useRef();
   
     const sendEmail = (e) => {
       e.preventDefault();
-  
+
       emailjs.sendForm('itoss_demo', 'itoss_contact_sales', form.current, '_k-ccalcSRdg49pcK')
         .then((result) => {
-            console.log(result.text);
+          setShowThankYou(true)
         }, (error) => {
-            console.log(error.text);
+          setErrorMessage(error.text);
         });
     };
-  
-    return (
-        <div className="contact-us">
-          <div className="screen-reader-response">
-            
+
+    const ThankYouView = () => {
+      return (
+        <div className="thank-you-message">
+          <div>
+            <img decoding="async" src="/img/contactform.png" width="200" height="166" alt="" />
           </div>
-          <form ref={form} onSubmit={sendEmail}>
+          <div className='title'><strong>Thank you!</strong></div>
+          <h2>We appreciate you reaching out.</h2>
+        </div>
+      )
+    }   
+    const ErrorMessageView = (message) => {
+      return (
+        <div className="error-message">
+              <div><strong>Error!</strong></div>
+              <p>{{message}}</p>
+        </div>
+      )
+    }  
+
+    const FormView = () => {
+      return (
+          <form ref={form} onSubmit={handleSubmit(sendEmail)}>
             <p><label className="label">Full name</label></p>
             <p className="field">
-              <input size="40" aria-required="true" aria-invalid="false" placeholder="Full name" type="text" name="user_name" />
-            </p>
+              <input {...register("user_name", { required: true })} placeholder="Full name"  />
+              { errors.user_name && <span className='error'>* This field is required</span> }
+            </p>            
             <p><label className="label">Job Title</label></p>
             <p className="field">
-              <input size="40" aria-required="true" aria-invalid="false" placeholder="Job Title" value="" type="text" name="user_job" />
-            </p>
+              <input {...register("user_job", { required: true })} placeholder="Job Title" />
+              { errors.user_job && <span className='error'>* This field is required</span> }
+            </p>            
             <p><label className="label">Email</label></p>
             <p className="field">
-              <input size="40" aria-required="true" aria-invalid="false" placeholder="Company Email" type="email" name="user_email" />
+              <input {...register("user_email", { required: true, pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} placeholder="Company Email" />
+              { errors.user_email && <span className='error'>* { (errors.user_email?.message) ? errors.user_email?.message : 'This field is required' }</span> }
             </p>
             <p><label className="label">Phone (Optional)</label></p>
-            <p class="field">
+            <p className="field">
               <span className="form-control">
-                <input size="40" aria-invalid="false" placeholder="Phone (Optional)" type="text" name="user_phone" />
+                <input {...register("user_phone", { required: false})} placeholder="Phone (Optional)" />
               </span>
             </p>
             <p><label className="label">Message</label></p>
             <p style={{marginBottom: '15px'}}>
               <span className="form-control">
-                <textarea cols="40" rows="8" className="form-control-textarea" aria-invalid="false" placeholder="How can we help?" name="message"></textarea>
+                <textarea {...register("message", { required: false })}  cols="40" rows="8" className="form-control-textarea"  placeholder="How can we help?"></textarea>
               </span>
             </p>
             <p>
               <input className="btn-submit" type="submit" value="Contact sales" />
             </p>
+            
+            { errorMessage ? <ErrorMessageView /> : null }
           </form>
+      );
+    }
+  
+    return (
+        <div className="contact-us">
+          { showThankYou ? <ThankYouView /> : <FormView /> }          
         </div>
     );
   };
