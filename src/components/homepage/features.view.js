@@ -3,22 +3,25 @@ import React from 'react';
 
 export const Features = () => { 
   const featureList = [
-    { title: "Focused on IT Service Providers", description: "Processing key metrics, automatizes notifications, corrective actions, reporting and other operation tasks" },
-    { title: "Framework for developing IT tasks", description: "Automatizes notifications, corrective actions, reporting and other operation tasks" },
+    { title: "Focused on IT Service Providers", icon: "/icons/it-service.png", description: "Processing key metrics, automatizes notifications, corrective actions, reporting and other operation tasks" },
+    { title: "Framework for developing IT tasks", icon: "/icons/development.png", description: "Automatizes notifications, corrective actions, reporting and other operation tasks" },
     //{ title: "License free", description: "No hidden licensing costs, no usage limits" },
-    { title: "Simple implementation, flexible, and scalable", description: "Microservices-based architecture, ready to use in just minutes" },
-    { title: "SAP BASIS ready and more", description: "Includes interfaces and knowledge for SAP ecosystem management, Linux, Windows and most database vendors" },
-    { title: "Operation management through custom control panels", description: "Ideal for operation centers with diverse management and support profiles" }
+    { title: "Simple implementation, flexible, and scalable", icon: "/icons/simple.png", description: "Microservices-based architecture, ready to use in just minutes" },
+    { title: "SAP BASIS ready and more", icon: "/icons/sap-basis.png", description: "Includes interfaces and knowledge for SAP ecosystem management, Linux, Windows and most database vendors" },
+    { title: "Operation management through custom control panels", icon: "/icons/panels.png", description: "Ideal for operation centers with diverse management and support profiles" }
   ]
 
-  const FeatureView = ({title, description}) => {
+  const FeatureView = ({icon, title, description}) => {
     return (
         <div className={clsx('col col--2')}>
           <div className='box text--center'>
-            <div>
+            <div className='hide-on-hover'>
+              <img src={icon}></img>
+            </div>
+            <div className='keep-on-hover'>
               <p><strong>{title}</strong></p>
             </div>
-            <div>
+            <div className='show-on-hover'>
               <p style={{fontSize: "14px"}}>{description}</p>
             </div>
           </div>

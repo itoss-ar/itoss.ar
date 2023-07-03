@@ -129,11 +129,12 @@ input {
 
 /* BANNER */
 .hero {
-  padding: 4rem 0;
+  padding: 0 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #303030;
+  background-color: #212121;
+  box-shadow: 0px 5px 10px #070707;
 }
 
 @media screen and (max-width: 996px) {
@@ -143,7 +144,8 @@ input {
 }
 
 .hero-main {
-  z-index: 1
+  z-index: 1;
+  height: 588px;
 }
 
 .hero-title {
@@ -175,11 +177,7 @@ input {
   height: 80vh;
   max-height: 560px;
   box-sizing: border-box;
-  padding: 48px 48px 32px;
   overflow: hidden;
-  transform: skewY(8deg);
-  transform-origin: 100%;
-  background: linear-gradient(90deg, #006699, #006699, #00CC99);
 }
 
 .hero-more-info {
@@ -198,6 +196,11 @@ svg {
   max-width: 50%;
 }
 
+.hero-video {
+  position: absolute;
+  z-index: -1;
+}
+
 /* FEATURES */
 .features {
   display: flex;
@@ -214,10 +217,11 @@ svg {
 .home-features {
   padding: 50px 25px 25px 25px;
   color: white;
-  background: #303030;
+  /*background: #303030;*/
   background: url(/img/background-circle-gradient.svg);
   background-size: cover;
-  background-color: #303030;
+  /*background-color: #303030;*/
+  background-color: #212121;
   background-position: top
 }
 
@@ -254,6 +258,30 @@ svg {
   color: #fff;
   background-image: linear-gradient(45deg, #006699, #006699, #00CC99);
 }
+
+/*
+.hide-on-hover, .keep-on-hover, .show-on-hover {
+  transition: all ease 0.45s;
+}
+
+.hide-on-hover {
+  transform: translate(-50%, -50%);
+}
+
+.keep-on-hover {
+  transform: translate(-50%, 2rem);
+}
+
+
+&:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+
+  
+  .hide-on-hover {
+    transform: translate(-50%, -100%);
+  }
+}
+*/
 
 /* SERVICES */
 .home-services { padding: 30px 0 10px 0; }

@@ -9,21 +9,8 @@ export const Banner = () => {
       <>
         <header>
           <div className="hero">
-            <div className="hero-background"></div>
-            <div className="container hero-main">
-              <div className="row">
-                <div className={clsx('col col--5')}>
-                  <div className="text--left">
-                    <h1 className="hero-title">Operate IT products with ease</h1>
-                    <p className="hero-subtitle">Complete customer visibility into infrastructure performance with effortless deployment.</p>                    
-                  </div>
-                </div>
-                <div className={clsx('col col--7')}>
-                  <div className="text--right">
-                    <img className="hero-img" src="img/banner-itoss-ar.png" alt="ITOSS: Operate IT products with ease" /> 
-                  </div>
-                </div>
-              </div>  
+            <div className="hero-main">
+              <video className="hero-video" loop muted autoPlay src="/videos/homepage3.mp4"></video>               
             </div> 
           </div>
         </header>
