@@ -139,13 +139,17 @@ input {
 
 @media screen and (max-width: 996px) {
   .hero {
-    padding: 2rem 0;
+    padding: 0 0;
   }
 }
 
 .hero-main {
   z-index: 1;
-  height: 588px;
+  width: 100%;
+  /*height: 588px;*/
+  height: 450px;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-title {
@@ -199,6 +203,7 @@ svg {
 .hero-video {
   position: absolute;
   z-index: -1;
+  margin-top: -125px
 }
 
 /* FEATURES */
