@@ -10,7 +10,7 @@ export const Banner = () => {
         <header>
           <div className="hero">
             <div className="hero-main">
-              <video className="hero-video" loop muted autoPlay src="/videos/homepage2.mp4"></video>               
+              <video className="hero-video" loop muted autoPlay src="/videos/homepage6.mp4"></video>               
             </div> 
           </div>
         </header>
