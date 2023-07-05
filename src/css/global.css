@@ -58,14 +58,19 @@ input {
 .navbar {
   box-shadow: none;
 }
+.navbar {
+  background: linear-gradient(90deg, #006699, #006699, #00CC99);
+}
 
 .navbar--fixed-top {
   position: sticky;
   top: 0;
-  background: linear-gradient(90deg, #006699, #006699, #00CC99);
+  background-color: transparent;
   z-index: var(--ifm-z-index-fixed);
   border-bottom: solid 0px;
 }
+
+
 
 .navbar__link--active {
   color: var(--ifm-navbar-link-hover-color);
@@ -80,6 +85,25 @@ input {
 /************************/
 /********* HOME *********/
 /************************/
+
+.homepage .main-wrapper {
+  margin-top: -60px
+}
+
+.homepage .navbar {
+  background: transparent;
+}
+.homepage.scrolled .navbar {
+  background: linear-gradient(90deg, #006699, #006699, #00CC99);
+}
+
+.homepage .navbar__search-input {
+  border: solid 1px #020606
+}
+
+.homepage.scrolled .navbar__search-input {
+  border: solid 0px #212121
+}
 
 .separator {
   margin: auto;
@@ -146,8 +170,8 @@ input {
 .hero-main {
   z-index: 1;
   width: 100%;
-  /*height: 588px;*/
-  height: 450px;
+  /*height: 588px;
+  height: 450px;*/
   display: flex;
   justify-content: center;
 }
@@ -201,9 +225,10 @@ svg {
 }
 
 .hero-video {
-  position: absolute;
+  /*position: absolute;
   z-index: -1;
-  margin-top: -125px
+  margin-top: -125px*/
+  width: 100%;
 }
 
 /* FEATURES */
