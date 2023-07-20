@@ -10,8 +10,6 @@ export const ContactUs = () => {
     const form = useRef();
   
     const sendEmail = (e) => {
-      e.preventDefault();
-
       emailjs.sendForm('itoss_demo', 'itoss_contact_sales', form.current, '_k-ccalcSRdg49pcK')
         .then((result) => {
           setShowThankYou(true)
