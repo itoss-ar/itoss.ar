@@ -7,7 +7,7 @@ export default function Services() {
     const {siteConfig} = useDocusaurusContext();
 
     return (
-      <Layout title={`${siteConfig.title}`} description="The Tool for Datacenter Service Management.">
+      <Layout title={`Services`} description="The Tool for Datacenter Service Management.">
         <main>
           <div>
             <Servicepage />

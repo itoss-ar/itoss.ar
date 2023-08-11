@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 export const Services = () => { 
   const serviceList = [
@@ -32,11 +34,11 @@ export const Services = () => {
         "Choose ITOSS for all your IT management needs and experience a more efficient and effective way of managing your infrastructure and products."
       ] 
     },
-  ]
+  ];
 
   const ServiceView = ({icon, title, items}) => {
     return (
-        <div className={clsx('col col--3')}>
+        <div  style={{margin: '20px', minHeight: '650px', maxHeight: '650px', height: '650px'}}>
           <div className='box text--center'>
           <div className='hide-on-hover'>
               <img src={icon}></img>
@@ -56,6 +58,28 @@ export const Services = () => {
     );
   }
 
+  const ServiceGalleryView = () => {
+    const handleDragStart = (e) => e.preventDefault();
+    const items = serviceList.map((props, idx) => <ServiceView key={idx} {...props} onDragStart={handleDragStart} />);
+
+    const responsive = {
+      0: { items: 1 },
+      576: { items: 1 },
+      768: { items: 2 },
+      992: { items: 3 },
+      1024: { items: 3 },
+      1400: { items: 4 }
+    };
+
+    return (
+      <div className='features'>
+        <AliceCarousel mouseTracking items={items} responsive={responsive} disableButtonsControls={false} disableDotsControls={true} paddingLeft={10} paddingRight={10} />
+      </div>
+    );
+  }
+
+  
+
   return (
     <>
       <section className="home-features" style={{paddingTop: "0px", backgroundImage: "none"}}>
@@ -68,9 +92,7 @@ export const Services = () => {
         </div>
         <div><hr className="separator" /></div>
         <div className={clsx('features col col--12 container-box')}> 
-          {serviceList.map((props, idx) => (
-              <ServiceView key={idx} {...props} />
-          ))}   
+          <ServiceGalleryView />
         </div>
       </section>
 

@@ -1,5 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 export const Features = () => { 
   const featureList = [
@@ -13,7 +15,7 @@ export const Features = () => {
 
   const FeatureView = ({icon, title, description}) => {
     return (
-        <div className={clsx('col col--2')}>
+        <div style={{margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px'}}>
           <div className='box text--center'>
             <div className='hide-on-hover'>
               <img src={icon}></img>
@@ -29,38 +31,24 @@ export const Features = () => {
     );
   }
 
-  const OperationView = () => {
+  const FeatureGalleryView = () => {
+    const handleDragStart = (e) => e.preventDefault();
+    const items = featureList.map((props, idx) => <FeatureView key={idx} {...props} onDragStart={handleDragStart} />);
+
+    const responsive = {
+      0: { items: 1 },
+      576: { items: 1 },
+      768: { items: 2 },
+      992: { items: 3 },
+      1024: { items: 3 },
+      1400: { items: 5 }
+    };
+
     return (
-      <>
-        <div className="features" style={{paddingBottom: 0}}>
-          <div className="container">
-            <h2 className="text--center">
-              <strong>Complete operation</strong>
-            </h2>
-          </div>        
-        </div>
-        <div className={clsx('features col col--12 container-box home-complete-operation')}> 
-          <div className={clsx('col col--3')}>
-            <ul>
-              <li>Operational state</li>
-              <li>KPI processing</li>
-            </ul>
-          </div>
-          <div className={clsx('col col--3')}>
-            <ul>
-              <li>Lyfe cycle management</li>
-              <li>Tracking</li>
-            </ul>
-          </div>
-          <div className={clsx('col col--3')}>
-            <ul>
-              <li>Customer operational database</li>
-              <li>Performance, configuration, security and more</li>
-            </ul>
-          </div>
-        </div>
-      </>
-    )
+      <div className='features'>
+        <AliceCarousel mouseTracking items={items} responsive={responsive} disableButtonsControls={false} disableDotsControls={true} paddingLeft={10} paddingRight={10} />
+      </div>
+    );
   }
 
   return (
@@ -74,18 +62,13 @@ export const Features = () => {
           </div>        
         </div>
         <div><hr className="separator" /></div>
-        <div className={clsx('features col col--12 container-box')}> 
-          <div className={clsx('col col--1')}></div> 
-          {featureList.map((props, idx) => (
-              <FeatureView key={idx} {...props} />
-          ))}   
-          <div className={clsx('col col--1')}></div>   
+        <div className={clsx('features-gallery')}> 
+            <FeatureGalleryView />
         </div>
         
         <p className='try text--center'><a className='btn-try' href="/resources">TRY ITOSS</a></p>
+        <p className='without-license text--center'>Without license cost - Use free</p>
       </section>
-
-
     </>
   )
 }

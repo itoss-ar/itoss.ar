@@ -25,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <Layout title={`${siteConfig.title}`} description="The Tool for Datacenter Service Management.">
+    <Layout title={``} description="The Tool for Datacenter Service Management.">
       <main>        
         <Homepage />
       </main>

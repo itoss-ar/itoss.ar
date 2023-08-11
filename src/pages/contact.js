@@ -9,7 +9,7 @@ export default function Contact() {
   const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title={`${siteConfig.title}`} description="The Tool for Datacenter Service Management.">
+    <Layout title={`Contact`} description="The Tool for Datacenter Service Management.">
       <main>
         <div>
           <Contactpage />
