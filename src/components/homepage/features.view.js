@@ -5,8 +5,8 @@ import 'react-alice-carousel/lib/alice-carousel.css';
 
 export const Features = () => { 
   const featureList = [
-    { title: "Focused on IT Service Providers", icon: "/icons/it-service.png", description: "Processing key metrics, automatizes notifications, corrective actions, reporting and other operation tasks" },
-    { title: "Framework for developing IT tasks", icon: "/icons/development.png", description: "Automatizes notifications, corrective actions, reporting and other operation tasks" },
+    { title: "Focused on IT Service Providers", icon: "/icons/it-service.png", description: "Ideal for IT providers for a deep operational management of their clients" },
+    { title: "Framework for developing IT tasks", icon: "/icons/development.png", description: "Processing key metrics, automatizes notifications, corrective actions, reporting and other operation tasks" },
     //{ title: "License free", description: "No hidden licensing costs, no usage limits" },
     { title: "Simple implementation, flexible, and scalable", icon: "/icons/simple.png", description: "Microservices-based architecture, ready to use in just minutes" },
     { title: "SAP BASIS ready and more", icon: "/icons/sap-basis.png", description: "Includes interfaces and knowledge for SAP ecosystem management, Linux, Windows and most database vendors" },
