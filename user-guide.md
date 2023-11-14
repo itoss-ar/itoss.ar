@@ -55,7 +55,6 @@ Los tableros de monitores están conformados por *contendores*, los cuales   mue
 Existen tableros públicos, diseñados y configurados por el administrador de ITOSS, y tableros personalizados por el usuario de soporte.  Para acceder o crear nuevos tableros, en la pantalla de Tableros seleccionar “Add”.
 
 
-
 `	`Imagen que muestra el acceso a la configuración de tableros de monitores.
 
 Inicialmente, al ingresar a ITOSS, los tableros públicos solo se muestran si fueron asignamos por el administrador de ITOSS al usuario de soporte, en caso de que no fuera así, es posible configurar para que estos tableros se abran al ingresar.
