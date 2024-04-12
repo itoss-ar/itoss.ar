@@ -2,6 +2,7 @@
 id: resources
 title: Resources
 ---
+<div class="markdown_resources">
 
 # Downloads
 
@@ -23,3 +24,7 @@ The easiest way to get itoss up and running is using our docker compose image.
    wget https://github.com/fmalaspina/itoss.ar/releases/download/v5.2/docker-compose.yml
    docker compose up
    ```
+
+</div>
+
+

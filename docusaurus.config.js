@@ -75,6 +75,9 @@ const config = {
           src: 'img/ITOSS-01-bl.png',
         },
         items: [
+          { to: '/services', label: 'Services', position: 'left' },
+          /*{to: '/blog', label: 'Blog', position: 'left'},*/
+          { to: '/resources', label: 'Resources', position: 'left' },
           {
             type: 'doc',
             docId: 'documents/concepts',
@@ -82,11 +85,11 @@ const config = {
             label: 'Documents',
 
           },
-          /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          { to: '/services', label: 'Services', position: 'left' },
-          { to: '/resources', label: 'Resources', position: 'left' },
           { to: '/contact', label: 'Contact', position: 'left' },
           /*{ to: '/try', label: 'Try', position: 'left' },*/
+          
+          { to: '/resources', label: '🚀Without license cost - Use free', position: 'right',className: 'navbar__link--license' },
+          
 
           /* {
              type: 'localeDropdown',
@@ -130,6 +133,7 @@ const config = {
                 label: 'Contact us',
                 to: '/contact',
               },
+              
             ],
           },
 

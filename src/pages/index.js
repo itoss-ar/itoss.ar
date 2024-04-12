@@ -25,10 +25,14 @@ export default function Home() {
   }, []);
 
   return (
+    
     <Layout title={``} description="The Tool for Datacenter Service Management.">
-      <main>        
+      <main>
+        
         <Homepage />
+        
       </main>
     </Layout>
+    
   );
 }

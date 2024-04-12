@@ -43,7 +43,7 @@ input {
 }
 
 .footer {
-  background-color: #006699 !important;
+  background-color: #212121 !important;
   color: white !important;
 }
 
@@ -60,6 +60,8 @@ input {
 }
 .navbar {
   background: linear-gradient(90deg, #006699, #006699, #00CC99);
+  display: block;
+  transition: display 0.3s;
 }
 
 .navbar--fixed-top {
@@ -116,6 +118,13 @@ input {
   background: linear-gradient(90deg, #006699, #006699, #00CC99);
 }
 
+
+
+.separator.separator-large {
+  width: 495px !important;
+  max-width: 495px !important;
+}
+
 .separator-black {
   margin: auto;
   display: block;
@@ -149,7 +158,62 @@ input {
   position: relative;
   background: #e5e5e5;
 }
+/*video contacto*/
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+#service_video {
+  position: absolute;
+  top:0px;
+  left:0px;
+  min-width: 100%;
+  transform: translate(0%, -10%); 
+  opacity: 0.4;
+  /* min-height: 100%; */
+  width: 100vw;
+  
+  z-index: 0;
+  /* object-fit: cover; */ 
+}
+#contact_video {
+  position: absolute;
+  top:0px;
+  left:0px;
+    transform: translate(-1%, 0%);
+  /* min-height: 100%; */
+  width:100vw;
+  opacity: 0.4;
+  
+  z-index: -1;
+  /* object-fit: cover; */
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%); */
+}
+ @media screen and (max-width:1760px) {
+  
+   .contact_form {
+     display: flex;
+     justify-content: space-around;
+     
+   }
+}
+.contact_form {
+  
+  
+}
 
+.content {
+  position: relative;
+  z-index: 1; /* Coloca el contenido encima del video */
+  text-align: center;
+  padding: 100px;
+  color: #fff;
+}
 
 /* BANNER */
 .hero {
@@ -386,9 +450,13 @@ svg {
 /* INSTRUMENTATION */
 
 /* BRANDS */
-.home-brands {  background-color: #e8ecf1; padding: 20px }
+.home-brands {  background-color: #212121; padding: 20px }
 .logos {
-  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logos img {
@@ -397,18 +465,34 @@ svg {
 }
 
 .logo {
-  max-width: 150px;
-  max-height: 75px;
+  width: auto;
+  height: 50px;
 }
 
 /* CONTACT US */
-
-.contact-us { border-width: 1px; border-color: white; background-color: #424242; padding: 50px; margin-bottom: 50px }
+/* 424242 */
+.contact-us { border: 2px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 0 30px 0 rgb(0 0 0 / 40%);
+  padding: 15px;
+  color: white;
+  height: 100%; }
   .contact-us p { margin: 20px 0 10px 0 }
   .contact-us .label { font-size: 16px; line-height: 1.75; margin: 0px 0px 5px 0px; }
-  .contact-us .field input, textarea { border: var(--ifm-table-border-width) solid var(--ifm-table-border-color); width: 100% !important; padding: 10px }
+  .contact-us .field input::placeholder{color: white;}
+    .contact-us .field input, textarea { border: 2px solid rgba(255, 255, 255, .25);
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 40%);
+    padding: 15px;
+    height: 100%; }
   .contact-us .btn-submit { background-color: #00CC99; border: solid 1px #00CC99; padding: 10px 15px 10px 15px; }
   .contact-us .thank-you-message { text-align: center; }
     .contact-us .thank-you-message .title { font-size: 2rem; margin-top: 30px; margin-bottom: 20px; }
     .contact-us h2 { font-weight: 300; }
   .contact-us .error { padding: 5px 0 0 0; font-size: 13px; color: #ff8d8d; }
+  .form-control-textarea::placeholder {
+  color: white;
+  }
+
+  

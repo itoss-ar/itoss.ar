@@ -37,11 +37,27 @@ export const ContactUs = () => {
         </div>
       )
     }  
+    setTimeout(() => {
+      const myVideo = document.getElementById('contact_video');
+      console.log(myVideo)
+      
+    if(myVideo) myVideo.play();
+      
+    }, 1000);
 
     const FormView = () => {
       return (
-          <form ref={form} onSubmit={handleSubmit(sendEmail)}>
-            <p><label className="label">Full name</label></p>
+        <>
+        <video autoplay muted loop id="contact_video">
+            <source src="/videos/banner_contacto.mp4" type="video/mp4"/>
+            
+        </video>
+      
+
+        <form className='contact_form' ref={form} onSubmit={handleSubmit(sendEmail)}>
+        
+          <div className='part_1'>
+          <p><label className="label">Full name</label></p>
             <p className="field">
               <input {...register("user_name", { required: true })} placeholder="Full name"  />
               { errors.user_name && <span className='error'>* This field is required</span> }
@@ -56,6 +72,8 @@ export const ContactUs = () => {
               <input {...register("user_email", { required: true, pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} placeholder="Company Email" />
               { errors.user_email && <span className='error'>* { (errors.user_email?.message) ? errors.user_email?.message : 'This field is required' }</span> }
             </p>
+          </div>
+          <div className='part_2'>
             <p><label className="label">Phone (Optional)</label></p>
             <p className="field">
               <span className="form-control">
@@ -71,9 +89,11 @@ export const ContactUs = () => {
             <p>
               <input className="btn-submit" type="submit" value="Contact sales" />
             </p>
-            
+            </div>
             { errorMessage ? <ErrorMessageView /> : null }
-          </form>
+          
+          </form>  
+        </>
       );
     }
   

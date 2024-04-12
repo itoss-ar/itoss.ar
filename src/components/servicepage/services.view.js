@@ -78,10 +78,20 @@ export const Services = () => {
     );
   }
 
-  
+  setTimeout(() => {
+    const myVideo = document.getElementById('service_video');
+    console.log(myVideo)
+    
+  if(myVideo) myVideo.play();
+    
+  }, 1000);
 
   return (
     <>
+    <video autoplay muted loop id="service_video">
+            <source src="/videos/banner_servicios.mp4" type="video/mp4"/>
+            
+        </video>
       <section className="home-features" style={{paddingTop: "0px", backgroundImage: "none"}}>
         <div className="features">
           <div className="container">
@@ -92,6 +102,7 @@ export const Services = () => {
         </div>
         <div><hr className="separator" /></div>
         <div className={clsx('features col col--12 container-box')}> 
+        
           <ServiceGalleryView />
         </div>
       </section>

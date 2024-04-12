@@ -7,7 +7,7 @@ export const Brands = () => {
       brand: 'Java'
     },{
       logo: '/brands/logo-spring.png',
-      brand: 'Spring'
+      brand: 'Spring'      
     },{
       logo: '/brands/logo-postgresql.png',
       brand: 'PostgreSQL'
@@ -26,15 +26,17 @@ export const Brands = () => {
     }
   
     return (
-      <div className="container" style={{marginTop: "10px", marginBottom: "20px"}}>
+      <div className="container" style={{ backgroundColor:"#212121", marginTop: "10px", marginBottom: "20px"}}>
         <div className="row justify-content-center">
           <div className={clsx('col col--12')}>
-            <h2 className="text--center" style={{color: "#222222"}}>
+            <h2 className="text--center" style={{color: "##ffffff"}}>
               <strong>Built on based on open and modern technologies.</strong>              
             </h2>
+            <hr className='separator separator-large'/>
           </div>          
           <div className={clsx('col col--12 col--sm-10')}>
             <div className="logos">
+              
             {brands.map((props, idx) => (
               <BrandView key={idx} {...props} />
             ))}
@@ -42,5 +44,6 @@ export const Brands = () => {
           </div>
         </div>
       </div>
+                 
     )
 }
