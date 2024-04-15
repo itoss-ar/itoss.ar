@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import Homepage from '@site/src/components/Homepage';
+import Homepage from '@site/src/components/homepage';
+
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
 
   useEffect(() => {
+   
+    
     document.body.classList.add('homepage');
     
     const handleScroll = (event) => {
@@ -22,6 +25,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+    
   }, []);
 
   return (

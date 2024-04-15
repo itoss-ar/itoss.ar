@@ -78,13 +78,13 @@ export const Services = () => {
     );
   }
 
-  setTimeout(() => {
+  /*setTimeout(() => {
     const myVideo = document.getElementById('service_video');
     console.log(myVideo)
     
   if(myVideo) myVideo.play();
     
-  }, 1000);
+  }, 1000);*/
 
   return (
     <>

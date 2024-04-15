@@ -4,7 +4,7 @@ import { Brands } from './brands.view';
 import { CompleteOperation } from './complete-operation.view';
 import { Features } from './features.view';
 
-window.addEventListener('scroll', function() {
+/*window.addEventListener('scroll', function() {
   
   const navbar = document.querySelector('.navbar');
   console.log(navbar)
@@ -19,7 +19,7 @@ window.addEventListener('scroll', function() {
           navbar.style.display = 'block';
     }
   }
-});
+});*/
 
 export default function Homepage() {
   return (

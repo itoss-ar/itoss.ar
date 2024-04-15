@@ -37,13 +37,14 @@ export const ContactUs = () => {
         </div>
       )
     }  
-    setTimeout(() => {
+   /* setTimeout(() => {
       const myVideo = document.getElementById('contact_video');
       console.log(myVideo)
       
     if(myVideo) myVideo.play();
       
     }, 1000);
+    */
 
     const FormView = () => {
       return (

@@ -336,7 +336,7 @@ svg {
 
 .home-features .box {
   border: 2px solid rgba(255, 255, 255, .25);
-  box-shadow: 0 0 30px 0 rgb(0 0 0 / 40%);
+  box-shadow: 0 0 30px 0 rgb(0 0 0 40%);
   padding: 15px;
   height: 100%;
 }
@@ -472,7 +472,7 @@ svg {
 /* CONTACT US */
 /* 424242 */
 .contact-us { border: 2px solid rgba(255, 255, 255, .25);
-  box-shadow: 0 0 30px 0 rgb(0 0 0 / 40%);
+  box-shadow: 0 0 30px 0 rgb(0 0 0 40%);
   padding: 15px;
   color: white;
   height: 100%; }
@@ -483,7 +483,7 @@ svg {
     background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
     
-    box-shadow: 0 0 30px 0 rgb(0 0 0 / 40%);
+    box-shadow: 0 0 30px 0 rgb(0 0 0 40%);
     padding: 15px;
     height: 100%; }
   .contact-us .btn-submit { background-color: #00CC99; border: solid 1px #00CC99; padding: 10px 15px 10px 15px; }

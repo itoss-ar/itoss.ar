@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import React from 'react';
 import { ContactUs } from './contactus.view';
-setTimeout(() => {
+/*setTimeout(() => {
   const myVideo = document.getElementById('myVideo');
   console.log(myVideo)
   
 if(myVideo) myVideo.play();
   
-}, 1000);
+}, 1000);*/
 
 export default function Contactpage() {
   return (
