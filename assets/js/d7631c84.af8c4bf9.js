@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkitoss_web_site=self.webpackChunkitoss_web_site||[]).push([[812],{6443:e=>{e.exports=JSON.parse('{"title":"Documents","description":"Guides, tasks and reference documentation for ITOSS.","slug":"/category/documents","permalink":"/docs/category/documents","navigation":{"next":{"title":"Concepts","permalink":"/docs/documents/concepts"}}}')}}]);

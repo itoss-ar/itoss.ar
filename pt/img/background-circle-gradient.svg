@@ -1,0 +1,17 @@
+<svg width="757" height="687" viewBox="0 0 757 687" xmlns="http://www.w3.org/2000/svg">
+    <title>background-gradients</title>
+    <defs>
+        <radialGradient cx="50.848%" cy="48.729%" fx="50.848%" fy="48.729%" r="49.897%" id="a">
+            <stop stop-color="#006699" stop-opacity=".506" offset="0%" />
+            <stop stop-color="#141515" stop-opacity="0" offset="100%" />
+        </radialGradient>
+        <radialGradient cx="50.848%" cy="48.729%" fx="50.848%" fy="48.729%" r="49.897%" id="b">
+            <stop stop-color="#00CC99" stop-opacity=".704" offset="0%" />
+            <stop stop-color="#141515" stop-opacity="0" offset="100%" />
+        </radialGradient>
+    </defs>
+    <g transform="translate(-7)" fill="none">
+        <circle fill="url(#a)" cx="343.022" cy="343.485" r="342.591" />
+        <circle fill="url(#b)" opacity=".706" cx="420.463" cy="353.647" r="342.591" />
+    </g>
+</svg>
