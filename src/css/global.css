@@ -14,11 +14,13 @@
   --ifm-font-family-base: 'Roboto';
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: white;
+  --ifm-navbar-sidebar-width: 300px;
   --ifm-link-color: #00CC99 !important;
   --ifm-menu-color-active: #00CC99;
   --ifm-tabs-color-active: #00CC99;
   --ifm-breadcrumb-color-active: #00CC99;
   --ifm-background-color: #303030 !important;
+  --ifm-font-size-base: 115%;
 }
 
 /************************/
@@ -26,10 +28,10 @@
 /************************/
 
 h1 {
-  font-size: 1.5rem !important;
+  font-size: 2.3rem !important;
 }
 h2 {
-  font-size: 1.2rem !important;
+  font-size: 2rem !important;
 }
 h3 {
   font-size: 1.1rem !important;
@@ -173,25 +175,25 @@ input {
   top:0px;
   left:0px;
   min-width: 100%;
-  transform: translate(0%, -10%); 
-  opacity: 0.4;
-  /* min-height: 100%; */
-  width: 100vw;
-  
+  transform: translate(0%, 5%); 
+  opacity: 0.7;  
+  width: 100vw;  
+  height: 190px;
   z-index: 0;
-  /* object-fit: cover; */ 
+  object-fit: cover; 
+  box-shadow: 0px 5px 10px #070707;
 }
 #contact_video {
   position: absolute;
   top:0px;
   left:0px;
-    transform: translate(-1%, 0%);
+    transform: translate(0%, 0%);
   /* min-height: 100%; */
   width:100vw;
   opacity: 0.4;
   
   z-index: -1;
-  /* object-fit: cover; */
+  object-fit: cover;
   /* clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%); */
 }
  @media screen and (max-width:1760px) {
@@ -293,6 +295,8 @@ svg {
   z-index: -1;
   margin-top: -125px*/
   width: 100%;
+  max-height: 600px;
+  object-fit: cover; 
 }
 
 /* FEATURES */
@@ -461,7 +465,7 @@ svg {
 
 .logos img {
   margin-right: 40px;
-  filter: grayscale(1);
+  filter: grayscale(1) invert(1);
 }
 
 .logo {
@@ -475,7 +479,12 @@ svg {
   box-shadow: 0 0 30px 0 rgb(0 0 0 40%);
   padding: 15px;
   color: white;
-  height: 100%; }
+  height: 100%;
+  background-color: #303030;
+  margin-top: 50px;
+  margin-bottom: 200px; 
+}
+
   .contact-us p { margin: 20px 0 10px 0 }
   .contact-us .label { font-size: 16px; line-height: 1.75; margin: 0px 0px 5px 0px; }
   .contact-us .field input::placeholder{color: white;}
@@ -495,4 +504,16 @@ svg {
   color: white;
   }
 
+
+
+  /* carousel */
+  .alice-carousel__prev-btn-item, .alice-carousel__next-btn-item { 
+    color: white !important;
+    border: solid 1px;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    opacity: 0.9; 
+  }
   

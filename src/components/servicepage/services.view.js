@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { useEffect } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
@@ -38,16 +38,16 @@ export const Services = () => {
 
   const ServiceView = ({icon, title, items}) => {
     return (
-        <div  style={{margin: '20px', minHeight: '650px', maxHeight: '650px', height: '650px'}}>
+        <div  style={{margin: '20px', minHeight: '650px', maxHeight: '650px', height: '650px', fontSize: "115%"}}>
           <div className='box text--center'>
-          <div className='hide-on-hover'>
+            <div className='hide-on-hover' style={{marginTop: "-15px"}}>
               <img src={icon}></img>
             </div>
-            <div className='keep-on-hover'>
+            <div className='keep-on-hover' style={{marginTop: "-15px"}}>
               <p><strong>{title}</strong></p>
             </div>
             <div>
-              <ul className='items' style={{ fontSize: "14px", textAlign: "left"}}>
+              <ul className='items' style={{ fontSize: "16px", textAlign: "left"}}>
                   {items.map((item, idx) => (
                       <li key={idx} className='item' style={{paddingBottom: "15px"}}>{item}</li>
                   ))}
@@ -86,28 +86,32 @@ export const Services = () => {
     
   }, 1000);*/
 
+  useEffect(() => {      
+    const serviceVideo = document.getElementById('service_video');   
+    if(serviceVideo){ 
+      serviceVideo.play();
+    } 
+
+    return () => {};    
+  }, []);
+
   return (
     <>
-    <video autoplay muted loop id="service_video">
-            <source src="/videos/banner_servicios.mp4" type="video/mp4"/>
-            
-        </video>
-      <section className="home-features" style={{paddingTop: "0px", backgroundImage: "none"}}>
-        <div className="features">
+      <video autoPlay muted loop id="service_video">
+        <source src="/videos/banner_servicios.mp4" type="video/mp4"/>            
+      </video>
+      <section className="home-features" style={{paddingTop: "0px"}}>
+        <div className="features" style={{position: "relative", marginTop: "0px"}}>
           <div className="container">
             <h1 className="text--center">
-              <strong>Services</strong>
+              <strong>Explore our services</strong>
             </h1>
           </div>        
-        </div>
-        <div><hr className="separator" /></div>
-        <div className={clsx('features col col--12 container-box')}> 
-        
+        </div>        
+        <div className={clsx('features col col--12 container-box')} style={{}}>         
           <ServiceGalleryView />
         </div>
       </section>
-
-
     </>
   )
 }

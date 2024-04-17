@@ -15,16 +15,16 @@ export const Features = () => {
 
   const FeatureView = ({icon, title, description}) => {
     return (
-        <div style={{margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px'}}>
+        <div style={{margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px', fontSize: '115%'}}>
           <div className='box text--center'>
-            <div className='hide-on-hover'>
+            <div className='hide-on-hover' style={{marginTop: "-15px"}}>
               <img src={icon}></img>
             </div>
-            <div className='keep-on-hover'>
+            <div className='keep-on-hover' style={{marginTop: "-15px"}}>
               <p><strong>{title}</strong></p>
             </div>
             <div className='show-on-hover'>
-              <p style={{fontSize: "14px"}}>{description}</p>
+              <p style={{fontSize: "16px"}}>{description}</p>
             </div>
           </div>
         </div>

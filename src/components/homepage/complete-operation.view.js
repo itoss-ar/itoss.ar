@@ -14,7 +14,7 @@ const featureList = [
 ]
 const FeatureView = ({ icon, title, description }) => {
   return (
-    <div style={{ margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px' }}>
+    <div style={{ margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px', fontSize: '115%'}}>
       <div className='box text--center'>
         <div className='hide-on-hover'>
           <img src={icon}></img>
@@ -23,7 +23,7 @@ const FeatureView = ({ icon, title, description }) => {
           <p><strong>{title}</strong></p>
         </div>
         <div className='show-on-hover'>
-          <p style={{ fontSize: "14px" }}>{description}</p>
+          <p style={{ fontSize: "16px" }}>{description}</p>
         </div>
       </div>
     </div>

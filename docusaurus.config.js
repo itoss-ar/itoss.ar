@@ -88,7 +88,7 @@ const config = {
           { to: '/contact', label: 'Contact', position: 'left' },
           /*{ to: '/try', label: 'Try', position: 'left' },*/
           
-          { to: '/resources', label: '🚀Without license cost - Use free', position: 'right',className: 'navbar__link--license' },
+          { to: '/resources', label: '🚀 Without license cost - Use free', position: 'right',className: 'navbar__link--license' },
           
 
           /* {

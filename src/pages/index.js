@@ -7,10 +7,11 @@ import Homepage from '@site/src/components/homepage';
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
 
-  useEffect(() => {
-   
-    
+  useEffect(() => {   
     document.body.classList.add('homepage');
+    const handleLoad = (event) => {
+      document.body.classList.add('homepage');
+    }
     
     const handleScroll = (event) => {
       if (window.scrollY > 60) {
@@ -19,24 +20,20 @@ export default function Home() {
         document.body.classList.remove('scrolled');
       }
     };
-
+    
+    window.addEventListener('load', handleLoad);
     window.addEventListener('scroll', handleScroll);
 
-    return () => {
+    return () => {      
       window.removeEventListener('scroll', handleScroll);
-    };
-    
+    };    
   }, []);
 
-  return (
-    
+  return (    
     <Layout title={``} description="The Tool for Datacenter Service Management.">
-      <main>
-        
-        <Homepage />
-        
+      <main>        
+        <Homepage />        
       </main>
-    </Layout>
-    
+    </Layout>    
   );
 }

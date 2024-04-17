@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useForm } from "react-hook-form";
 
 export const ContactUs = () => {
@@ -9,6 +9,15 @@ export const ContactUs = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const form = useRef();
   
+    useEffect(() => {      
+      const contactVideo = document.getElementById('contact_video');   
+      if(contactVideo){ 
+        contactVideo.play();
+      } 
+  
+      return () => {};    
+    }, []);
+
     const sendEmail = (e) => {
       emailjs.sendForm('itoss_demo', 'itoss_contact_sales', form.current, '_k-ccalcSRdg49pcK')
         .then((result) => {
@@ -49,9 +58,8 @@ export const ContactUs = () => {
     const FormView = () => {
       return (
         <>
-        <video autoplay muted loop id="contact_video">
-            <source src="/videos/banner_contacto.mp4" type="video/mp4"/>
-            
+        <video autoPlay muted loop id="contact_video">
+            <source src="/videos/banner_contacto.mp4" type="video/mp4"/>            
         </video>
       
 
