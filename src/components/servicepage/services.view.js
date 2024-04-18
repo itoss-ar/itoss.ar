@@ -68,7 +68,8 @@ export const Services = () => {
       768: { items: 2 },
       992: { items: 3 },
       1024: { items: 3 },
-      1400: { items: 4 }
+      1400: { items: 4 },
+      1600: { items: 5 }
     };
 
     return (

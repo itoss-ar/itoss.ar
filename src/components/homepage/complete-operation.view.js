@@ -1,9 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import AliceCarousel from 'react-alice-carousel';
+
 const featureList = [
   { title: "Operational state", icon: "/icons/operational-state.gif", description: "Our app is currently operational, ensuring an optimal and uninterrupted user experience. " },
   { title: "KPI processing", icon: "/icons/KPI_processing.gif", description: "Our application is actively optimizing Key Performance Indicators (KPIs), ensuring efficient and real-time analysis." },
@@ -12,24 +10,25 @@ const featureList = [
   { title: "Customer operational database", icon: "/icons/customer_operational_database.gif", description: "Facilitating seamless operations, our application maintains a robust customer database, ensuring efficient organization and accessibility of customer-related information." },
   { title: "Performance, configuration, security and more", icon: "/icons/Performance_configuration_security_and_more.gif", description: "Exceling in performance, configuration, security, and other essential aspects, the application ensures top-notch functionality." }
 ]
-const FeatureView = ({ icon, title, description }) => {
-  return (
-    <div style={{ margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px', fontSize: '115%'}}>
-      <div className='box text--center'>
-        <div className='hide-on-hover' style={{marginTop: "-15px"}}>
-          <img src={icon}></img>
-        </div>
-        <div className='keep-on-hover'>
-          <p><strong>{title}</strong></p>
-        </div>
-        <div className='show-on-hover'>
-          <p style={{ fontSize: "16px" }}>{description}</p>
+
+const FeatureGalleryView = () => {
+  const FeatureView = ({ icon, title, description }) => {
+    return (
+      <div style={{ margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px', fontSize: '115%'}}>
+        <div className='box text--center'>
+          <div className='hide-on-hover' style={{marginTop: "-15px"}}>
+            <img src={icon}></img>
+          </div>
+          <div className='keep-on-hover'>
+            <p><strong>{title}</strong></p>
+          </div>
+          <div className='show-on-hover'>
+            <p style={{ fontSize: "16px" }}>{description}</p>
+          </div>
         </div>
       </div>
-    </div>
-  );
-}
-const FeatureGalleryView = () => {
+    );
+  }
   const handleDragStart = (e) => e.preventDefault();
   const items = featureList.map((props, idx) => <FeatureView key={idx} {...props} onDragStart={handleDragStart} />);
 
@@ -53,8 +52,8 @@ export const CompleteOperation = () => {
   //modificar el html para cambiar el formato del titulo 19 -23
   return (
     <>
-      <section className="home-features">
-        <div className="features">
+      <section className="home-features" style={{paddingTop: "20px"}}>
+        <div className="features" style={{paddingTop: "0px"}}>
           <div className="container">
             <h2 className="text--center">
               <strong>Complete operation</strong>

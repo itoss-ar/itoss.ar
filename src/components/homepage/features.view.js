@@ -15,7 +15,7 @@ export const Features = () => {
 
   const FeatureView = ({icon, title, description}) => {
     return (
-        <div style={{margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px', fontSize: '115%'}}>
+        <div style={{margin: '20px', minHeight: '475px', maxHeight: '475px', height: '475px', fontSize: '115%'}}>
           <div className='box text--center'>
             <div className='hide-on-hover' style={{marginTop: "-15px"}}>
               <img src={icon}></img>
@@ -41,7 +41,8 @@ export const Features = () => {
       768: { items: 2 },
       992: { items: 3 },
       1024: { items: 3 },
-      1400: { items: 5 }
+      1400: { items: 4 },
+      1600: { items: 5 }
     };
 
     return (
@@ -53,7 +54,7 @@ export const Features = () => {
 
   return (
     <>
-      <section className="home-features">
+      <section className="home-features" style={{paddingTop: "0px"}}>
         <div className="features">
           <div className="container">
             <h2 className="text--center">
