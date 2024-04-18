@@ -16,7 +16,7 @@ const FeatureView = ({ icon, title, description }) => {
   return (
     <div style={{ margin: '20px', minHeight: '500px', maxHeight: '500px', height: '500px', fontSize: '115%'}}>
       <div className='box text--center'>
-        <div className='hide-on-hover'>
+        <div className='hide-on-hover' style={{marginTop: "-15px"}}>
           <img src={icon}></img>
         </div>
         <div className='keep-on-hover'>
@@ -39,7 +39,8 @@ const FeatureGalleryView = () => {
     768: { items: 2 },
     992: { items: 3 },
     1024: { items: 3 },
-    1400: { items: 5 }
+    1400: { items: 4 },
+    1600: { items: 5 }
   };
 
   return (
