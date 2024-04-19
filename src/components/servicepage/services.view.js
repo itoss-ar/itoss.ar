@@ -102,7 +102,7 @@ export const Services = () => {
         <source src="/videos/banner_servicios.mp4" type="video/mp4"/>            
       </video>
       <section className="home-features" style={{paddingTop: "0px"}}>
-        <div className="features" style={{position: "relative", marginTop: "0px"}}>
+        <div className="features" style={{position: "relative", marginTop: "20px"}}>
           <div className="container">
             <h1 className="text--center">
               <strong>Explore our services</strong>
