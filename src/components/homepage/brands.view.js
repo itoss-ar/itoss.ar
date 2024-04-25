@@ -32,7 +32,7 @@ export const Brands = () => {
             <h2 className="text--center" style={{color: "##ffffff"}}>
               <strong>Built on based on open and modern technologies.</strong>              
             </h2>
-            <hr className='separator separator-large'/>
+            <hr className='separator'/>
           </div>          
           <div className={clsx('col col--12 col--sm-10')}>
             <div className="logos">
