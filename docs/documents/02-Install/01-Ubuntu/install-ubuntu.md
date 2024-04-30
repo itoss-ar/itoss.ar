@@ -27,19 +27,40 @@ This guide is oriented and tested on Ubuntu Server 22.04 LTS, a dedicated server
 
 ### Previous Steps
 ### Installation of Postgres + TimeScaleDB
-1. Configure IT repositories
-```shell
-curl -s https://packagecloud.io/install/repositories/timescale/timescaledb/script.deb.sh | sudo bash
+
+> Follow the vendor instructions for an updated installation, the following instructions may not be updated: https://docs.timescale.com/self-hosted/latest/install/installation-linux/
+  
+1. At the command prompt, as root, add the PostgreSQL third party repository to get the latest PostgreSQL packages:
+```shell 
+apt install gnupg postgresql-common apt-transport-https lsb-release wget
 ```
-2. Update repositories
-```shell
-sudo apt update
+2. Run the PostgreSQL repository setup script:
+```shell 
+/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 ```
-3. Install postgres + timeScaleDB
+3. Add the TimescaleDB third party repository:
 ```shell
-sudo apt install timescaledb-2-postgresql-14
+echo "deb https://packagecloud.io/timescale/timescaledb/ubuntu/ $(lsb_release -c -s) main" | sudo tee /etc/apt/sources.list.d/timescaledb.list
 ```
-4. Configure postgres + timescaleDB
+4. Install TimescaleDB GPG key
+```shell
+wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo apt-key add -
+```
+> For Ubuntu 21.10 and later use this command to install TimescaleDB GPG key wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/timescaledb.gpg
+
+5. Update your local repository list:
+```shell
+apt update
+```
+6. Install TimescaleDB:
+```shell
+apt install timescaledb-2-postgresql-14
+```
+7. Install TimescaleDB client:
+```shell
+apt-get update
+apt-get install postgresql-client
+```
 #### As root or postgres user:
 Add this line to the file /etc/postgresql/14/main/postgresql.conf:
 ```shell
@@ -123,8 +144,11 @@ $ psql
 CREATE USER itoss WITH PASSWORD 'admin';
 CREATE DATABASE itossdb;
 \c itossdb;
+
 ALTER DATABASE itossdb OWNER TO itoss;
 ALTER SCHEMA public OWNER TO itoss;
+CREATE EXTENSION IF NOT EXISTS timescaledb;
+
 \q
 psql -d itossdb -f /app/setup/itossdb-initial.sql
 ```
