@@ -149,11 +149,10 @@ ALTER DATABASE itossdb OWNER TO itoss;
 ALTER SCHEMA public OWNER TO itoss;
 CREATE EXTENSION IF NOT EXISTS timescaledb;
 
-\q
-
 SELECT timescaledb_pre_restore();
+\q
 psql -d itossdb -f /app/setup/itossdb-initial.sql
-
+\c itossdb
 SELECT timescaledb_post_restore();
 ```
 
