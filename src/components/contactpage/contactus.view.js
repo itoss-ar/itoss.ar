@@ -102,7 +102,7 @@ export const ContactUs = () => {
   }
   
     return (
-      <>
+      <>        
         <video autoPlay muted loop id="contact_video2">
           <source src="/videos/banner_contacto.mp4" type="video/mp4"/>            
         </video>
