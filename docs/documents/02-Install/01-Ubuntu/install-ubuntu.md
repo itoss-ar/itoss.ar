@@ -150,7 +150,11 @@ ALTER SCHEMA public OWNER TO itoss;
 CREATE EXTENSION IF NOT EXISTS timescaledb;
 
 \q
+
+SELECT timescaledb_pre_restore();
 psql -d itossdb -f /app/setup/itossdb-initial.sql
+
+SELECT timescaledb_post_restore();
 ```
 
 5. Create ITOSS services and start the application
