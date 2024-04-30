@@ -12,7 +12,7 @@ if(myVideo) myVideo.play();
 export default function Contactpage() {
   return (
     <>
-      <div >
+      <div>
         <div className="features">
           <div className="container">
             <h1 className="text--center">
@@ -21,12 +21,12 @@ export default function Contactpage() {
           </div>        
         </div>
         <div><hr className="separator" /></div>
-        <div className={clsx('features col col--12 container-box')}> 
-          <div className={clsx('col col--3')}></div>
-          <div className={clsx('col col--6')}>
-            <ContactUs />
-          </div>  
-          <div className={clsx('col col--3')}></div>        
+        <div className={clsx('features col col--12 container-box contact-page')}> 
+          
+            <div className={clsx('col col--12')} style={{display: 'flex', justifyContent: 'center'}}>
+              <ContactUs />
+            </div>  
+          
         </div>
       </div>
     </>

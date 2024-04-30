@@ -58,58 +58,58 @@ export const ContactUs = () => {
     const FormView = () => {
       return (
         <>
-        <video autoPlay muted loop id="contact_video">
-            <source src="/videos/banner_contacto.mp4" type="video/mp4"/>            
-        </video>
-      
-
-        <form className='contact_form' ref={form} onSubmit={handleSubmit(sendEmail)}>
-        
-          <div className='part_1'>
-          <p><label className="label">Full name</label></p>
-            <p className="field">
-              <input {...register("user_name", { required: true })} placeholder="Full name"  />
-              { errors.user_name && <span className='error'>* This field is required</span> }
-            </p>            
-            <p><label className="label">Job Title</label></p>
-            <p className="field">
-              <input {...register("user_job", { required: true })} placeholder="Job Title" />
-              { errors.user_job && <span className='error'>* This field is required</span> }
-            </p>            
-            <p><label className="label">Email</label></p>
-            <p className="field">
-              <input {...register("user_email", { required: true, pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} placeholder="Company Email" />
-              { errors.user_email && <span className='error'>* { (errors.user_email?.message) ? errors.user_email?.message : 'This field is required' }</span> }
-            </p>
-          </div>
-          <div className='part_2'>
-            <p><label className="label">Phone (Optional)</label></p>
-            <p className="field">
-              <span className="form-control">
-                <input {...register("user_phone", { required: false})} placeholder="Phone (Optional)" />
-              </span>
-            </p>
-            <p><label className="label">Message</label></p>
-            <p style={{marginBottom: '15px'}}>
-              <span className="form-control">
-                <textarea {...register("message", { required: false })}  cols="40" rows="8" className="form-control-textarea"  placeholder="How can we help?"></textarea>
-              </span>
-            </p>
-            <p>
-              <input className="btn-submit" type="submit" value="Contact sales" />
-            </p>
+        <form className='contact_form' ref={form} onSubmit={handleSubmit(sendEmail)}>   
+          <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'stretch'}}>     
+            <div style={{width: '225px', paddingLeft: '30px'}}>
+              <p><label className="label">Full name</label></p>
+              <p className="field">
+                <input {...register("user_name", { required: true })} placeholder="Full name"  />
+                { errors.user_name && <span className='error'>* This field is required</span> }
+              </p>            
+              <p><label className="label">Job Title</label></p>
+              <p className="field">
+                <input {...register("user_job", { required: true })} placeholder="Job Title" />
+                { errors.user_job && <span className='error'>* This field is required</span> }
+              </p>            
+              <p><label className="label">Email</label></p>
+              <p className="field">
+                <input {...register("user_email", { required: true, pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "Invalid email address" } })} placeholder="Company Email" />
+                { errors.user_email && <span className='error'>* { (errors.user_email?.message) ? errors.user_email?.message : 'This field is required' }</span> }
+              </p>
             </div>
-            { errorMessage ? <ErrorMessageView /> : null }
-          
-          </form>  
-        </>
-      );
-    }
+            <div style={{width: '375px', paddingLeft: '30px', paddingRight: '30px'}}>
+              <p><label className="label">Phone (Optional)</label></p>
+              <p className="field">
+                <span className="form-control">
+                  <input {...register("user_phone", { required: false})} placeholder="Phone (Optional)" />
+                </span>
+              </p>
+              <p><label className="label">Message</label></p>
+              <p style={{marginBottom: '15px'}}>
+                <span className="form-control">
+                  <textarea {...register("message", { required: false })}  cols="40" rows="8" className="form-control-textarea"  placeholder="How can we help?"></textarea>
+                </span>
+              </p>
+              <p>
+                <input className="btn-submit" type="submit" value="Contact sales" />
+              </p>
+            </div>
+          </div>
+          { errorMessage ? <ErrorMessageView /> : null }          
+        </form>  
+      </>
+    );
+  }
   
     return (
+      <>
+        <video autoPlay muted loop id="contact_video2">
+          <source src="/videos/banner_contacto.mp4" type="video/mp4"/>            
+        </video>
         <div className="contact-us">
           { showThankYou ? <ThankYouView /> : <FormView /> }          
         </div>
+      </>
     );
   };
   

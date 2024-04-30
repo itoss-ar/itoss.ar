@@ -202,18 +202,33 @@ input {
   z-index: -1;
   object-fit: cover;
   /* clip-path: polygon(0 0, 100% 0, 100% 100%, 20% 100%); */
+  background:red;
 }
- @media screen and (max-width:1760px) {
+
+#contact_video2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  min-width: 100%;
+  transform: translate(0%, 5%);
+  opacity: 0.7;
+  width: 100vw;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  box-shadow: 0px 5px 10px #070707;
+}
+
+ /*@media screen and (max-width:1760px) {
   
    .contact_form {
      display: flex;
      justify-content: space-around;
      
    }
-}
+}*/
 .contact_form {
-  
-  
+  /*z-index: 3000;*/  
 }
 
 .content {
@@ -488,10 +503,12 @@ svg {
   box-shadow: 0 0 30px 0 rgb(0 0 0 40%);
   padding: 15px;
   color: white;
-  height: 100%;
+  /*height: 100%;*/
   background-color: #303030;
   margin-top: 50px;
+  max-width: 650px;
   margin-bottom: 200px; 
+  z-index: 1;
 }
 
   .contact-us p { margin: 20px 0 10px 0 }
