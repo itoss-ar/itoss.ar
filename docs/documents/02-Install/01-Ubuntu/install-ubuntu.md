@@ -46,17 +46,17 @@ echo "deb https://packagecloud.io/timescale/timescaledb/ubuntu/ $(lsb_release -c
 ```shell
 wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo apt-key add -
 ```
-> For Ubuntu 21.10 and later use this command to install TimescaleDB GPG key wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/timescaledb.gpg
 
-5. Update your local repository list:
+
+1. Update your local repository list:
 ```shell
 apt update
 ```
-6. Install TimescaleDB:
+1. Install TimescaleDB:
 ```shell
 apt install timescaledb-2-postgresql-14
 ```
-7. Install TimescaleDB client:
+1. Install TimescaleDB client:
 ```shell
 apt-get update
 apt-get install postgresql-client
@@ -125,10 +125,10 @@ Follow these steps:
 
 ```shell
 cd /
-tar xvf itoss-v5.2.tar.gz
+tar xvf itoss-v7.0.0.tar.gz
 ``` 
 
-3. Configure ngnix
+3. Configure nginx
 
 ```shell
 sudo cp -rf /app/setup/default.conf /etc/nginx/conf.d/default.conf 2>/dev/null
