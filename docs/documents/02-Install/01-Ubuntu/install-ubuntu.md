@@ -54,8 +54,9 @@ apt update
 ```
 1. Install TimescaleDB:
 ```shell
-apt install timescaledb-2-postgresql-14
+apt-get install timescaledb-2-postgresql-12='2.14.2*' timescaledb-2-loader-postgresql-12='2.14.2*'
 ```
+
 1. Install TimescaleDB client:
 ```shell
 apt-get update
