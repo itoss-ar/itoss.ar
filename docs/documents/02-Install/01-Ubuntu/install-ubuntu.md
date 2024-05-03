@@ -44,20 +44,18 @@ echo "deb https://packagecloud.io/timescale/timescaledb/ubuntu/ $(lsb_release -c
 ```
 4. Install TimescaleDB GPG key
 ```shell
-wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo apt-key add -
+wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/timescaledb.gpg
 ```
-
-
-1. Update your local repository list:
+5. Update your local repository list:
 ```shell
 apt update
 ```
-1. Install TimescaleDB:
+6. Install TimescaleDB:
 ```shell
-apt-get install timescaledb-2-postgresql-12='2.14.2*' timescaledb-2-loader-postgresql-12='2.14.2*'
+apt-get install timescaledb-2-postgresql-14=2.14.2~ubuntu22.04
 ```
 
-1. Install TimescaleDB client:
+7. Install TimescaleDB client:
 ```shell
 apt-get update
 apt-get install postgresql-client
@@ -153,6 +151,7 @@ CREATE EXTENSION IF NOT EXISTS timescaledb;
 SELECT timescaledb_pre_restore();
 \q
 psql -d itossdb -f /app/setup/itossdb-initial.sql
+psql
 \c itossdb
 SELECT timescaledb_post_restore();
 ```
