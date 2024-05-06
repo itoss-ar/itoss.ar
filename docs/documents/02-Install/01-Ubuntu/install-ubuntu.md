@@ -139,19 +139,33 @@ sudo systemctl start nginx
 
 ```shell
 sudo su - postgres
-$ psql
+```
+```shell
+psql
+```
+```shell
 CREATE USER itoss WITH PASSWORD 'admin';
 CREATE DATABASE itossdb;
+```
+```shell
 \c itossdb;
-
+```
+```shell
 ALTER DATABASE itossdb OWNER TO itoss;
 ALTER SCHEMA public OWNER TO itoss;
 CREATE EXTENSION IF NOT EXISTS timescaledb;
-
 SELECT timescaledb_pre_restore();
+```
+```shell
 \q
+```
+```shell
 psql -d itossdb -f /app/setup/itossdb-initial.sql
+```
+```shell
 psql
+```
+```shell
 \c itossdb
 SELECT timescaledb_post_restore();
 ```
