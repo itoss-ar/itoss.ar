@@ -1,0 +1,14 @@
+---
+title: Powershell Installation
+---
+
+Follow the steps to install homologated version of powershell:
+
+```shell
+sudo apt-get update
+sudo apt-get install -y wget
+wget https://github.com/PowerShell/PowerShell/releases/download/v7.2.19/powershell_7.2.19-1.deb_amd64.deb
+sudo dpkg -i powershell_7.2.19-1.deb_amd64.deb
+sudo apt-get install -f
+rm powershell_7.2.19-1.deb_amd64.deb
+```
