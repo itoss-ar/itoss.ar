@@ -167,6 +167,8 @@ psql
 ```
 ```shell
 \c itossdb
+```
+```shell
 SELECT timescaledb_post_restore();
 ```
 
