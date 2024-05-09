@@ -120,11 +120,11 @@ Follow these steps:
 
 **[Go to Resources](/resources)**
 
-2. Unzip the itoss-v5.2.tar.gz archive
+2. Unzip the itoss-v7.tar.gz archive
 
 ```shell
 cd /
-tar xvf itoss-v7.0.0.tar.gz
+tar xvf itoss-v7.tar.gz
 ``` 
 
 3. Configure nginx

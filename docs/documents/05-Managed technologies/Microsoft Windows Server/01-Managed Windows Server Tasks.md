@@ -1,10 +1,16 @@
 ---
 title: Managed Windows Server Tasks
 ---
+
 Remote management of Microsoft Windows (and its entire related ecosystem) can be implemented using either of these two transport protocols:
-WSMan (WINRM). This option is supported for communication between Windows systems.
-OpenSSH. This option is implemented in ITOSS, allowing interoperability between different operating systems and being more efficient.
-Microsoft Windows Management in ITOSS
+
+### WSMan (WINRM)
+This option is supported for communication between Windows systems.
+
+### OpenSSH
+This option is implemented in ITOSS, allowing interoperability between different operating systems and being more efficient.
+
+### Microsoft Windows Management in ITOSS
 The operational management of Microsoft Windows in ITOSS is implemented using the OpenSSH protocol. To enable these features in Windows management objects, follow these steps (from PowerShell terminal as an administrator user):
 1. Enable remote access for the administrators group
 ```shell
