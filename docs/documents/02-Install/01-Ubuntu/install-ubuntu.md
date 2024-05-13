@@ -8,16 +8,17 @@ This basic installation guide covers all essential functions installed on one se
 
 This guide includes the installation of the following functions and/or software packages:
 
-- Database - Postgresql 14 + Timescale
+- Database - Postgresql 14 + Timescale 2.15
 - Web Server - Nginx
 - ITOSS Manager
 - ITOSS Collector
+- ITOSS Reporting
 
 ## Hardware Requirements
 The minimum hardware requirements to run all central functions of ITOSS on a virtual server are:
 
-- 8 CPUs
-- 16 GB RAM
+- 4 CPUs
+- 8 GB RAM
 - 50 GB of disk space.
 
 ## Operating System
@@ -32,46 +33,39 @@ This guide is oriented and tested on Ubuntu Server 22.04 LTS, a dedicated server
   
 1. At the command prompt, as root, add the PostgreSQL third party repository to get the latest PostgreSQL packages:
 ```shell 
-apt install gnupg postgresql-common apt-transport-https lsb-release wget
+sudo apt install gnupg postgresql-common apt-transport-https lsb-release wget
 ```
 2. Run the PostgreSQL repository setup script:
 ```shell 
-/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 ```
 3. Add the TimescaleDB third party repository:
 ```shell
-echo "deb https://packagecloud.io/timescale/timescaledb/ubuntu/ $(lsb_release -c -s) main" | sudo tee /etc/apt/sources.list.d/timescaledb.list
+sudo echo "deb https://packagecloud.io/timescale/timescaledb/ubuntu/ $(lsb_release -c -s) main" | sudo tee /etc/apt/sources.list.d/timescaledb.list
 ```
 4. Install TimescaleDB GPG key
 ```shell
-wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/timescaledb.gpg
+sudo wget --quiet -O - https://packagecloud.io/timescale/timescaledb/gpgkey | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/timescaledb.gpg
 ```
 5. Update your local repository list:
 ```shell
-apt update
+sudo apt update
 ```
 6. Install TimescaleDB:
 ```shell
-apt-get install timescaledb-2-postgresql-14=2.14.2~ubuntu22.04
+sudo apt-get install timescaledb-2-postgresql-14
 ```
-
-7. Install TimescaleDB client:
+7. Tunning Timescaledb:
 ```shell
-apt-get update
-apt-get install postgresql-client
+sudo timescaledb-tune --yes
 ```
-#### As root or postgres user:
-Add this line to the file /etc/postgresql/14/main/postgresql.conf:
-```shell
-shared_preload_libraries = 'timescaledb'
-```
-In the file /etc/postgresql/14/main/pg_hba.conf edit the line:
+8. In the file /etc/postgresql/14/main/pg_hba.conf edit the line:
 ```shell
 local all all peer
 ```
 Replace "peer" with "trust"
 
-Restart the postgresql service:
+9. Restart the postgresql service:
 ```shell
 sudo systemctl restart postgresql
 ``` 
@@ -84,23 +78,23 @@ sudo apt install curl gnupg2 ca-certificates lsb-release ubuntu-keyring
 ```
 2. Import nginx official key
 ```shell
-curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+sudo curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
 ```
 
 3. Verify key (optional)
 ```shell
-gpg --dry-run --quiet --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
+sudo gpg --dry-run --quiet --import --import-options import-show /usr/share/keyrings/nginx-archive-keyring.gpg
 ```
 
 4. Configure stable version repository.
 
 ```shell
-echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
+sudo echo "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] http://nginx.org/packages/ubuntu `lsb_release -cs` nginx" | sudo tee /etc/apt/sources.list.d/nginx.list
 ```
 
 5. Configure nginx package priority
 ```shell
-echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
+sudo echo -e "Package: *\nPin: origin nginx.org\nPin: release o=nginx\nPin-Priority: 900\n" | sudo tee /etc/apt/preferences.d/99nginx
 ``` 
 
 6. Install nginx
@@ -114,7 +108,7 @@ sudo apt install nginx
 
 ## ITOSS Installation and Configuration
 ### Installing ITOSS
-Follow these steps:
+Follow these steps as root:
 
 1. Download the software to the "/" directory
 
@@ -171,33 +165,17 @@ psql
 ```shell
 SELECT timescaledb_post_restore();
 ```
-
+```shell
+\q
+```
 5. Create ITOSS services and start the application
 
 ```shell
-cp /app/setup/*.service /etc/systemd/system/
+sudo cp /app/setup/*.service /etc/systemd/system/
 sudo systemctl enable itoss-manager.service
 sudo systemctl enable itoss-collector.service
 sudo systemctl enable itoss-reporting.service
 sudo systemctl start itoss-manager
 sudo systemctl start itoss-collector.service
 sudo systemctl start itoss-reporting.service
-```
-
-***
-
-
-### Installing PowerShell (optional)
-In cases where you need to manage components through PowerShell (for example Microsoft ecosystem).
-
-_For more information:
-[https://docs.microsoft.com/en-us/powershell/[https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2](https://docs.microsoft.com/en-us/powershell/scripting/install/install-ubuntu?view=powershell-7.2)_
-
-```shell
-sudo apt-get install -y wget apt-transport-https software-properties-common
-wget -q [<https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb](https://packages.microsoft.com/config/ubuntu/$(lsb_release%20-rs)/packages-microsoft-prod.deb)
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update
-sudo apt-get install -y powershell
-sudo apt-get install -y gss-ntlmssp
 ```
