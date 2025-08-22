@@ -78,6 +78,7 @@ const config = {
           { to: '/services', label: 'Services', position: 'left' },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           { to: '/resources', label: 'Resources', position: 'left' },
+          
           {
             type: 'doc',
             docId: 'documents/concepts',
