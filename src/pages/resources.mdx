@@ -23,8 +23,9 @@ Spin up the full ITOSS stack (DB, Manager, Collector, Reporting, DS, Frontend, J
 > This installation is meant for lab, pilot or POC only! For enterprise and production ready installation please contact us.
 
 ```bash
-git clone https://github.com/itoss-frsi/itoss-suite.git
-cd itoss-suite
+curl -L https://github.com/user/repo/archive/refs/heads/main.zip -o repo.zip # don't use -L option on windows
+unzip repo.zip
+cd itoss-suite-main
 cp .env.example .env
 docker compose pull
 docker compose up -d
