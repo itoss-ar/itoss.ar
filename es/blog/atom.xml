@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://itoss-ar.github.io/itoss.ar/es/blog</id>
+    <id>https://fmalaspina.github.io/es/blog</id>
     <title>ITOSS: Operate IT products with ease Blog</title>
     <updated>2022-06-16T12:14:01.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://itoss-ar.github.io/itoss.ar/es/blog"/>
+    <link rel="alternate" href="https://fmalaspina.github.io/es/blog"/>
     <subtitle>ITOSS: Operate IT products with ease Blog</subtitle>
-    <icon>https://itoss-ar.github.io/itoss.ar/es/img/favicon.png</icon>
+    <icon>https://fmalaspina.github.io/es/img/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Post example]]></title>
-        <id>https://itoss-ar.github.io/itoss.ar/es/blog/08-06-2022-post</id>
-        <link href="https://itoss-ar.github.io/itoss.ar/es/blog/08-06-2022-post"/>
+        <id>https://fmalaspina.github.io/es/blog/08-06-2022-post</id>
+        <link href="https://fmalaspina.github.io/es/blog/08-06-2022-post"/>
         <updated>2022-06-16T12:14:01.000Z</updated>
         <summary type="html"><![CDATA[Post example]]></summary>
         <content type="html"><![CDATA[<p>Post example</p>]]></content>
