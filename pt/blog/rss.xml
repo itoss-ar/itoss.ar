@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>ITOSS: Operate IT products with ease Blog</title>
-        <link>https://itoss-ar.github.io/pt/blog</link>
+        <link>https://itoss-ar.github.io/itoss.ar/pt/blog</link>
         <description>ITOSS: Operate IT products with ease Blog</description>
         <lastBuildDate>Thu, 16 Jun 2022 12:14:01 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>pt</language>
         <item>
             <title><![CDATA[Post example]]></title>
-            <link>https://itoss-ar.github.io/pt/blog/08-06-2022-post</link>
-            <guid>https://itoss-ar.github.io/pt/blog/08-06-2022-post</guid>
+            <link>https://itoss-ar.github.io/itoss.ar/pt/blog/08-06-2022-post</link>
+            <guid>https://itoss-ar.github.io/itoss.ar/pt/blog/08-06-2022-post</guid>
             <pubDate>Thu, 16 Jun 2022 12:14:01 GMT</pubDate>
             <description><![CDATA[Post example]]></description>
             <content:encoded><![CDATA[<p>Post example</p>]]></content:encoded>
