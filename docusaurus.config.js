@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'ITOSS: Operate IT products with ease',
   tagline: 'La solución de monitoreo remoto para cualquier tecnología',
-  url: 'https://fmalaspina.github.io',
+  url: 'https://itoss-ar.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -18,7 +18,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'fmalaspina', // Usually your GitHub org/user name.
+  organizationName: 'itoss-ar', // Usually your GitHub org/user name.
   projectName: 'itoss.ar', // Usually your repo name.
   trailingSlash: false,
   // Even if you don't use internalization, you can use this field to set useful
