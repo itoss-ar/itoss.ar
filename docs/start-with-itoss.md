@@ -45,7 +45,6 @@ The following ports must be available and not in use by other services:
 | `8080` | Manager          | Core management service                          |
 | `8081` | Collector        | Data collection and processing service           |
 | `8084` | Job Scheduler    | Task scheduling and automation service           |
-| `8085` | Decision Service | Decision and rule evaluation service             |
   
 Ensure that these ports are accessible within the network context of the deployment and properly exposed if external access is required.
 
@@ -75,7 +74,6 @@ The suite's `docker-compose.yml` defines the following services:
 | `itoss-manager`   | `itosssoftware/itoss-manager:v8`   | `GET /stats`             | `${MANAGER_PORT:-8080} → 8080`   |
 | `itoss-collector` | `itosssoftware/itoss-collector:v8` | depends on DB/Manager    | `${COLLECTOR_PORT:-8081} → 8081` |
 | `itoss-reporting` | `itosssoftware/itoss-reporting:v8` | depends on DB            | `${REPORTING_PORT:-8079} → 8079` |
-| `itoss-ds`        | `itosssoftware/itoss-ds:v8`        | depends on DB            | `${DS_PORT:-8085} → 8085`        |
 | `itoss-jobsched`  | `itosssoftware/itoss-jobsched:v8`  | depends on DB            | `${JOBSCHED_PORT:-8084} → 8084`  |
 | `itoss-frontend`  | `itosssoftware/itoss-frontend:v8`  | depends on Mgr / Rep     | `${FRONTEND_PORT:-80} → 80`      |
 Data persists in `./db (mapped into the Postgres container).
