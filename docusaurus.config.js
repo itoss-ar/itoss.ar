@@ -14,7 +14,7 @@ const config = {
   baseUrl: '/',
 
   organizationName: 'itoss-ar',
-  projectName: 'itoss',
+  projectName: 'itoss.ar',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
