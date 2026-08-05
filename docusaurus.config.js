@@ -10,11 +10,12 @@ const config = {
   tagline: 'Operate IT products with ease',
   favicon: 'img/favicon.png',
 
-  url: 'https://www.itoss.ar',
+  url: 'https://itoss.ar',
   baseUrl: '/',
 
   organizationName: 'itoss-ar',
   projectName: 'itoss.ar',
+  deploymentBranch: 'main',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
