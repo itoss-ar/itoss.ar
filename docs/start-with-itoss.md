@@ -54,7 +54,7 @@ In environments with strict network policies, firewall rules and port mappings s
 
 ```bash
 # Download the suite
-curl -L https://github.com/itoss-ar/itoss.ar/releases/download/v8.4/itoss-suite-v8.4.zip -o itoss-suite.zip # don't use -L option on windows
+curl -L https://github.com/itoss-ar/itoss.ar/releases/download/v8.4.2/itoss-suite-v8.4.2.zip -o itoss-suite.zip # don't use -L option on windows
 unzip itoss-suite.zip
 
 # Bring up the stack
