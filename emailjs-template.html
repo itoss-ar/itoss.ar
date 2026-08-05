@@ -1,0 +1,92 @@
+<!--
+  EmailJS template for service "itoss_demo" / template "itoss_contact_sales".
+  Paste the markup below into the EmailJS template "Content" editor (Code / HTML mode).
+  Variables used (must match the name="" attributes in src/pages/contact.js):
+    {{user_name}} {{user_first_name}} {{user_last_name}} {{user_email}}
+    {{user_phone}} {{user_company}} {{user_job}} {{user_infra_size}}
+    {{user_interests}} {{message}}
+  Recommended "To email": your sales inbox.  "Reply To": {{user_email}}
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0a0e14;margin:0;padding:32px 0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:#11161f;border:1px solid #1e2733;border-radius:14px;overflow:hidden;">
+
+        <!-- Header -->
+        <tr>
+          <td style="padding:28px 32px;background:linear-gradient(90deg,#00e5ff 0%,#a3ff6f 100%);">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="font-size:20px;font-weight:700;color:#0a0e14;letter-spacing:0.5px;">ITOSS</td>
+                <td align="right" style="font-size:12px;font-weight:600;color:#0a0e14;text-transform:uppercase;letter-spacing:1px;">New demo request</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Intro -->
+        <tr>
+          <td style="padding:32px 32px 8px;">
+            <h1 style="margin:0 0 6px;font-size:22px;color:#eef2f7;font-weight:700;">{{user_name}}</h1>
+            <p style="margin:0;font-size:14px;color:#8a97a8;">{{user_job}} &middot; {{user_company}}</p>
+          </td>
+        </tr>
+
+        <!-- Details table -->
+        <tr>
+          <td style="padding:20px 32px 8px;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:separate;">
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;width:180px;vertical-align:top;">Email</td>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:14px;color:#eef2f7;"><a href="mailto:{{user_email}}" style="color:#00e5ff;text-decoration:none;">{{user_email}}</a></td>
+              </tr>
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">Phone</td>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:14px;color:#eef2f7;">{{user_phone}}</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">Company</td>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:14px;color:#eef2f7;">{{user_company}}</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">Role</td>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:14px;color:#eef2f7;">{{user_job}}</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">Infra size</td>
+                <td style="padding:12px 0;border-bottom:1px solid #1e2733;font-size:14px;color:#eef2f7;">{{user_infra_size}}</td>
+              </tr>
+              <tr>
+                <td style="padding:12px 0;font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">Interested in</td>
+                <td style="padding:12px 0;font-size:14px;color:#a3ff6f;">{{user_interests}}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Message -->
+        <tr>
+          <td style="padding:12px 32px 28px;">
+            <div style="font-size:11px;color:#5c6a7a;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;">Message</div>
+            <div style="background:#0a0e14;border:1px solid #1e2733;border-radius:10px;padding:16px 18px;font-size:14px;line-height:1.6;color:#c3ccd8;white-space:pre-wrap;">{{message}}</div>
+          </td>
+        </tr>
+
+        <!-- CTA -->
+        <tr>
+          <td style="padding:0 32px 32px;">
+            <a href="mailto:{{user_email}}" style="display:inline-block;background:#00e5ff;color:#0a0e14;font-size:14px;font-weight:600;text-decoration:none;padding:12px 22px;border-radius:8px;">Reply to {{user_first_name}} &rarr;</a>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:20px 32px;background:#0a0e14;border-top:1px solid #1e2733;">
+            <p style="margin:0;font-size:12px;color:#5c6a7a;">Sent from the ITOSS website contact form &middot; itoss.ar</p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

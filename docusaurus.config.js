@@ -1,43 +1,27 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// ITOSS — Docusaurus configuration
+// Docs: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'ITOSS: Operate IT products with ease',
-  tagline: 'La solución de monitoreo remoto para cualquier tecnología',
-  url: 'https://itoss-ar.github.io',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  title: 'ITOSS',
+  tagline: 'Operate IT products with ease',
   favicon: 'img/favicon.png',
-  deploymentBranch: 'main',
 
+  url: 'https://www.itoss.ar',
+  baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'itoss-ar', // Usually your GitHub org/user name.
-  projectName: 'itoss.ar', // Usually your repo name.
-  trailingSlash: false,
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  organizationName: 'itoss-ar',
+  projectName: 'itoss',
+
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
+
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'pt'],
-    localeConfigs: {
-      en: {
-        label: 'English',
-      },
-      es: {
-        label: 'Spanish',
-      },
-      pt: {
-        label: 'Portuguese',
-      }
-    }
+    locales: ['en'],
   },
 
   presets: [
@@ -45,20 +29,13 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        sitemap: {
-          changefreq: 'daily',
-          priority: 0.5,
-          ignorePatterns: ['/tags/**'],
-          filename: 'sitemap.xml',
-        },
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: './sidebars.js',
+          editUrl: 'https://github.com/itoss-ar/itoss/tree/main/docs/',
         },
-        blog: {
-          showReadingTime: true,
-        },
+        blog: false,
         theme: {
-          customCss: require.resolve('./src/css/global.css'),
+          customCss: './src/css/custom.css',
         },
       }),
     ],
@@ -67,115 +44,74 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: 'img/itoss-social-card.png',
 
-      navbar: {
-        title: '',
-        logo: {
-          alt: 'Itoss Site Logo',
-          src: 'img/ITOSS-01-bl.png',
-        },
-        items: [
-          { to: '/services', label: 'Services', position: 'left' },
-          /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          { to: '/resources', label: 'Resources', position: 'left' },
-          
-          {
-            type: 'doc',
-            docId: 'documents/concepts',
-            position: 'left',
-            label: 'Documents',
-
-          },
-          { to: '/contact', label: 'Contact', position: 'left' },
-          /*{ to: '/try', label: 'Try', position: 'left' },*/
-          
-          { to: '/resources', label: '🚀 Without license cost - Use free', position: 'right',className: 'navbar__link--license' },
-          
-
-          /* {
-             type: 'localeDropdown',
-             position: 'left',
-           },*/
-        ],
-      },
-      footer: {
-        style: 'light',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Concepts',
-                to: '/docs/documents/concepts',
-              },
-
-              {
-                label: 'Installation on Ubuntu',
-                to: '/docs/documents/Install/Ubuntu/ubuntu-installation',
-              },
-            ],
-          },
-          {
-            title: 'Explore',
-            items: [
-              /* {
-                 label: 'Blog',
-                 to: '/blog',
-               },*/
-              {
-                  label: 'Services',
-                  to: '/services',
-              },
-              /*{
-                label: 'Support',
-                to: '/support',
-              },*/
-              {
-                label: 'Contact us',
-                to: '/contact',
-              },
-              
-            ],
-          },
-
-        ],
-        copyright: `© ${new Date().getFullYear()} ITOSS Project. All rights reserved.`,
-      },
-      prism: {
-        //theme: require('prism-react-renderer/themes/vsDark'),
-        theme: require('prism-react-renderer/themes/oceanicNext'),
-        //theme: lightCodeTheme,
-        //darkTheme: darkCodeTheme,
-        additionalLanguages: ['powershell','java']
-      },
+      // Full dark mode only — matches the ITOSS brand
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
-    }),
-  themes: [
-    // ... Your other themes.
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      {
 
-        // ... Your options.
-        // `hashed` is recommended as long-term-cache of index file is possible.
-        hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        indexDocs: true,
-        indexPages: true,
-        language: ["en", "es"],
-
-        // ```
+      navbar: {
+        logo: {
+          alt: 'ITOSS',
+          src: 'img/ITOSS-01-bl+Aqua.png',
+          srcDark: 'img/ITOSS-01-bl+Aqua.png',
+        },
+        items: [
+          {to: '/services', label: 'Services', position: 'left'},
+          {to: '/docs/start-with-itoss', label: 'Try ITOSS', position: 'left'},    
+          {
+            type: 'docSidebar',
+            sidebarId: 'docsSidebar',
+            position: 'left',
+            label: 'Documents',
+          },
+          {to: '/contact', label: 'Contact', position: 'left'},          
+          {
+            to: '/contact',
+            label: 'Request a guided demo',
+            position: 'right',
+            className: 'navbar-cta',
+          },
+        ],
       },
-    ],
-  ],
 
+      footer: {
+        style: 'dark',
+        links: [          
+          {
+            title: 'Docs',
+            items: [
+              {label: 'Concepts', to: '/docs/concepts'},
+              {label: 'Get started with ITOSS', to: '/docs/start-with-itoss'},
+            ],
+          },
+          {
+            title: 'Explore',
+            items: [
+              {label: 'Services', to: '/services'},
+              {label: 'Contact us', to: '/contact'},
+            ],
+          },
+        ],
+        copyright: `© ${new Date().getFullYear()} ITOSS Project. All rights reserved.`,
+      },
 
+      prism: {
+        theme: prismThemes.vsDark,
+        darkTheme: prismThemes.vsDark,
+        additionalLanguages: ['bash', 'yaml', 'json', 'docker', 'sql'],
+      },
+
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
+    }),
 };
 
-module.exports = config;
+export default config;
