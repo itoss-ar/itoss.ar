@@ -159,7 +159,7 @@ export default function ContactPage() {
                   <div className="mono" style={{fontSize: 11, color: 'var(--lime)', letterSpacing: '0.1em', marginBottom: 10}}>SELF-HOSTED</div>
                   <h3 style={{fontSize: 16, marginBottom: 6}}>Want to try it first?</h3>
                   <p style={{color: 'var(--text-3)', fontSize: 13, lineHeight: 1.55, marginBottom: 14}}>The self-hosted version is free. Spin it up in 5 minutes with Docker compose.</p>
-                  <Link to="/docs/getting-started/quick-start" className="btn btn-secondary btn-sm">See quick start →</Link>
+                  <Link to="/docs/start-with-itoss" className="btn btn-secondary btn-sm">See quick start →</Link>
                 </div>
               </aside>
             </div>

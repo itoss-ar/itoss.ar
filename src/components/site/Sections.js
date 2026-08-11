@@ -168,7 +168,7 @@ export function BigCTA() {
           <p className="lede">Book a 30-minute guided demo with a consultant. We'll walk you through real MSP use cases and how they'd apply to your operation.</p>
           <div className="hero-ctas">
             <Link to="/contact" className="btn btn-primary btn-lg">Request a guided demo <span className="arrow">→</span></Link>
-            <Link to="/docs/getting-started/quick-start" className="btn btn-secondary btn-lg">Get started with ITOSS</Link>
+            <Link to="/docs/start-with-itoss" className="btn btn-secondary btn-lg">Get started with ITOSS</Link>
           </div>
           <div style={{marginTop: 24, fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text-4)'}}>
             <span style={{color: 'var(--lime)'}}>●</span> No licensing costs &nbsp;·&nbsp; Deploy with docker compose &nbsp;·&nbsp; Multi-tenant by design
