@@ -30,7 +30,7 @@ export function Hero() {
             </div>
           </div>
           <div>          
-            <img src="img/hero-dashboard4.png" alt="ITOSS dashboard preview" style={{width: '100%', borderRadius: 8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}} />
+            <img src="img/hero-dashboard.gif" alt="ITOSS dashboard preview" style={{width: '100%', borderRadius: 8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}} />
           </div>
         </div>
       </div>
