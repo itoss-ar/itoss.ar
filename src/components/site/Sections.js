@@ -108,8 +108,8 @@ export function CompleteOperations() {
           <span className="eyebrow" style={{marginBottom: 16, justifyContent: 'flex-start'}}>Capabilities</span>
           <h2 className="h2">Complete <span className="brand-grad-text">operation</span>.</h2>
           <p className="lede" style={{marginTop: 16, textAlign: 'left'}}>
-            Complete operation means providing a fully integrated operational platform that delivers real-time KPI analysis, 
-            end-to-end lifecycle management, precise activity tracking, always-on operational status, a robust customer operations database, and built-in performance, configuration, and security capabilities.
+            ITOSS centralizes operational data, metrics, events, notifications, and customer information into a single platform, 
+            giving IT teams and service providers complete visibility across their managed environments.
           </p>
         </div>
         <div className="grid grid-3" style={{gap: 16}}>
@@ -119,7 +119,7 @@ export function CompleteOperations() {
               <div className="module-name">{m.code}</div>
               <h3>{m.name}</h3>
               <p>{m.desc}</p>
-              { false && <ul className="module-feat">{m.feats.map((f, i) => <li key={i}>{f}</li>)}</ul> }
+              { true && <ul className="module-feat">{m.feats.map((f, i) => <li key={i}>{f}</li>)}</ul> }
             </article>
           ))}
         </div>        

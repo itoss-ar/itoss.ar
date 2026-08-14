@@ -30,57 +30,57 @@ export const MODULES = [
 
 export const SERVICES = [
   {
-    id: 'support', code: '24/7 technical support packages', name: 'Software Support',
-    desc: 'Our basic package provides 24/7 technical support to keep your software running smoothly, while premium adds a dedicated support representative and priority response times.',
-    feats: ['24/7 technical support', 'Basic & premium tiers', 'Dedicated support rep', 'Priority response times'],
+    id: 'support', code: 'Software support packages', name: 'Software Support',
+    desc: 'Keep your ITOSS platform running smoothly with reliable software maintenance and expert assistance.',
+    feats: ['Software bug fixes and issue resolutions.', 'Two ITOSS platform upgrades per calendar year, assisted by our support team', 'End-user "how-to" support.', 'Access to ITOSS training materials, documentation, and video tutorials.'],
   },
   {
-    id: 'implementation', code: 'Seamless software implementation', name: 'Implementation',
-    desc: 'Our team of experts works with you to ensure a seamless implementation of the ITOSS software in your infrastructure, from pre-implementation planning to post-implementation support.',
-    feats: ['Expert-led implementation', 'Pre-implementation planning', 'Post-implementation support', 'Infrastructure integration'],
+    id: 'administration', code: 'Manage your IT infrastructure', name: 'Platform Administration',
+    desc: 'Maximize the value of your ITOSS investment with proactive platform administration, operational support, and ongoing optimization.',
+    feats: ['Regular reviews of platform health, performance, and configuration.', 'Execution of day-to-day administrative tasks.', 'Platform adoption and data quality analysis to help improve operational effectiveness.', 'Planning and execution of platform updates and upgrades when required.'],
   },
   {
-    id: 'training', code: 'Skills and knowledge for your team', name: 'Training',
-    desc: 'Our training program gives your team the skills and knowledge they need to effectively use the ITOSS software, with sessions that can be customized to your specific needs.',
-    feats: ['Hands-on training program', 'Effective product usage', 'Customizable sessions', 'Tailored to your needs'],
+    id: 'implementation', code: 'Seamless software implementation', name: 'Professional Implementation',
+    desc: 'Ensure a fast and successful ITOSS deployment with expert guidance and best-practice adoption.',
+    feats: ['ITOSS deployment planning and implementation.', 'Knowledge transfer sessions for operational and technical teams.', 'Access to operational training videos and onboarding materials.', 'Best-practice recommendations for platform configuration and adoption.'],
   },
   {
-    id: 'administration', code: 'Manage your IT infrastructure', name: 'Administration Services',
-    desc: 'Our administration services help you manage your IT infrastructure and products more effectively, with our experts building a customized solution that meets your unique needs.',
-    feats: ['Infrastructure management', 'Customized solutions', 'Expert team support', 'Efficient IT management'],
-  },
+    id: 'training', code: 'Skills and knowledge for your team', name: 'AI Integration & Automation',
+    desc: 'Empower ITOSS with AI-driven automation to enhance operational efficiency and service delivery. Through secure MCP integration.',
+    feats: ['AI-powered operational assistants.', 'Intelligent KPI and alert analysis.', 'Automated reporting and workflow execution.', 'Secure, governed AI integration.', 'Designed for MSP and multi-tenant environments.'],
+  }
 ];
 
 export const COMPLETE_OPERATIONS = [
   {
     id: 'kpi', code: 'Real-time KPI processing', name: 'KPI Processing',
-    desc: 'Our application is actively optimizing Key Performance Indicators (KPIs), ensuring efficient and real-time analysis.',
-    feats: ['Real-time analysis', 'KPI optimization', 'Efficient processing', 'Actionable metrics'],
+    desc: 'Transform operational data into actionable insights with real-time KPI calculation, threshold evaluation, trend analysis, and service health monitoring.',
+    feats: ['Real-time KPI evaluation', 'Threshold-based monitoring', 'Trend and capacity analysis', 'Service health indicators'],
   },
   {
     id: 'lifecycle', code: 'End-to-end life cycle management', name: 'Life Cycle Management',
-    desc: 'Efficient life cycle management is underway in our application, ensuring seamless progression and functionality.',
-    feats: ['Seamless progression', 'Stage-by-stage control', 'Reliable functionality', 'Efficient management'],
+    desc: 'Track and govern every stage of a technology product\'s lifecycle. From initial delivery to operational support, maintenance activities, service retirement, and end-of-life, ITOSS provides a complete operational record with ownership, timestamps, and historical traceability.',
+    feats: ['End-to-end lifecycle visibility', 'Product status evolution', 'Historical traceability', 'Activity ownership tracking', 'Audit-ready records', 'Service lifecycle governance'],
   },
   {
-    id: 'tracking', code: 'Precise activity tracking', name: 'Tracking',
-    desc: 'Our application is adept at precise tracking, providing real-time insights into user activities.',
-    feats: ['Precise tracking', 'Real-time insights', 'User activity visibility', 'Continuous monitoring'],
+    id: 'tracking', code: 'Precise activity tracking', name: 'Activity Tracking',
+    desc: 'ITOSS provides a unified operational timeline for each managed technology component, capturing lifecycle changes, support team annotations, automated and manual operational actions, alert-driven activities, and related service tickets. This historical record enables efficient troubleshooting, operational analysis, and service governance.',
+    feats: ['Unified component timeline', 'Lifecycle transition records', 'Support notes and annotations', 'Alert-related operational events', 'Linked ticketing records', 'End-to-end operational traceability'],
   },
   {
-    id: 'opstate', code: 'Always-on operational state', name: 'Operational State',
-    desc: 'Our app is currently operational, ensuring an optimal and uninterrupted user experience.',
-    feats: ['Always operational', 'Uninterrupted experience', 'Optimal performance', 'High availability'],
+    id: 'opstate', code: 'Smart operations', name: 'Operational Task Automation',
+    desc: 'Schedule and automate operational tasks across managed technology components. ITOSS enables recurring and event-driven activities to reduce manual effort, improve operational consistency, and ensure critical tasks are executed on time.',
+    feats: ['Scheduled operational tasks', 'Recurring maintenance activities', 'Event-driven task execution', 'Reduced manual effort', 'Operational consistency', 'Automated task tracking'],
   },
   {
-    id: 'customerdb', code: 'Robust customer operational database', name: 'Customer Operational Database',
-    desc: 'Facilitating seamless operations, our application maintains a robust customer database, ensuring efficient organization and accessibility of customer-related information.',
-    feats: ['Robust customer database', 'Efficient organization', 'Easy accessibility', 'Seamless operations'],
+    id: 'customerdb', code: 'Live Operational CMDB', name: 'Customer Operational Database',
+    desc: 'TOSS creates a connected operational ecosystem where customers, technology products, and support teams are linked through a common operational data model. This enables operators and managers to understand the current operational state, historical evolution, support activities, alerts, incidents, and business impact from a single place.',
+    feats: ['Connected customer ecosystem', 'Product and component relationships', 'Support structure visibility', 'Current operational state', 'Historical operational information', 'Comprehensive operational reality'],
   },
   {
-    id: 'performance', code: 'Performance, configuration & security', name: 'Performance, Configuration & Security',
-    desc: 'Exceling in performance, configuration, security, and other essential aspects, the application ensures top-notch functionality.',
-    feats: ['High performance', 'Flexible configuration', 'Built-in security', 'Top-notch functionality'],
+    id: 'performance', code: 'Performance, configuration & security', name: 'Performance, Capacity & Configuration Management',
+    desc: 'Support performance, capacity, configuration, and security configuration management processes across managed technology components. ITOSS provides operational visibility, historical information, traceability, compliance controls, and customer-focused reporting capabilities required to maintain reliable, secure, and efficient technology services.',
+    feats: ['Performance management', 'Capacity management', 'Configuration management', 'Security configuration assurance', 'Compliance monitoring', 'Custom customer reporting', 'Operational traceability'],
   },
 ];
 

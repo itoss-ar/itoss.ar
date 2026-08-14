@@ -38,7 +38,7 @@ const sidebars = {
           ],
         },
       ],
-    },
+    }/*,
     {
       type: 'category',
       label: 'Reference',
@@ -51,7 +51,7 @@ const sidebars = {
           ],
         }
       ],
-    },
+    },*/
   ],
 };
 
