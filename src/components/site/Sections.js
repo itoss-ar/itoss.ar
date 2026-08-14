@@ -75,7 +75,7 @@ export function Modules() {
       <div className="itoss-container-wide">
         <div className="section-head" style={{textAlign: 'left', marginBottom: 48, maxWidth: 1200}}>
           <span className="eyebrow" style={{marginBottom: 16, justifyContent: 'flex-start'}}>Platform</span>
-          <h2 className="h2">Operate IT products <span className="brand-grad-text">with easy</span>.</h2>
+          <h2 className="h2">Operate IT products <span className="brand-grad-text">with ease</span>.</h2>
           <p className="lede" style={{marginTop: 16, textAlign: 'left'}}>
             ITOSS gives IT service providers everything they need to run their clients' operations —
             metrics, automation, reporting and SAP, working together with shared data and real-time context.

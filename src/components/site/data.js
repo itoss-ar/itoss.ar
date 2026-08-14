@@ -54,8 +54,8 @@ export const SERVICES = [
 export const COMPLETE_OPERATIONS = [
   {
     id: 'kpi', code: 'Real-time KPI processing', name: 'KPI Processing',
-    desc: 'Transform operational data into actionable insights with real-time KPI calculation, threshold evaluation, trend analysis, and service health monitoring.',
-    feats: ['Real-time KPI evaluation', 'Threshold-based monitoring', 'Trend and capacity analysis', 'Service health indicators'],
+    desc: 'ITOSS transforms operational data into actionable intelligence by collecting, calculating, and evaluating KPIs in real time. Configurable rules and conditions enable the platform to determine operational states and automatically trigger notifications, populate control panels, and feed Service Management processes.',
+    feats: ['Real-time KPI evaluation', 'Threshold-based monitoring', 'Trend and capacity analysis', 'Service health indicators', 'Operational state monitoring', 'Automated notification triggering'],
   },
   {
     id: 'lifecycle', code: 'End-to-end life cycle management', name: 'Life Cycle Management',
@@ -78,9 +78,9 @@ export const COMPLETE_OPERATIONS = [
     feats: ['Connected customer ecosystem', 'Product and component relationships', 'Support structure visibility', 'Current operational state', 'Historical operational information', 'Comprehensive operational reality'],
   },
   {
-    id: 'performance', code: 'Performance, configuration & security', name: 'Performance, Capacity & Configuration Management',
-    desc: 'Support performance, capacity, configuration, and security configuration management processes across managed technology components. ITOSS provides operational visibility, historical information, traceability, compliance controls, and customer-focused reporting capabilities required to maintain reliable, secure, and efficient technology services.',
-    feats: ['Performance management', 'Capacity management', 'Configuration management', 'Security configuration assurance', 'Compliance monitoring', 'Custom customer reporting', 'Operational traceability'],
+    id: 'performance', code: 'Performance, configuration & security', name: 'Service Management Intelligence',
+    desc: 'Provide the operational intelligence required to support Incident, Performance, Capacity, Configuration, and Service Reporting processes. ITOSS consolidates operational data, lifecycle information, KPIs, and managed component information into a single source of operational context.',
+    feats: ['Automated incident initiation', 'Performance management insights', 'Capacity planning support', 'Trusted configuration data', 'Security assurance visibility', 'Customer-tailored reporting'],
   },
 ];
 
