@@ -74,7 +74,7 @@ export const COMPLETE_OPERATIONS = [
   },
   {
     id: 'customerdb', code: 'Live Operational CMDB', name: 'Customer Operational Database',
-    desc: 'TOSS creates a connected operational ecosystem where customers, technology products, and support teams are linked through a common operational data model. This enables operators and managers to understand the current operational state, historical evolution, support activities, alerts, incidents, and business impact from a single place.',
+    desc: 'ITOSS creates a connected operational ecosystem where customers, technology products, and support teams are linked through a common operational data model. This enables operators and managers to understand the current operational state, historical evolution, support activities, alerts, incidents, and business impact from a single place.',
     feats: ['Connected customer ecosystem', 'Product and component relationships', 'Support structure visibility', 'Current operational state', 'Historical operational information', 'Comprehensive operational reality'],
   },
   {
