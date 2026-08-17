@@ -26,7 +26,7 @@ export function Hero() {
               <span className="dot" />
               <span>Production-ready in 5 minutes</span>
               <span className="dot" />
-              <span>Multi-tenant</span>
+              <span>Multi-client</span>
             </div>
           </div>
           <div>          
@@ -171,7 +171,7 @@ export function BigCTA() {
             <Link to="/docs/start-with-itoss" className="btn btn-secondary btn-lg">Get started with ITOSS</Link>
           </div>
           <div style={{marginTop: 24, fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text-4)'}}>
-            <span style={{color: 'var(--lime)'}}>●</span> No licensing costs &nbsp;·&nbsp; Deploy with docker compose &nbsp;·&nbsp; Multi-tenant by design
+            <span style={{color: 'var(--lime)'}}>●</span> No licensing costs &nbsp;·&nbsp; Deploy with docker compose &nbsp;·&nbsp; Multi-client
           </div>
         </div>
       </div>
