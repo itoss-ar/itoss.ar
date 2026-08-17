@@ -58,21 +58,6 @@ export const COMPLETE_OPERATIONS = [
     feats: ['Real-time KPI evaluation', 'Threshold-based monitoring', 'Trend and capacity analysis', 'Service health indicators', 'Operational state monitoring', 'Automated notification triggering'],
   },
   {
-    id: 'lifecycle', code: 'End-to-end life cycle management', name: 'Life Cycle Management',
-    desc: 'Track and govern every stage of a technology product\'s lifecycle. From initial delivery to operational support, maintenance activities, service retirement, and end-of-life, ITOSS provides a complete operational record with ownership, timestamps, and historical traceability.',
-    feats: ['End-to-end lifecycle visibility', 'Product status evolution', 'Historical traceability', 'Activity ownership tracking', 'Audit-ready records', 'Service lifecycle governance'],
-  },
-  {
-    id: 'tracking', code: 'Precise activity tracking', name: 'Activity Tracking',
-    desc: 'ITOSS provides a unified operational timeline for each managed technology component, capturing lifecycle changes, support team annotations, automated and manual operational actions, alert-driven activities, and related service tickets. This historical record enables efficient troubleshooting, operational analysis, and service governance.',
-    feats: ['Unified component timeline', 'Lifecycle transition records', 'Support notes and annotations', 'Alert-related operational events', 'Linked ticketing records', 'End-to-end operational traceability'],
-  },
-  {
-    id: 'opstate', code: 'Smart operations', name: 'Operational Task Automation',
-    desc: 'Schedule and automate operational tasks across managed technology components. ITOSS enables recurring and event-driven activities to reduce manual effort, improve operational consistency, and ensure critical tasks are executed on time.',
-    feats: ['Scheduled operational tasks', 'Recurring maintenance activities', 'Event-driven task execution', 'Reduced manual effort', 'Operational consistency', 'Automated task tracking'],
-  },
-  {
     id: 'customerdb', code: 'Live Operational CMDB', name: 'Customer Operational Database',
     desc: 'ITOSS creates a connected operational ecosystem where customers, technology products, and support teams are linked through a common operational data model. This enables operators and managers to understand the current operational state, historical evolution, support activities, alerts, incidents, and business impact from a single place.',
     feats: ['Connected customer ecosystem', 'Product and component relationships', 'Support structure visibility', 'Current operational state', 'Historical operational information', 'Comprehensive operational reality'],
@@ -82,6 +67,21 @@ export const COMPLETE_OPERATIONS = [
     desc: 'Provide the operational intelligence required to support Incident, Performance, Capacity, Configuration, and Service Reporting processes. ITOSS consolidates operational data, lifecycle information, KPIs, and managed component information into a single source of operational context.',
     feats: ['Automated incident initiation', 'Performance management insights', 'Capacity planning support', 'Trusted configuration data', 'Security assurance visibility', 'Customer-tailored reporting'],
   },
+  {
+    id: 'lifecycle', code: 'End-to-end life cycle management', name: 'Life Cycle Management',
+    desc: 'Track and govern every stage of a technology product\'s lifecycle. From initial delivery to operational support, maintenance activities, service retirement, and end-of-life, ITOSS provides a complete operational record with ownership, timestamps, and historical traceability.',
+    feats: ['End-to-end lifecycle visibility', 'Product status evolution', 'Historical traceability', 'Activity ownership tracking', 'Audit-ready records', 'Service lifecycle governance'],
+  },
+  {
+    id: 'opstate', code: 'Smart operations', name: 'Operational Task Automation',
+    desc: 'Schedule and automate operational tasks across managed technology components. ITOSS enables recurring and event-driven activities to reduce manual effort, improve operational consistency, and ensure critical tasks are executed on time.',
+    feats: ['Scheduled operational tasks', 'Recurring maintenance activities', 'Event-driven task execution', 'Reduced manual effort', 'Operational consistency', 'Automated task tracking'],
+  },
+  {
+    id: 'tracking', code: 'Precise activity tracking', name: 'Activity Tracking',
+    desc: 'ITOSS provides a unified operational timeline for each managed technology component, capturing lifecycle changes, support team annotations, automated and manual operational actions, alert-driven activities, and related service tickets. This historical record enables efficient troubleshooting, operational analysis, and service governance.',
+    feats: ['Unified component timeline', 'Lifecycle transition records', 'Support notes and annotations', 'Alert-related operational events', 'Linked ticketing records', 'End-to-end operational traceability'],
+  }
 ];
 
 export function ModuleIcon({kind}) {
