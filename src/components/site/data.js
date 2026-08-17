@@ -3,28 +3,28 @@
 export const MODULES = [
   {
     id: 'providers', code: 'Focused on IT Service Providers', name: 'Managed Service Providers',
-    desc: 'Ideal for IT providers for a deep operational management of their clients',
-    feats: ['Native multi-tenant', 'Per-client visibility', 'Role-based access', 'Centralized operations'],
+    desc: 'Operate and support multiple customers from a single operational platform.',
+    feats: ['Multi-client operations', 'Distributed operations support', 'Per-customer operational context', 'Centralized operations', 'Operational ownership boundaries'],
   },
   {
-    id: 'framework', code: 'Framework for developing IT tasks', name: 'IT Framework',
-    desc: 'Processing key metrics, automatizes notifications, corrective actions, reporting and other operation tasks',
-    feats: ['Key metric processing', 'Automated notifications', 'Corrective actions', 'Built-in reporting'],
+    id: 'framework', code: 'Framework for developing IT tasks', name: 'Technology Management Framework ',
+    desc: 'Incorporate and manage diverse technology products through a common operational framework.',
+    feats: ['Leverages standard management interfaces', 'Technology-agnostic design', 'Rapid technology onboarding', 'Extensible operational model', 'Custom technology solutions'],
   },
   {
-    id: 'scalable', code: 'Simple implementation, flexible, and scalable', name: 'Scalable',
-    desc: 'Microservices-based architecture, ready to use in just minutes',
-    feats: ['Microservices architecture', 'Ready in minutes', 'Horizontally scalable', 'Flexible deployment'],
+    id: 'scalable', code: 'Simple implementation, flexible, and scalable', name: 'Enterprise-Ready Architecture',
+    desc: 'Built on proven open technologies and modern architectural principles.',
+    feats: ['Microservices architecture', 'Open and robust technology stack', 'Enterprise scalability', 'Production-ready in minutes', 'Horizontally scalable'],
   },
   {
-    id: 'panels', code: 'Operation management through custom control panels', name: 'Control Panels',
-    desc: 'Ideal for operation centers with diverse management and support profiles',
-    feats: ['Custom control panels', 'Operation-center ready', 'Multiple profiles', 'Management + support views'],
+    id: 'panels', code: 'Operation management through custom control panels', name: 'Unified Operational Model',
+    desc: 'Manage diverse technology products through a common operational language.',
+    feats: ['Common operational model', 'Operational ownership model', 'Multi-team collaboration', 'Cross-technology visibility', 'Tailored operational workspaces'],
   },
   {
-    id: 'sap', code: 'SAP BASIS ready and more', name: 'SAP BASIS',
-    desc: 'Includes interfaces and knowledge for SAP ecosystem management, Linux, Windows and most database vendors',
-    feats: ['SAP ecosystem ready', 'Linux · Windows', 'Most DB vendors', 'Prebuilt interfaces'],
+    id: 'sap', code: 'SAP BASIS ready and more', name: 'Operational Knowledge',
+    desc: 'ITOSS includes operational knowledge and management models for common technology platforms, including SAP, Linux, Windows, databases, and enterprise infrastructure.',
+    feats: ['Embedded operational expertise', 'Proven management practices', 'Reduced implementation effort', 'Prebuilt interfaces', 'SAP ecosystem ready'],
   },
 ];
 
@@ -32,7 +32,7 @@ export const SERVICES = [
   {
     id: 'support', code: 'Software support packages', name: 'Software Support',
     desc: 'Keep your ITOSS platform running smoothly with reliable software maintenance and expert assistance.',
-    feats: ['Software bug fixes and issue resolutions.', 'Two ITOSS platform upgrades per calendar year, assisted by our support team', 'End-user "how-to" support.', 'Access to ITOSS training materials, documentation, and video tutorials.'],
+    feats: ['Software bug fixes and issue resolutions.', 'Two ITOSS platform upgrades per calendar year, assisted by our support team', 'End-user "how-to" support.', 'Access to ITOSS training materials, documentation, and video tutorials.', 'Direct access to ITOSS specialists for troubleshooting and operational guidance'],
   },
   {
     id: 'administration', code: 'Manage your IT infrastructure', name: 'Platform Administration',
@@ -47,7 +47,7 @@ export const SERVICES = [
   {
     id: 'training', code: 'Skills and knowledge for your team', name: 'AI Integration & Automation',
     desc: 'Empower ITOSS with AI-driven automation to enhance operational efficiency and service delivery. Through secure MCP integration.',
-    feats: ['AI-powered operational assistants.', 'Intelligent KPI and alert analysis.', 'Automated reporting and workflow execution.', 'Secure, governed AI integration.', 'Designed for MSP and multi-tenant environments.'],
+    feats: ['AI-powered operational assistants.', 'Intelligent KPI and alert analysis.', 'Automated reporting and workflow execution.', 'Secure, governed AI integration.', 'AI-Powered Operational Knowledge Integration.'],
   }
 ];
 

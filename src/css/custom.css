@@ -334,7 +334,7 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; color: var(--text); }
 
 /* hero */
 .hero { position: relative; padding: 48px 0 64px; overflow: hidden; }
-.hero .h1 { margin-bottom: 24px; max-width: 18ch; }
+.hero .h1 { margin-bottom: 24px; max-width: 18ch; font-size: clamp(32px, 7vw, 62px); }
 .hero .lede { margin-bottom: 36px; max-width: 52ch; }
 
 /* hero layout — mobile first: single column, two columns from tablet up */
@@ -506,3 +506,4 @@ code { background: var(--surface); border: 1px solid var(--border); border-radiu
   .hero-ctas .btn { flex: 1 1 100%; }
   .integ-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
 }
+

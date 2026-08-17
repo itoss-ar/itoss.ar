@@ -13,9 +13,9 @@ export function Hero() {
               <span className="pill pill-cyan"><span className="status-dot" /> v8.4 · Now available</span>
               <span className="pill">No license fees</span>
             </div>
-            <h1 className="h1">Operate IT products <span className="brand-grad-text">with ease</span>.</h1>
+            <h1 className="h1">Operational Intelligence for <span className="brand-grad-text">Technology Services</span>.</h1>
             <p className="lede">
-              Complete customer visibility into infrastructure performance with effortless deployment.
+              Manage technology products through a unified operational model that connects lifecycle management, automation, KPIs processing, operational activities, and Service Management processes. 
             </p>
             <div className="hero-ctas">
               <Link to="/contact" className="btn btn-primary btn-lg">Request a guided demo<span className="arrow">→</span></Link>
@@ -30,7 +30,7 @@ export function Hero() {
             </div>
           </div>
           <div>          
-            <img src="img/hero-dashboard.gif" alt="ITOSS dashboard preview" style={{width: '100%', borderRadius: 8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}} />
+            <img src="img/hero-dashboard.webp" alt="ITOSS dashboard preview" style={{width: '100%', borderRadius: 8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}} />
           </div>
         </div>
       </div>
@@ -75,10 +75,10 @@ export function Modules() {
       <div className="itoss-container-wide">
         <div className="section-head" style={{textAlign: 'left', marginBottom: 48, maxWidth: 1200}}>
           <span className="eyebrow" style={{marginBottom: 16, justifyContent: 'flex-start'}}>Platform</span>
-          <h2 className="h2">Operate IT products <span className="brand-grad-text">with ease</span>.</h2>
+          <h2 className="h2">Operational Intelligence for <span className="brand-grad-text">Technology Services</span>.</h2>
           <p className="lede" style={{marginTop: 16, textAlign: 'left'}}>
-            ITOSS gives IT service providers everything they need to run their clients' operations —
-            metrics, automation, reporting and SAP, working together with shared data and real-time context.
+            ITOSS is an extensible operational framework that enables organizations to manage diverse technology products through a common operational model. 
+            It provides the building blocks required to develop, and scale technology management solutions. 
           </p>
         </div>
         <div className="grid grid-5" style={{gap: 16}}>

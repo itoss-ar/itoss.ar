@@ -5,7 +5,7 @@ import {Services, BigCTA} from '@site/src/components/site/Sections';
 
 export default function PricingPage() {
   return (
-    <Layout title="Pricing" description="ITOSS es self-hosted por diseño. Empezás gratis, sin licencias por host.">
+    <Layout title="Services" description="ITOSS es self-hosted por diseño. Empezás gratis, sin licencias por host.">
       <main>
         <section className="page-head">
           <div className="glow-bg"><div className="orb orb-cyan" style={{width: 500, height: 500, top: -250, left: '50%', transform: 'translateX(-50%)'}} /><div className="grid-floor" /></div>
