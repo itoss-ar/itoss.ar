@@ -13,7 +13,7 @@ export function Hero() {
               <span className="pill pill-cyan"><span className="status-dot" /> v8.4 · Now available</span>
               <span className="pill">No license fees</span>
             </div>
-            <h1 className="h1">Operational Intelligence for <span className="brand-grad-text">Technology Services</span>.</h1>
+            <h1 className="h1">Operational Intelligence for <span className="brand-grad-text">Technology Services</span></h1>
             <p className="lede">
               Manage technology products through a unified operational model that connects lifecycle management, automation, KPIs processing, operational activities, and Service Management processes. 
             </p>
@@ -75,7 +75,7 @@ export function Modules() {
       <div className="itoss-container-wide">
         <div className="section-head" style={{textAlign: 'left', marginBottom: 48, maxWidth: 1200}}>
           <span className="eyebrow" style={{marginBottom: 16, justifyContent: 'flex-start'}}>Platform</span>
-          <h2 className="h2">Operational Intelligence for <span className="brand-grad-text">Technology Services</span>.</h2>
+          <h2 className="h2">Operational Intelligence for <span className="brand-grad-text">Technology Services</span></h2>
           <p className="lede" style={{marginTop: 16, textAlign: 'left'}}>
             ITOSS is an extensible operational framework that enables organizations to manage diverse technology products through a common operational model. 
             It provides the building blocks required to develop, and scale technology management solutions. 
@@ -106,7 +106,7 @@ export function CompleteOperations() {
       <div className="itoss-container-wide">
         <div className="section-head" style={{textAlign: 'left', marginBottom: 48, maxWidth: 1200}}>
           <span className="eyebrow" style={{marginBottom: 16, justifyContent: 'flex-start'}}>Capabilities</span>
-          <h2 className="h2">Complete <span className="brand-grad-text">operation</span>.</h2>
+          <h2 className="h2">Complete <span className="brand-grad-text">operation</span></h2>
           <p className="lede" style={{marginTop: 16, textAlign: 'left'}}>
             ITOSS centralizes operational data, metrics, events, notifications, and customer information into a single platform, 
             giving IT teams and service providers complete visibility across their managed environments.
@@ -164,7 +164,7 @@ export function BigCTA() {
       <div className="itoss-container-wide">
         <div className="cta-block">
           <span className="eyebrow" style={{justifyContent: 'center'}}>Let's talk</span>
-          <h2 className="h2">Operating IT for multiple clients?<br /><span className="brand-grad-text">We'll show you how ITOSS scales with you.</span></h2>
+          <h2 className="h2">Operating IT for multiple clients?<br /><span className="brand-grad-text">We'll show you how ITOSS scales with you</span></h2>
           <p className="lede">Book a 30-minute guided demo with a consultant. We'll walk you through real MSP use cases and how they'd apply to your operation.</p>
           <div className="hero-ctas">
             <Link to="/contact" className="btn btn-primary btn-lg">Request a guided demo <span className="arrow">→</span></Link>

@@ -32,22 +32,22 @@ export const SERVICES = [
   {
     id: 'support', code: 'Software support packages', name: 'Software Support',
     desc: 'Keep your ITOSS platform running smoothly with reliable software maintenance and expert assistance.',
-    feats: ['Software bug fixes and issue resolutions.', 'Two ITOSS platform upgrades per calendar year, assisted by our support team', 'End-user "how-to" support.', 'Access to ITOSS training materials, documentation, and video tutorials.', 'Direct access to ITOSS specialists for troubleshooting and operational guidance'],
+    feats: ['Software bug fixes and issue resolutions', 'Two ITOSS platform upgrades per calendar year, assisted by our support team', 'End-user "how-to" support', 'Access to ITOSS training materials, documentation, and video tutorials', 'Direct access to ITOSS specialists for troubleshooting and operational guidance'],
   },
   {
     id: 'administration', code: 'Manage your IT infrastructure', name: 'Platform Administration',
     desc: 'Maximize the value of your ITOSS investment with proactive platform administration, operational support, and ongoing optimization.',
-    feats: ['Regular reviews of platform health, performance, and configuration.', 'Execution of day-to-day administrative tasks.', 'Platform adoption and data quality analysis to help improve operational effectiveness.', 'Planning and execution of platform updates and upgrades when required.'],
+    feats: ['Regular reviews of platform health, performance, and configuration', 'Execution of day-to-day administrative tasks', 'Platform adoption and data quality analysis to help improve operational effectiveness', 'Planning and execution of platform updates and upgrades when required'],
   },
   {
     id: 'implementation', code: 'Seamless software implementation', name: 'Professional Implementation',
     desc: 'Ensure a fast and successful ITOSS deployment with expert guidance and best-practice adoption.',
-    feats: ['ITOSS deployment planning and implementation.', 'Knowledge transfer sessions for operational and technical teams.', 'Access to operational training videos and onboarding materials.', 'Best-practice recommendations for platform configuration and adoption.'],
+    feats: ['ITOSS deployment planning and implementation', 'Knowledge transfer sessions for operational and technical teams', 'Access to operational training videos and onboarding materials', 'Best-practice recommendations for platform configuration and adoption'],
   },
   {
     id: 'training', code: 'Skills and knowledge for your team', name: 'AI Integration & Automation',
     desc: 'Empower ITOSS with AI-driven automation to enhance operational efficiency and service delivery. Through secure MCP integration.',
-    feats: ['AI-powered operational assistants.', 'Intelligent KPI and alert analysis.', 'Automated reporting and workflow execution.', 'Secure, governed AI integration.', 'AI-Powered Operational Knowledge Integration.'],
+    feats: ['AI-powered operational assistants', 'Intelligent KPI and alert analysis', 'Automated reporting and workflow execution', 'Secure, governed AI integration', 'AI-Powered Operational Knowledge Integration'],
   }
 ];
 

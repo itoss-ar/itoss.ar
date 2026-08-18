@@ -92,7 +92,7 @@ export default function ContactPage() {
           <div className="glow-bg"><div className="orb orb-cyan" style={{width: 500, height: 500, top: -250, left: -100}} /><div className="orb orb-lime" style={{width: 400, height: 400, bottom: -200, right: -100}} /><div className="grid-floor" /></div>
           <div className="itoss-container-wide" style={{position: 'relative', zIndex: 1}}>
             <span className="eyebrow">Contact</span>
-            <h1 className="h1">Schedule a <span className="brand-grad-text">guided demo</span>.</h1>
+            <h1 className="h1">Schedule a <span className="brand-grad-text">guided demo</span></h1>
             <p className="lede">30 minutes with a consultant. We'll show you ITOSS applied to your real use case — MSPs, SRE teams, SAP operations, whatever your team needs.</p>
           </div>
         </section>
