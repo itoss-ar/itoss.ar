@@ -63,7 +63,6 @@ const config = {
         items: [
           {to: '/services', label: 'Services', position: 'left'},
           {to: '/docs/start-with-itoss', label: 'Try ITOSS', position: 'left'},    
-          {to: '/tutorials', label: 'Tutorials', position: 'left'},  
           {to: '/use-cases', label: 'Use Cases', position: 'left'},    
           {
             type: 'docSidebar',
@@ -71,6 +70,7 @@ const config = {
             position: 'left',
             label: 'Documents',
           },          
+          {to: '/tutorials', label: 'Tutorials', position: 'left'},  
           {to: '/contact', label: 'Contact', position: 'left'},          
           {
             to: '/contact',
