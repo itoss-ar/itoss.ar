@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
-import {MODULES, COMPLETE_OPERATIONS, SERVICES, ModuleIcon, CompleteOperationIcon, ServiceIcon} from './data';
+import {MODULES, COMPLETE_OPERATIONS, SERVICES, TUTORIALS, ModuleIcon, CompleteOperationIcon, ServiceIcon} from './data';
 
 export function Hero() {
   return (
@@ -30,7 +30,7 @@ export function Hero() {
             </div>
           </div>
           <div>          
-            <img src="img/hero-dashboard.webp" alt="ITOSS dashboard preview" style={{width: '100%', borderRadius: 8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}} />
+            <img src="img/hero-dashboard2.webp" alt="ITOSS dashboard preview" style={{width: '100%', borderRadius: 8, boxShadow: '0 20px 40px rgba(0,0,0,0.3)'}} />
           </div>
         </div>
       </div>
@@ -129,12 +129,72 @@ export function CompleteOperations() {
 }
 
 // ============================================================
+// TUTORIALS
+// ============================================================
+export function Tutorials() {
+  return (
+    <section className="section" style={{background: 'var(--bg-1)'}}>
+      <div className="itoss-container-wide">
+        
+        <div className="grid grid-2" style={{gap: 24}}>
+          {TUTORIALS.map((t) => (
+            <article className="module-card" key={t.id} style={{padding: 0, overflow: 'hidden'}}>
+              { false && <div style={{position: 'relative', width: '100%', aspectRatio: '16 / 9', background: '#000', borderBottom: '1px solid var(--border)'}}>
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
+                  title={t.name}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0}}
+                />
+              </div> }
+              <div style={{padding: 28, display: 'flex', flexDirection: 'column', flex: 1}}>
+                <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
+                  <div className="module-icon" style={{margin: 0}}><TutorialIcon kind={t.id} /></div>
+                  <div className="module-name" style={{marginBottom: 0}}>{t.code}</div>
+                </div>
+                <h3>{t.name}</h3>
+                <p>{t.desc}</p>
+                { false && <ul className="module-feat">{t.feats.map((f, i) => <li key={i}>{f}</li>)}</ul> }
+                <a href={`https://www.youtube.com/watch?v=${t.videoId}`} target="_blank" rel="noopener" className="module-link">
+                  Watch on YouTube <span>→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+export function TutorialIcon({kind}) {
+  const s = {width: 24, height: 24, stroke: 'currentColor', fill: 'none', strokeWidth: 1.6, strokeLinecap: 'round', strokeLinejoin: 'round'};
+  switch (kind) {
+    case 'quickstart':
+      return <svg {...s}><circle cx="12" cy="12" r="9" /><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none" /></svg>;
+    case 'multitenant':
+      return <svg {...s}><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><polygon points="17.5 14.5 20.5 20 14.5 20 17.5 14.5" fill="currentColor" stroke="none" /></svg>;
+    default:
+      return null;
+  }
+}
+
+// ============================================================
 // SERVICES
 // ============================================================
 export function Services() {
   return (
     <section className="section">
       <div className="itoss-container-wide">
+        <div className="section-head" style={{textAlign: 'left', marginBottom: 48, maxWidth: 1200}}>
+          <span className="eyebrow" style={{marginBottom: 16, justifyContent: 'flex-start'}}>Services</span>
+          <h2 className="h2">Technology Platform + <span className="brand-grad-text">Expert Services</span></h2>
+          <p className="lede" style={{marginTop: 16, textAlign: 'left'}}>
+            Get the flexibility of an enterprise-grade IT operations platform without licensing costs, 
+            backed by professional services that ensure successful deployment, operational excellence, and continuous improvement. 
+          </p>
+        </div>
         <div className="grid grid-4" style={{gap: 16}}>
           {SERVICES.map((m) => (
             <article className="module-card" key={m.id}>

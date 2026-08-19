@@ -45,7 +45,7 @@ export const SERVICES = [
     feats: ['ITOSS deployment planning and implementation', 'Knowledge transfer sessions for operational and technical teams', 'Access to operational training videos and onboarding materials', 'Best-practice recommendations for platform configuration and adoption'],
   },
   {
-    id: 'training', code: 'Skills and knowledge for your team', name: 'AI Integration & Automation',
+    id: 'ai', code: 'AI Professional Services', name: 'AI Integration & Automation',
     desc: 'Empower ITOSS with AI-driven automation to enhance operational efficiency and service delivery. Through secure MCP integration.',
     feats: ['AI-powered operational assistants', 'Intelligent KPI and alert analysis', 'Automated reporting and workflow execution', 'Secure, governed AI integration', 'AI-Powered Operational Knowledge Integration'],
   }
@@ -82,6 +82,25 @@ export const COMPLETE_OPERATIONS = [
     desc: 'ITOSS provides a unified operational timeline for each managed technology component, capturing lifecycle changes, support team annotations, automated and manual operational actions, alert-driven activities, and related service tickets. This historical record enables efficient troubleshooting, operational analysis, and service governance.',
     feats: ['Unified component timeline', 'Lifecycle transition records', 'Support notes and annotations', 'Alert-related operational events', 'Linked ticketing records', 'End-to-end operational traceability'],
   }
+];
+
+export const TUTORIALS = [
+  {
+    id: 'quickstart',
+    videoId: 'ulBqyvKqFtU',
+    code: 'TUTORIAL / 01',
+    name: 'Quick Start with ITOSS',
+    desc: 'It demonstrates how to quickly set up ITOSS, add a technology product, and view its operational status through the platform\'s dashboards and control panels.',
+    feats: ['Component creation & configuration', 'Multi-tenant organization', 'Operational monitoring dashboard', 'Dashboard entry management'],
+  },
+  {
+    id: 'multitenant',
+    videoId: 'JYgYTiDZHjA',
+    code: 'TUTORIAL / 02',
+    name: 'Operation with ITOSS',
+    desc: 'See how ITOSS turns real-time monitoring into a single operational dashboard—track every component\'s status, drill into the details, and act on issues before they escalate.',
+    feats: ['Visual operational dashboards', 'Prioritized dashboard entries', 'Full monitoring context', 'Drill-down component view'],
+  },
 ];
 
 export function ModuleIcon({kind}) {
@@ -143,6 +162,9 @@ export function ServiceIcon({kind}) {
     case 'administration':
       // shield / managed infrastructure
       return <svg {...s}><path d="M12 3 5 6v5c0 4.3 3 7.5 7 9 4-1.5 7-4.7 7-9V6Z" /><path d="M9 11.5 11 13.5 15 9.5" /></svg>;
+    case 'ai':
+      // chip + sparkle / artificial intelligence
+      return <svg {...s}><rect x="6" y="6" width="10" height="10" rx="2" /><rect x="9.5" y="9.5" width="3" height="3" rx="0.5" /><path d="M9 3v3" /><path d="M13 3v3" /><path d="M9 16v3" /><path d="M13 16v3" /><path d="M3 9h3" /><path d="M3 13h3" /><path d="M16 9h1.5" /><path d="M16 13h1.5" /><path d="m19.5 2.5.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8Z" /></svg>;
     default:
       return null;
   }
