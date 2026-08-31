@@ -111,7 +111,7 @@ export const TUTORIALS = [
   },
     {
     id: 'quickstart',
-    videoId: 'JYgYTiDZHjA',
+    videoId: 'aaCI89imzk',
     code: 'TUTORIAL / 04',
     name: 'Operational Dashboard',
     desc: 'See how ITOSS operational dashboards give support teams everything they need to manage their components—switch between container, component-type, metric-category and list views, watch live indicators for component status, entry priority and management quality, and filter down to the situations that need action.',
