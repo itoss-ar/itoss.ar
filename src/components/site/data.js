@@ -94,12 +94,28 @@ export const TUTORIALS = [
     feats: ['Component creation & configuration', 'Multi-tenant organization', 'Operational monitoring dashboard', 'Dashboard entry management'],
   },
   {
-    id: 'multitenant',
+    id: 'quickstart',
     videoId: 'JYgYTiDZHjA',
     code: 'TUTORIAL / 02',
     name: 'Operation with ITOSS',
     desc: 'See how ITOSS turns real-time monitoring into a single operational dashboard—track every component\'s status, drill into the details, and act on issues before they escalate.',
     feats: ['Visual operational dashboards', 'Prioritized dashboard entries', 'Full monitoring context', 'Drill-down component view'],
+  },
+    {
+    id: 'quickstart',
+    videoId: 'xskvpWTIRZQ',
+    code: 'TUTORIAL / 03',
+    name: 'General Status dashboard',
+    desc: 'See how the ITOSS general status dashboard gives you a high-level view of your managed components—track up/down status at a glance, explore it grouped by company, location or component type, drill down for detail, and filter by environment or by the systems you own.',
+    feats: ['High-level status overview', 'Group by company, location or type', 'Drill-down navigation', 'Environment & ownership filters'],
+  },
+    {
+    id: 'quickstart',
+    videoId: 'JYgYTiDZHjA',
+    code: 'TUTORIAL / 04',
+    name: 'Operational Dashboard',
+    desc: 'See how ITOSS operational dashboards give support teams everything they need to manage their components—switch between container, component-type, metric-category and list views, watch live indicators for component status, entry priority and management quality, and filter down to the situations that need action.',
+    feats: ['Multiple operational views', 'Live status & priority indicators', 'Management-quality scoring', 'Custom filtered views'],
   },
 ];
 
