@@ -12,7 +12,7 @@ export default function TutorialsPage() {
           <div className="itoss-container-wide" style={{position: 'relative', zIndex: 1}}>
             <span className="eyebrow" style={{justifyContent: 'center'}}>Tutorials</span>
             <h1 className="h1">Learn ITOSS <span className="brand-grad-text">by watching</span></h1>
-            <p className="lede">Short, practical video guides that take you from a fresh install to a fully operational, multi-tenant monitoring platform — step by step.</p>
+            <p className="lede">Short, practical video guides that take you from a fresh install to a fully operational, multi-client operational management platform — step by step.</p>
           </div>
         </section>        
         <Tutorials/>

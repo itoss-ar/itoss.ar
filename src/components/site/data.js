@@ -109,13 +109,29 @@ export const TUTORIALS = [
     desc: 'See how the ITOSS general status dashboard gives you a high-level view of your managed components—track up/down status at a glance, explore it grouped by company, location or component type, drill down for detail, and filter by environment or by the systems you own.',
     feats: ['High-level status overview', 'Group by company, location or type', 'Drill-down navigation', 'Environment & ownership filters'],
   },
-    {
+  {
     id: 'quickstart',
     videoId: 'aaCI89imzkA',
     code: 'TUTORIAL / 04',
     name: 'Operational Dashboard',
     desc: 'See how ITOSS operational dashboards give support teams everything they need to manage their components—switch between container, component-type, metric-category and list views, watch live indicators for component status, entry priority and management quality, and filter down to the situations that need action.',
     feats: ['Multiple operational views', 'Live status & priority indicators', 'Management-quality scoring', 'Custom filtered views'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'srAuHq0ETmc',
+    code: 'TUTORIAL / 05',
+    name: 'Component Dashboard - Part 1',
+    desc: 'Dive into the ITOSS component dashboard for a centralized, single-component view of your infrastructure—check real-time status and life-cycle history, drill down into attended and pending monitor entries, log user notes tied to specific events, and visualize how each component relates to and depends on the rest of your environment.',
+    feats: ['Centralized single-component view', 'Life-cycle & state history', 'Attended entries drill-down', 'User notes & annotations', 'Component relationship graph'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'JsC9hgXlPFw',
+    code: 'TUTORIAL / 06',
+    name: 'Component Dashboard - Part 2',
+    desc: 'Continue the tour of the ITOSS component dashboard with its deeper operational tools—switch metrics between chart and table views, browse historical performance data with selectable time ranges and export it to CSV, review availability timelines and full configuration attributes, and use the toolbar\'s audited diagnostic commands, external app links, maintenance scheduling and component settings to manage the component end-to-end.',
+    feats: ['Chart & table visualization toggle', 'Historical performance data & CSV export', 'Audited diagnostic commands & external tools', 'Maintenance scheduling & component settings', 'Monitor status & management reports'],
   },
 ];
 
