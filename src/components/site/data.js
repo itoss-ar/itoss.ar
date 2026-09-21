@@ -138,8 +138,16 @@ export const TUTORIALS = [
     videoId: 'rYWY-JB-8Ow',
     code: 'TUTORIAL / 07',
     name: 'Company Dashboard',
-    desc: 'Take a tour of the ITOSS Company Dashboard, the entry point for monitoring an organization\'s entire technology footprint. Quickly locate a company through the global search, review activity summary cards for tickets, operations logs, user notes and lifecycle changes, and drill into consolidated component health views grouped by type, environment and management profile. Explore the full company component inventory across delivery, maintenance, out-of-service and end-of-service states with advanced filtering, build custom operational dashboards from selected components and containers, and generate executive-level reports tailored to business needs.',
+    desc: 'Explore the ITOSS Company Dashboard to monitor an organization’s technology footprint, activity, component health, and lifecycle. Search companies, review key metrics, filter components, build custom operational dashboards, and generate executive-level reports.',
     feats: ['Company search & quick access', 'Activity summary cards (tickets, logs, notes, lifecycle changes)', 'Consolidated component health by type & management profile', 'Full component inventory with advanced filtering', 'Custom dashboards & executive-level reports'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'oVQjWH9cZ_4',
+    code: 'TUTORIAL / 08',
+    name: 'Component Lifecycle',
+    desc: 'Manage the complete component life cycle in ITOSS, from deployment to retirement, with stage dashboards, transition reports, and controlled, auditable actions.',
+    feats: ['Life cycle dashboard with stage indicators (delivery, operations, maintenance, out of service, end of service)', 'Monthly trend charts & month-over-month comparisons', '3-month transition reports for promotions & end-of-service retirements', 'Dedicated per-stage consoles with filtering, individual & bulk actions', 'Controlled, auditable state transitions for full life cycle traceability'],
   }
 ];
 
