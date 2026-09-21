@@ -133,6 +133,14 @@ export const TUTORIALS = [
     desc: 'Continue the tour of the ITOSS component dashboard with its deeper operational tools—switch metrics between chart and table views, browse historical performance data with selectable time ranges and export it to CSV, review availability timelines and full configuration attributes, and use the toolbar\'s audited diagnostic commands, external app links, maintenance scheduling and component settings to manage the component end-to-end.',
     feats: ['Chart & table visualization toggle', 'Historical performance data & CSV export', 'Audited diagnostic commands & external tools', 'Maintenance scheduling & component settings', 'Monitor status & management reports'],
   },
+  {
+    id: 'quickstart',
+    videoId: 'rYWY-JB-8Ow',
+    code: 'TUTORIAL / 07',
+    name: 'Company Dashboard',
+    desc: 'Take a tour of the ITOSS Company Dashboard, the entry point for monitoring an organization\'s entire technology footprint. Quickly locate a company through the global search, review activity summary cards for tickets, operations logs, user notes and lifecycle changes, and drill into consolidated component health views grouped by type, environment and management profile. Explore the full company component inventory across delivery, maintenance, out-of-service and end-of-service states with advanced filtering, build custom operational dashboards from selected components and containers, and generate executive-level reports tailored to business needs.',
+    feats: ['Company search & quick access', 'Activity summary cards (tickets, logs, notes, lifecycle changes)', 'Consolidated component health by type & management profile', 'Full component inventory with advanced filtering', 'Custom dashboards & executive-level reports'],
+  }
 ];
 
 export function ModuleIcon({kind}) {
