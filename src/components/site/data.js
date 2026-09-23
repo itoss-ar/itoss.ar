@@ -148,6 +148,14 @@ export const TUTORIALS = [
     name: 'Component Lifecycle',
     desc: 'Manage the complete component life cycle in ITOSS, from deployment to retirement, with stage dashboards, transition reports, and controlled, auditable actions.',
     feats: ['Life cycle dashboard with stage indicators (delivery, operations, maintenance, out of service, end of service)', 'Monthly trend charts & month-over-month comparisons', '3-month transition reports for promotions & end-of-service retirements', 'Dedicated per-stage consoles with filtering, individual & bulk actions', 'Controlled, auditable state transitions for full life cycle traceability'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'EI1rnpueiUA',
+    code: 'TUTORIAL / 09',
+    name: 'Companies, Work Groups & Contacts',
+    desc: 'Create and manage the core entities of a managed services environment in ITOSS: companies, support work groups, and customer contacts. Together they are the foundation for customer management, support responsibilities, and service ownership.',
+    feats: ['Central access from Configuration to the company, work group and contact consoles', 'Company creation by type (e.g. customer) with required name and location fields', 'Add several companies to a pending list and save them together', 'Work groups that define support team structure and set who owns each component', 'Contacts that link each managed service to its customer stakeholders, and can be edited at any time'],
   }
 ];
 
