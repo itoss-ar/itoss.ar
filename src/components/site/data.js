@@ -172,6 +172,14 @@ export const TUTORIALS = [
     name: 'Reports',
     desc: 'Explore the reports available to support users in ITOSS. They cover ITOSS entities, historical metrics, managed events and other operational data, so support teams can analyze performance, monitor services and make informed decisions.',
     feats: ['Central access to the reporting console from Explore › Reports', 'Reports grouped by area of interest: entities, metrics, events and service activities', 'Inventory reports on components, their relationships and configuration details', 'Access by role, and every report can be customized by ITOSS administrators', 'Statistics by technology type, filtered by company or location', 'Export to CSV for further analysis, or to HTML for managers and executives'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'GD6tFaaARNA',
+    code: 'TUTORIAL / XX',
+    name: 'Notifications',
+    desc: 'Learn how notifications work in ITOSS. They alert support teams to critical operational situations, so the right people know about important events in time and can respond quickly to keep services reliable.',
+    feats: ['Notification area at the top right of the interface, next to the search box', 'Bell icon with a counter badge showing the number of active notifications', 'Open the panel to review active notifications and see details of each event', 'Created by actions in the monitors\' operational logic when a condition needs attention', 'Notifications stay active for up to 4 hours, then are removed for good', 'Dismiss one notification or clear them all; this only changes your own view, not what other users see'],
   }
 ];
 
