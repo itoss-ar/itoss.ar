@@ -156,6 +156,22 @@ export const TUTORIALS = [
     name: 'Companies, Work Groups & Contacts',
     desc: 'Create and manage the core entities of a managed services environment in ITOSS: companies, support work groups, and customer contacts. Together they are the foundation for customer management, support responsibilities, and service ownership.',
     feats: ['Central access from Configuration to the company, work group and contact consoles', 'Company creation by type (e.g. customer) with required name and location fields', 'Add several companies to a pending list and save them together', 'Work groups that define support team structure and set who owns each component', 'Contacts that link each managed service to its customer stakeholders, and can be edited at any time'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'UrFQ5j_oQzM',
+    code: 'TUTORIAL / 10',
+    name: 'Managing Components',
+    desc: 'Create and manage components in ITOSS, the main objects the platform operates on. Each component stands for a technology, service or abstract entity whose key operational indicators are collected, monitored and analyzed.',
+    feats: ['Central access from Configuration to the components management console', 'Component creation by type (e.g. Linux), with connection fields such as ICMP target and SSH credentials shown automatically for each type', 'Add several components with the same administrative settings to a pending list and create them together', 'Links to tenants, company, location, contact, management profile, collector and the responsible work group or owner', 'Lifecycle control: new components start in the delivery stage so their monitors can be tested before they move into operation'],
+  },
+  {
+    id: 'quickstart',
+    videoId: 'EMFT5XaJqO4',
+    code: 'TUTORIAL / 11',
+    name: 'Reports',
+    desc: 'Explore the reports available to support users in ITOSS. They cover ITOSS entities, historical metrics, managed events and other operational data, so support teams can analyze performance, monitor services and make informed decisions.',
+    feats: ['Central access to the reporting console from Explore › Reports', 'Reports grouped by area of interest: entities, metrics, events and service activities', 'Inventory reports on components, their relationships and configuration details', 'Access by role, and every report can be customized by ITOSS administrators', 'Statistics by technology type, filtered by company or location', 'Export to CSV for further analysis, or to HTML for managers and executives'],
   }
 ];
 
