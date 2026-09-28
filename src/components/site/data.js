@@ -176,7 +176,7 @@ export const TUTORIALS = [
   {
     id: 'quickstart',
     videoId: 'GD6tFaaARNA',
-    code: 'TUTORIAL / XX',
+    code: 'TUTORIAL / 12',
     name: 'Notifications',
     desc: 'Learn how notifications work in ITOSS. They alert support teams to critical operational situations, so the right people know about important events in time and can respond quickly to keep services reliable.',
     feats: ['Notification area at the top right of the interface, next to the search box', 'Bell icon with a counter badge showing the number of active notifications', 'Open the panel to review active notifications and see details of each event', 'Created by actions in the monitors\' operational logic when a condition needs attention', 'Notifications stay active for up to 4 hours, then are removed for good', 'Dismiss one notification or clear them all; this only changes your own view, not what other users see'],
