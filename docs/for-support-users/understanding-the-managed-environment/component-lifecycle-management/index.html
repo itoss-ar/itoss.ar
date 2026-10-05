@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-for-support-users/understanding-the-managed-environment/component-lifecycle-management" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.10.1">
+<title data-rh="true">Component Lifecycle Management | ITOSS</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://itoss.ar/img/itoss-social-card.png"><meta data-rh="true" name="twitter:image" content="https://itoss.ar/img/itoss-social-card.png"><meta data-rh="true" property="og:url" content="https://itoss.ar/docs/for-support-users/understanding-the-managed-environment/component-lifecycle-management"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Component Lifecycle Management | ITOSS"><meta data-rh="true" name="description" content="Overview"><meta data-rh="true" property="og:description" content="Overview"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://itoss.ar/docs/for-support-users/understanding-the-managed-environment/component-lifecycle-management"><link data-rh="true" rel="alternate" href="https://itoss.ar/docs/for-support-users/understanding-the-managed-environment/component-lifecycle-management" hreflang="en"><link data-rh="true" rel="alternate" href="https://itoss.ar/docs/for-support-users/understanding-the-managed-environment/component-lifecycle-management" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"For Support Users","item":"https://itoss.ar/docs/for-support-users/intro"},{"@type":"ListItem","position":2,"name":"Component Lifecycle Management","item":"https://itoss.ar/docs/for-support-users/understanding-the-managed-environment/component-lifecycle-management"}]}</script><link rel="stylesheet" href="/assets/css/styles.128e59ae.css">
+<script src="/assets/js/runtime~main.58d794b5.js" defer="defer"></script>
+<script src="/assets/js/main.019061e5.js" defer="defer"></script>
+</head>
+<body>
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>document.documentElement.setAttribute("data-theme","dark"),document.documentElement.setAttribute("data-theme-choice","dark"),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/ITOSS-01-bl+Aqua.png" alt="ITOSS" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/ITOSS-01-bl+Aqua.png" alt="ITOSS" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div></a><a class="navbar__item navbar__link" href="/services">Services</a><a class="navbar__item navbar__link" href="/docs/start-with-itoss">Try ITOSS</a><a class="navbar__item navbar__link" href="/use-cases">Use Cases</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/concepts">Documents</a><a class="navbar__item navbar__link" href="/tutorials">Tutorials</a><a class="navbar__item navbar__link" href="/contact">Contact</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a class="navbar__item navbar__link navbar-cta" href="/contact">Request a guided demo</a><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/concepts"><span title="Concepts" class="linkLabel_WmDU">Concepts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/start-with-itoss"><span title="Start with ITOSS" class="linkLabel_WmDU">Start with ITOSS</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--active" href="/docs/for-support-users/intro"><span title="For Support Users" class="categoryLinkLabel_W154">For Support Users</span></a><button aria-label="Collapse sidebar category &#x27;For Support Users&#x27;" aria-expanded="true" type="button" class="clean-btn menu__caret"></button></div><ul class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" tabindex="0" href="/docs/for-support-users/understanding-the-managed-environment/managed-components"><span title="Understanding the Managed Environment" class="categoryLinkLabel_W154">Understanding the Managed Environment</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/for-support-users/understanding-the-managed-environment/managed-components"><span title="Managed Components" class="linkLabel_WmDU">Managed Components</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/for-support-users/understanding-the-managed-environment/companies-support-teams-and-contacts"><span title="Companies, Workgroups, and Contacts" class="linkLabel_WmDU">Companies, Workgroups, and Contacts</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/for-support-users/understanding-the-managed-environment/component-lifecycle-management"><span title="Component Lifecycle Management" class="linkLabel_WmDU">Component Lifecycle Management</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/for-support-users/operational-management/managing-technology-with-itoss"><span title="Operational Management" class="categoryLinkLabel_W154">Operational Management</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/for-support-users/operational-views/general-status-dashboard"><span title="Operational Views" class="categoryLinkLabel_W154">Operational Views</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" tabindex="0" href="/docs/for-support-users/reporting-and-historical-analysis/reports"><span title="Reporting and Historical Analysis" class="categoryLinkLabel_W154">Reporting and Historical Analysis</span></a></div></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/docs/hana"><span title="Managed Technologies" class="categoryLinkLabel_W154">Managed Technologies</span></a></div></li></ul></nav><button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/docs/for-support-users/intro"><span>For Support Users</span></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Understanding the Managed Environment</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Component Lifecycle Management</span></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Component Lifecycle Management</h1></header>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview">Overview<a href="#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>Component Lifecycle Management controls the operational state of managed components throughout their existence in ITOSS. The lifecycle model ensures that components progress through a controlled and auditable process, from initial onboarding to retirement, while maintaining accurate operational visibility and governance.</p>
+<p>Lifecycle management helps support teams distinguish between components that are actively monitored, temporarily unavailable, undergoing maintenance, or permanently retired. This classification improves operational accuracy and prevents inactive assets from affecting monitoring and reporting processes.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="purpose">Purpose<a href="#purpose" class="hash-link" aria-label="Direct link to Purpose" title="Direct link to Purpose" translate="no">​</a></h2>
+<p>The lifecycle model supports several operational objectives:</p>
+<ul>
+<li class="">Control component onboarding into operational management.</li>
+<li class="">Distinguish active and inactive assets.</li>
+<li class="">Support planned maintenance activities.</li>
+<li class="">Manage temporary service withdrawals.</li>
+<li class="">Track component retirement.</li>
+<li class="">Maintain lifecycle history for auditing and reporting purposes.</li>
+<li class="">Improve the accuracy of operational monitoring and service visibility.</li>
+</ul>
+<hr>
+<h1>Lifecycle Dashboard</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="overview-1">Overview<a href="#overview-1" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview" translate="no">​</a></h2>
+<p>The Lifecycle Dashboard provides a consolidated view of lifecycle activity across the managed environment. It enables support users to review the distribution of components across lifecycle stages and analyze lifecycle transitions over time.</p>
+<p>The dashboard serves as both an operational control point and a reporting tool for lifecycle management activities.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle-indicators">Lifecycle Indicators<a href="#lifecycle-indicators" class="hash-link" aria-label="Direct link to Lifecycle Indicators" title="Direct link to Lifecycle Indicators" translate="no">​</a></h2>
+<p>The dashboard displays summary indicators showing the number of components currently assigned to each lifecycle stage.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="available-lifecycle-states">Available Lifecycle States<a href="#available-lifecycle-states" class="hash-link" aria-label="Direct link to Available Lifecycle States" title="Direct link to Available Lifecycle States" translate="no">​</a></h3>
+<ul>
+<li class="">Delivery</li>
+<li class="">Operations</li>
+<li class="">Maintenance</li>
+<li class="">Out of Service</li>
+<li class="">End of Service</li>
+</ul>
+<p>These indicators provide immediate visibility into the operational status of the managed inventory.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle-analytics">Lifecycle Analytics<a href="#lifecycle-analytics" class="hash-link" aria-label="Direct link to Lifecycle Analytics" title="Direct link to Lifecycle Analytics" translate="no">​</a></h2>
+<p>The dashboard includes graphical and reporting views that help support users understand the evolution of the managed environment.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transition-trends">Transition Trends<a href="#transition-trends" class="hash-link" aria-label="Direct link to Transition Trends" title="Direct link to Transition Trends" translate="no">​</a></h3>
+<p>Lifecycle charts provide visibility into:</p>
+<ul>
+<li class="">Components promoted to Operations.</li>
+<li class="">Components transitioned to End of Service.</li>
+<li class="">Monthly lifecycle trends.</li>
+<li class="">Comparative lifecycle activity between reporting periods.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="historical-reports">Historical Reports<a href="#historical-reports" class="hash-link" aria-label="Direct link to Historical Reports" title="Direct link to Historical Reports" translate="no">​</a></h3>
+<p>Historical reports provide detailed information about lifecycle transitions occurring during recent periods, including:</p>
+<ul>
+<li class="">Components entering Operations.</li>
+<li class="">Components reaching End of Service.</li>
+</ul>
+<p>These reports support operational governance, capacity planning, and lifecycle auditing activities.</p>
+<hr>
+<h1>Lifecycle Stages</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="delivery">Delivery<a href="#delivery" class="hash-link" aria-label="Direct link to Delivery" title="Direct link to Delivery" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="description">Description<a href="#description" class="hash-link" aria-label="Direct link to Description" title="Direct link to Description" translate="no">​</a></h3>
+<p>Delivery is the initial lifecycle state assigned to a component when it is first created and onboarded into ITOSS.</p>
+<p>Components in this stage are available for preparation, validation, and configuration activities before entering operational management.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-characteristics">Operational Characteristics<a href="#operational-characteristics" class="hash-link" aria-label="Direct link to Operational Characteristics" title="Direct link to Operational Characteristics" translate="no">​</a></h3>
+<ul>
+<li class="">Component has been created in ITOSS.</li>
+<li class="">Operational onboarding activities may still be in progress.</li>
+<li class="">Production monitoring may not yet be active.</li>
+<li class="">Validation and readiness checks can be performed.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="available-transitions">Available Transitions<a href="#available-transitions" class="hash-link" aria-label="Direct link to Available Transitions" title="Direct link to Available Transitions" translate="no">​</a></h3>
+<p>A component in Delivery can be:</p>
+<ul>
+<li class="">Promoted to Operations.</li>
+<li class="">Transitioned directly to End of Service if it will not become operational.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-use-cases">Typical Use Cases<a href="#typical-use-cases" class="hash-link" aria-label="Direct link to Typical Use Cases" title="Direct link to Typical Use Cases" translate="no">​</a></h3>
+<ul>
+<li class="">New infrastructure onboarding.</li>
+<li class="">Service deployment preparation.</li>
+<li class="">Monitoring validation.</li>
+<li class="">Inventory registration before production use.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="operations">Operations<a href="#operations" class="hash-link" aria-label="Direct link to Operations" title="Direct link to Operations" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="description-1">Description<a href="#description-1" class="hash-link" aria-label="Direct link to Description" title="Direct link to Description" translate="no">​</a></h3>
+<p>Operations is the active lifecycle stage where components participate fully in operational monitoring and management processes.</p>
+<p>This is the only lifecycle stage in which components are actively managed as part of normal service operations.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-characteristics-1">Operational Characteristics<a href="#operational-characteristics-1" class="hash-link" aria-label="Direct link to Operational Characteristics" title="Direct link to Operational Characteristics" translate="no">​</a></h3>
+<ul>
+<li class="">Monitoring is active.</li>
+<li class="">Metrics are collected.</li>
+<li class="">Dashboard entries can be generated.</li>
+<li class="">Events and notifications are processed.</li>
+<li class="">Operational reporting is available.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="available-transitions-1">Available Transitions<a href="#available-transitions-1" class="hash-link" aria-label="Direct link to Available Transitions" title="Direct link to Available Transitions" translate="no">​</a></h3>
+<p>A component in Operations can transition to:</p>
+<ul>
+<li class="">Maintenance</li>
+<li class="">Out of Service</li>
+<li class="">End of Service</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle-rule">Lifecycle Rule<a href="#lifecycle-rule" class="hash-link" aria-label="Direct link to Lifecycle Rule" title="Direct link to Lifecycle Rule" translate="no">​</a></h3>
+<p>Once a component enters Operations, it cannot return to the Delivery stage. This restriction ensures a controlled and auditable lifecycle progression.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-use-cases-1">Typical Use Cases<a href="#typical-use-cases-1" class="hash-link" aria-label="Direct link to Typical Use Cases" title="Direct link to Typical Use Cases" translate="no">​</a></h3>
+<ul>
+<li class="">Production services.</li>
+<li class="">Operational infrastructure.</li>
+<li class="">Actively monitored assets.</li>
+<li class="">Business-critical components.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="maintenance">Maintenance<a href="#maintenance" class="hash-link" aria-label="Direct link to Maintenance" title="Direct link to Maintenance" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="description-2">Description<a href="#description-2" class="hash-link" aria-label="Direct link to Description" title="Direct link to Description" translate="no">​</a></h3>
+<p>The Maintenance stage represents a planned operational activity performed during a predefined maintenance window.</p>
+<p>During maintenance, components are temporarily excluded from normal operational management activities while maintenance tasks are executed.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-characteristics-2">Operational Characteristics<a href="#operational-characteristics-2" class="hash-link" aria-label="Direct link to Operational Characteristics" title="Direct link to Operational Characteristics" translate="no">​</a></h3>
+<ul>
+<li class="">Maintenance activities are planned.</li>
+<li class="">Start and end dates are defined.</li>
+<li class="">Operational management is temporarily suspended.</li>
+<li class="">Normal monitoring behavior may be adjusted during the maintenance period.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="automatic-lifecycle-handling">Automatic Lifecycle Handling<a href="#automatic-lifecycle-handling" class="hash-link" aria-label="Direct link to Automatic Lifecycle Handling" title="Direct link to Automatic Lifecycle Handling" translate="no">​</a></h3>
+<p>In most cases, components automatically return to their normal operational lifecycle flow after the maintenance window expires.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="available-transitions-2">Available Transitions<a href="#available-transitions-2" class="hash-link" aria-label="Direct link to Available Transitions" title="Direct link to Available Transitions" translate="no">​</a></h3>
+<p>If maintenance activities need to be terminated before completion, components can be transitioned to:</p>
+<ul>
+<li class="">Operations</li>
+<li class="">End of Service</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-use-cases-2">Typical Use Cases<a href="#typical-use-cases-2" class="hash-link" aria-label="Direct link to Typical Use Cases" title="Direct link to Typical Use Cases" translate="no">​</a></h3>
+<ul>
+<li class="">Planned infrastructure upgrades.</li>
+<li class="">Operating system maintenance.</li>
+<li class="">Database maintenance tasks.</li>
+<li class="">Service migrations.</li>
+<li class="">Scheduled downtime.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="out-of-service">Out of Service<a href="#out-of-service" class="hash-link" aria-label="Direct link to Out of Service" title="Direct link to Out of Service" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="description-3">Description<a href="#description-3" class="hash-link" aria-label="Direct link to Description" title="Direct link to Description" translate="no">​</a></h3>
+<p>Out of Service is a temporary lifecycle state used when a component must be removed from operational management on demand.</p>
+<p>Unlike Maintenance, this stage is typically used for unscheduled or operator-initiated situations.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-characteristics-3">Operational Characteristics<a href="#operational-characteristics-3" class="hash-link" aria-label="Direct link to Operational Characteristics" title="Direct link to Operational Characteristics" translate="no">​</a></h3>
+<ul>
+<li class="">Component is not actively managed.</li>
+<li class="">Monitoring activities are suspended.</li>
+<li class="">The situation is generally temporary.</li>
+<li class="">The component remains available for future reactivation.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="available-transitions-3">Available Transitions<a href="#available-transitions-3" class="hash-link" aria-label="Direct link to Available Transitions" title="Direct link to Available Transitions" translate="no">​</a></h3>
+<p>Components in Out of Service can transition to:</p>
+<ul>
+<li class="">Operations</li>
+<li class="">End of Service</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="typical-use-cases-3">Typical Use Cases<a href="#typical-use-cases-3" class="hash-link" aria-label="Direct link to Typical Use Cases" title="Direct link to Typical Use Cases" translate="no">​</a></h3>
+<ul>
+<li class="">Emergency shutdowns.</li>
+<li class="">Temporary service withdrawal.</li>
+<li class="">Infrastructure isolation.</li>
+<li class="">Extended troubleshooting activities.</li>
+<li class="">Unplanned operational interruptions.</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="end-of-service">End of Service<a href="#end-of-service" class="hash-link" aria-label="Direct link to End of Service" title="Direct link to End of Service" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="description-4">Description<a href="#description-4" class="hash-link" aria-label="Direct link to Description" title="Direct link to Description" translate="no">​</a></h3>
+<p>End of Service represents the final lifecycle stage of a managed component.</p>
+<p>Components in this state have completed their operational lifecycle and are no longer managed by ITOSS.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-characteristics-4">Operational Characteristics<a href="#operational-characteristics-4" class="hash-link" aria-label="Direct link to Operational Characteristics" title="Direct link to Operational Characteristics" translate="no">​</a></h3>
+<ul>
+<li class="">Monitoring is permanently disabled.</li>
+<li class="">No lifecycle actions are available.</li>
+<li class="">The component remains visible for historical reference.</li>
+<li class="">Lifecycle history is preserved.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle-rule-1">Lifecycle Rule<a href="#lifecycle-rule-1" class="hash-link" aria-label="Direct link to Lifecycle Rule" title="Direct link to Lifecycle Rule" translate="no">​</a></h3>
+<p>Components in End of Service cannot transition to any other lifecycle stage.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-value">Operational Value<a href="#operational-value" class="hash-link" aria-label="Direct link to Operational Value" title="Direct link to Operational Value" translate="no">​</a></h3>
+<p>The End of Service repository provides information required for:</p>
+<ul>
+<li class="">Historical tracking.</li>
+<li class="">Auditing.</li>
+<li class="">Lifecycle reporting.</li>
+<li class="">Asset retirement reviews.</li>
+</ul>
+<hr>
+<h1>Lifecycle Flow</h1>
+<p>The following diagram illustrates the lifecycle progression of a managed component.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#9CDCFE;--prism-background-color:#1E1E1E"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#9CDCFE;background-color:#1E1E1E"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#9CDCFE"><span class="token plain">Delivery</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">├──&gt; Operations</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ ├──&gt; Maintenance</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │ │</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │ └──&gt; Operations</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ ├──&gt; Out of Service</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │ │</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │ └──&gt; Operations</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ │</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│ └──&gt; End of Service</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">│</span><br></div><div class="token-line" style="color:#9CDCFE"><span class="token plain">└──&gt; End of Service</span><br></div></code></pre></div></div>
+<p>Components can move through multiple operational states during their lifecycle, but End of Service always represents the final state.</p>
+<hr>
+<h1>Typical Use Cases</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-service-onboarding">New Service Onboarding<a href="#new-service-onboarding" class="hash-link" aria-label="Direct link to New Service Onboarding" title="Direct link to New Service Onboarding" translate="no">​</a></h2>
+<p>A component begins in Delivery, undergoes validation activities, and is promoted to Operations when ready for production management.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="planned-maintenance">Planned Maintenance<a href="#planned-maintenance" class="hash-link" aria-label="Direct link to Planned Maintenance" title="Direct link to Planned Maintenance" translate="no">​</a></h2>
+<p>An operational component is temporarily moved to Maintenance while scheduled activities are performed, then automatically returns to normal operation.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="temporary-service-suspension">Temporary Service Suspension<a href="#temporary-service-suspension" class="hash-link" aria-label="Direct link to Temporary Service Suspension" title="Direct link to Temporary Service Suspension" translate="no">​</a></h2>
+<p>A component experiencing operational issues is placed Out of Service until corrective measures are completed and normal operation can resume.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="asset-retirement">Asset Retirement<a href="#asset-retirement" class="hash-link" aria-label="Direct link to Asset Retirement" title="Direct link to Asset Retirement" translate="no">​</a></h2>
+<p>A decommissioned component is moved to End of Service, where its lifecycle history remains available for reporting and auditing purposes.</p>
+<hr>
+<h1>Operational Considerations</h1>
+<ul>
+<li class="">Lifecycle state directly affects how ITOSS manages a component.</li>
+<li class="">Only components in the Operations stage participate fully in monitoring and operational management.</li>
+<li class="">Maintenance is intended for planned activities with defined time windows.</li>
+<li class="">Out of Service is intended for temporary operator-controlled withdrawals from operation.</li>
+<li class="">End of Service is a permanent retirement state.</li>
+<li class="">Lifecycle history supports governance, auditing, and reporting activities.</li>
+<li class="">Lifecycle dashboards provide valuable insight into onboarding, maintenance, and retirement activities across the managed environment.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="lifecycle-transition-matrix">Lifecycle Transition Matrix<a href="#lifecycle-transition-matrix" class="hash-link" aria-label="Direct link to Lifecycle Transition Matrix" title="Direct link to Lifecycle Transition Matrix" translate="no">​</a></h2>
+<p>The following table summarizes the valid transitions between lifecycle stages.</p>
+<table><thead><tr><th>Current State</th><th>Delivery</th><th>Operations</th><th>Maintenance</th><th>Out of Service</th><th>End of Service</th></tr></thead><tbody><tr><td>Delivery</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>✓</td></tr><tr><td>Operations</td><td>—</td><td>—</td><td>✓</td><td>✓</td><td>✓</td></tr><tr><td>Maintenance</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>✓</td></tr><tr><td>Out of Service</td><td>—</td><td>✓</td><td>—</td><td>—</td><td>✓</td></tr><tr><td>End of Service</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="transition-rules">Transition Rules<a href="#transition-rules" class="hash-link" aria-label="Direct link to Transition Rules" title="Direct link to Transition Rules" translate="no">​</a></h3>
+<table><thead><tr><th>Rule</th><th>Description</th></tr></thead><tbody><tr><td>Initial State</td><td>All new managed components enter the lifecycle in the <strong>Delivery</strong> state.</td></tr><tr><td>Activation</td><td>Components become fully operational only after transitioning to <strong>Operations</strong>.</td></tr><tr><td>No Return to Delivery</td><td>Components that have entered <strong>Operations</strong> cannot return to <strong>Delivery</strong>.</td></tr><tr><td>Maintenance Exit</td><td>Components in <strong>Maintenance</strong> can return to <strong>Operations</strong> or be retired through <strong>End of Service</strong>.</td></tr><tr><td>Out of Service Exit</td><td>Components in <strong>Out of Service</strong> can return to <strong>Operations</strong> or transition to <strong>End of Service</strong>.</td></tr><tr><td>Final State</td><td><strong>End of Service</strong> is a terminal state and does not allow further transitions.</td></tr></tbody></table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operational-impact-by-lifecycle-state">Operational Impact by Lifecycle State<a href="#operational-impact-by-lifecycle-state" class="hash-link" aria-label="Direct link to Operational Impact by Lifecycle State" title="Direct link to Operational Impact by Lifecycle State" translate="no">​</a></h3>
+<table><thead><tr><th>Lifecycle State</th><th>Monitoring</th><th>Metrics Collection</th><th>Dashboard Entries</th><th>Operational Management</th></tr></thead><tbody><tr><td>Delivery</td><td>Limited</td><td>Validation Only</td><td>No</td><td>Preparation and Validation</td></tr><tr><td>Operations</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Fully Managed</td></tr><tr><td>Maintenance</td><td>Suspended or Limited</td><td>Optional</td><td>Normally Suppressed</td><td>Maintenance Activities</td></tr><tr><td>Out of Service</td><td>Suspended</td><td>No</td><td>No</td><td>Temporarily Disabled</td></tr><tr><td>End of Service</td><td>No</td><td>No</td><td>No</td><td>Permanently Retired</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="related-features">Related Features<a href="#related-features" class="hash-link" aria-label="Direct link to Related Features" title="Direct link to Related Features" translate="no">​</a></h2>
+<ul>
+<li class="">Managed Components</li>
+<li class="">Component Dashboard</li>
+<li class="">Operational Dashboards</li>
+<li class="">Monitoring</li>
+<li class="">Metrics</li>
+<li class="">Reports</li>
+<li class="">Service Management</li>
+<li class="">Operations Log</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href="https://github.com/itoss-ar/itoss/tree/main/docs/docs/for-support-users/1-understanding-the-managed-environment/component-lifecycle-management.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/for-support-users/understanding-the-managed-environment/companies-support-teams-and-contacts"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Companies, Workgroups, and Contacts</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/for-support-users/operational-management/managing-technology-with-itoss"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Managing Technology with ITOSS Dashboards</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#overview" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#purpose" class="table-of-contents__link toc-highlight">Purpose</a></li><li><a href="#overview-1" class="table-of-contents__link toc-highlight">Overview</a></li><li><a href="#lifecycle-indicators" class="table-of-contents__link toc-highlight">Lifecycle Indicators</a><ul><li><a href="#available-lifecycle-states" class="table-of-contents__link toc-highlight">Available Lifecycle States</a></li></ul></li><li><a href="#lifecycle-analytics" class="table-of-contents__link toc-highlight">Lifecycle Analytics</a><ul><li><a href="#transition-trends" class="table-of-contents__link toc-highlight">Transition Trends</a></li><li><a href="#historical-reports" class="table-of-contents__link toc-highlight">Historical Reports</a></li></ul></li><li><a href="#delivery" class="table-of-contents__link toc-highlight">Delivery</a><ul><li><a href="#description" class="table-of-contents__link toc-highlight">Description</a></li><li><a href="#operational-characteristics" class="table-of-contents__link toc-highlight">Operational Characteristics</a></li><li><a href="#available-transitions" class="table-of-contents__link toc-highlight">Available Transitions</a></li><li><a href="#typical-use-cases" class="table-of-contents__link toc-highlight">Typical Use Cases</a></li></ul></li><li><a href="#operations" class="table-of-contents__link toc-highlight">Operations</a><ul><li><a href="#description-1" class="table-of-contents__link toc-highlight">Description</a></li><li><a href="#operational-characteristics-1" class="table-of-contents__link toc-highlight">Operational Characteristics</a></li><li><a href="#available-transitions-1" class="table-of-contents__link toc-highlight">Available Transitions</a></li><li><a href="#lifecycle-rule" class="table-of-contents__link toc-highlight">Lifecycle Rule</a></li><li><a href="#typical-use-cases-1" class="table-of-contents__link toc-highlight">Typical Use Cases</a></li></ul></li><li><a href="#maintenance" class="table-of-contents__link toc-highlight">Maintenance</a><ul><li><a href="#description-2" class="table-of-contents__link toc-highlight">Description</a></li><li><a href="#operational-characteristics-2" class="table-of-contents__link toc-highlight">Operational Characteristics</a></li><li><a href="#automatic-lifecycle-handling" class="table-of-contents__link toc-highlight">Automatic Lifecycle Handling</a></li><li><a href="#available-transitions-2" class="table-of-contents__link toc-highlight">Available Transitions</a></li><li><a href="#typical-use-cases-2" class="table-of-contents__link toc-highlight">Typical Use Cases</a></li></ul></li><li><a href="#out-of-service" class="table-of-contents__link toc-highlight">Out of Service</a><ul><li><a href="#description-3" class="table-of-contents__link toc-highlight">Description</a></li><li><a href="#operational-characteristics-3" class="table-of-contents__link toc-highlight">Operational Characteristics</a></li><li><a href="#available-transitions-3" class="table-of-contents__link toc-highlight">Available Transitions</a></li><li><a href="#typical-use-cases-3" class="table-of-contents__link toc-highlight">Typical Use Cases</a></li></ul></li><li><a href="#end-of-service" class="table-of-contents__link toc-highlight">End of Service</a><ul><li><a href="#description-4" class="table-of-contents__link toc-highlight">Description</a></li><li><a href="#operational-characteristics-4" class="table-of-contents__link toc-highlight">Operational Characteristics</a></li><li><a href="#lifecycle-rule-1" class="table-of-contents__link toc-highlight">Lifecycle Rule</a></li><li><a href="#operational-value" class="table-of-contents__link toc-highlight">Operational Value</a></li></ul></li><li><a href="#new-service-onboarding" class="table-of-contents__link toc-highlight">New Service Onboarding</a></li><li><a href="#planned-maintenance" class="table-of-contents__link toc-highlight">Planned Maintenance</a></li><li><a href="#temporary-service-suspension" class="table-of-contents__link toc-highlight">Temporary Service Suspension</a></li><li><a href="#asset-retirement" class="table-of-contents__link toc-highlight">Asset Retirement</a></li><li><a href="#lifecycle-transition-matrix" class="table-of-contents__link toc-highlight">Lifecycle Transition Matrix</a><ul><li><a href="#transition-rules" class="table-of-contents__link toc-highlight">Transition Rules</a></li><li><a href="#operational-impact-by-lifecycle-state" class="table-of-contents__link toc-highlight">Operational Impact by Lifecycle State</a></li></ul></li><li><a href="#related-features" class="table-of-contents__link toc-highlight">Related Features</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/concepts">Concepts</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/start-with-itoss">Get started with ITOSS</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Explore</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/services">Services</a></li><li class="footer__item"><a class="footer__link-item" href="/contact">Contact us</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">© 2026 ITOSS Project. All rights reserved.</div></div></div></footer></div>
+</body>
+</html>
