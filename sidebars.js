@@ -5,8 +5,49 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docsSidebar: [
-    'concepts',
-    'start-with-itoss',        
+    'concepts',    
+    'start-with-itoss',
+    {
+      type: 'category',
+      label: 'For Support Users',
+      link: {type: 'doc', id: 'for-support-users/intro'},
+      items: [
+        {
+          type: 'category',
+          label: 'Understanding the Managed Environment',
+          items: [
+            'for-support-users/understanding-the-managed-environment/managed-components',
+            'for-support-users/understanding-the-managed-environment/companies-support-teams-and-contacts',
+            'for-support-users/understanding-the-managed-environment/component-lifecycle-management',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Operational Management',
+          items: [
+            'for-support-users/operational-management/managing-technology-with-itoss',
+            'for-support-users/operational-management/operational-dashboard',
+            'for-support-users/operational-management/notifications',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Operational Views',
+          items: [
+            'for-support-users/operational-views/general-status-dashboard',
+            'for-support-users/operational-views/component-dashboard',
+            'for-support-users/operational-views/company-dashboard',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Reporting and Historical Analysis',
+          items: [
+            'for-support-users/reporting-and-historical-analysis/reports',
+          ],
+        },
+      ],
+    },
     {
       type: 'category',
       label: 'Managed Technologies',
