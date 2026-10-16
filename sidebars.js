@@ -50,9 +50,39 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Managed Technologies',
+      label: 'Technologies Managed',
+      link: {type: 'doc', id: 'managed-technologies/intro'},
       items: [
         {
+            type: 'category',
+            label: 'Linux',
+            link: {type: 'doc', id: 'managed-technologies/os/linux'},
+            items: [
+              'managed-technologies/os/linux-ssh-key-based-authentication',
+              'managed-technologies/os/linux-ssh-password-authentication',
+            ],
+          },
+
+          {
+            type: 'category',
+            label: 'Microsoft Windows Server',
+            link: {type: 'doc', id: 'managed-technologies/microsoft-windows-server/windows'},
+            items: [
+              'managed-technologies/microsoft-windows-server/managed-windows-server-tasks',
+            ],
+          },
+
+          'managed-technologies/databases/hana',
+          'managed-technologies/databases/microsoft-sql-server',
+          'managed-technologies/databases/mysql',
+          'managed-technologies/databases/oracle',
+          'managed-technologies/databases/postgre-sql',
+          'managed-technologies/databases/sybase',          
+
+          'managed-technologies/containers/kubernetes-user-creation-for-itoss-integration',
+
+          'managed-technologies/sap/sap-abap',
+        /*{
           type: 'category',
           label: 'Databases',
           items: [
@@ -77,7 +107,7 @@ const sidebars = {
           items: [
             'managed-technologies/sap/sap-abap',
           ],
-        },
+        },*/
       ],
     }/*,
     {
