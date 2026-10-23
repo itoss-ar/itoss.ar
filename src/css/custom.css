@@ -298,6 +298,51 @@ h1, h2, h3, h4 { letter-spacing: -0.02em; color: var(--text); }
 .pill-cyan { color: var(--cyan); border-color: rgba(0,229,255,0.3); background: rgba(0,229,255,0.06); }
 .pill-lime { color: var(--lime); border-color: rgba(163,255,111,0.3); background: rgba(163,255,111,0.06); }
 
+/* tutorials: filter chips + grouped sections */
+.tutorial-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
+.tutorial-chip { cursor: pointer; padding: 6px 14px; font-size: 12px; transition: border-color 0.15s, color 0.15s; }
+.tutorial-chip:hover { border-color: var(--border-3); color: var(--text); }
+.tutorial-chip.pill-cyan:hover { color: var(--cyan); border-color: rgba(0,229,255,0.5); }
+.tutorial-chip-count { opacity: 0.6; }
+.section.tutorials-list { padding-top: 48px; }
+.tutorial-section { margin-bottom: 72px; scroll-margin-top: 100px; }
+.tutorial-section:last-child { margin-bottom: 0; }
+.tutorial-section .h2 { margin: 12px 0 8px; }
+.tutorial-section-desc { opacity: 0.7; max-width: 640px; margin-bottom: 28px; }
+.tutorial-card { scroll-margin-top: 100px; }
+.module-card.tutorial-card-soon { border-style: dashed; }
+
+/* tutorials sidebar: desktop only */
+.tutorials-sidebar { display: none; }
+@media (min-width: 1100px) {
+  .tutorials-layout { display: grid; grid-template-columns: 292px minmax(0, 1fr); gap: 48px; align-items: start; }
+  .tutorials-sidebar {
+    display: block; position: sticky; top: 96px; max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: thin;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 20px 16px 20px 12px;
+  }
+}
+.tutorials-sidebar-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-4); margin: 0 0 14px 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.tutorials-sidebar-group + .tutorials-sidebar-group { margin-top: 20px; }
+.tutorials-sidebar a { text-decoration: none; transition: color 0.15s; }
+.tutorials-sidebar-section { display: block; font-size: 14px; font-weight: 600; color: var(--text-2); padding: 4px 0 4px 12px; border-left: 2px solid transparent; }
+.tutorials-sidebar-section:hover { color: var(--text); }
+.tutorials-sidebar-section.active { color: var(--cyan); border-left-color: var(--cyan); }
+.tutorials-sidebar ol { list-style: none; margin: 6px 0 0; padding: 0 0 0 14px; }
+.tutorials-sidebar li a { display: flex; gap: 8px; font-size: 13px; line-height: 1.4; color: var(--text-3); padding: 4px 0; }
+.tutorials-sidebar li a:hover { color: var(--text); }
+.tutorials-sidebar li.soon a { opacity: 0.5; }
+.tutorials-sidebar-title { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tutorials-sidebar-num { font-family: var(--font-mono); font-size: 11px; color: var(--text-4); padding-top: 2px; }
+.tutorial-soon-link { opacity: 0.5; pointer-events: none; }
+@media (max-width: 899px) {
+  .tutorial-chips { gap: 6px; }
+  .tutorial-chip { padding: 5px 11px; font-size: 11px; }
+  .section.tutorials-list { padding-top: 32px; }
+  .tutorial-section { margin-bottom: 56px; }
+  .tutorial-section .h2 { font-size: clamp(28px, 7vw, 40px); }
+  .tutorial-section .grid-2 { grid-template-columns: 1fr; }
+}
+
 .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 8px var(--green); animation: itoss-pulse 2s infinite; }
 @keyframes itoss-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 

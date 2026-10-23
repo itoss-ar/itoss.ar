@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from '@docusaurus/Link';
-import {MODULES, COMPLETE_OPERATIONS, SERVICES, TUTORIALS, ModuleIcon, CompleteOperationIcon, ServiceIcon} from './data';
+import {useHistory, useLocation} from '@docusaurus/router';
+import {MODULES, COMPLETE_OPERATIONS, SERVICES, TUTORIALS, TUTORIAL_SECTIONS, ModuleIcon, CompleteOperationIcon, ServiceIcon} from './data';
 
 export function Hero() {
   return (
@@ -131,41 +132,160 @@ export function CompleteOperations() {
 // ============================================================
 // TUTORIALS
 // ============================================================
-export function Tutorials() {
+// Active section filter, synced with ?section=<id> (no param = All).
+// The URL is read after mount so the SSR markup and first client render match.
+export function useTutorialFilter() {
+  const location = useLocation();
+  const history = useHistory();
+  const [filter, setFilterState] = useState('all');
+
+  useEffect(() => {
+    const id = new URLSearchParams(location.search).get('section');
+    setFilterState(TUTORIAL_SECTIONS.some((s) => s.id === id) ? id : 'all');
+  }, [location.search]);
+
+  const setFilter = (id) => {
+    const params = new URLSearchParams(location.search);
+    if (id === 'all') params.delete('section');
+    else params.set('section', id);
+    const search = params.toString();
+    history.replace({...location, search: search ? `?${search}` : ''});
+  };
+
+  return [filter, setFilter];
+}
+
+const publishedCount = (tutorials) => tutorials.filter((t) => !t.comingSoon).length;
+
+export function TutorialChips({filter, onChange}) {
+  const chips = [
+    {id: 'all', name: 'All', count: publishedCount(TUTORIALS), soon: false},
+    ...TUTORIAL_SECTIONS.map((s) => {
+      const items = TUTORIALS.filter((t) => t.section === s.id);
+      const count = publishedCount(items);
+      return {...s, count, soon: items.length > 0 && count === 0};
+    }),
+  ];
+
   return (
-    <section className="section" style={{background: 'var(--bg-1)'}}>
-      <div className="itoss-container-wide">
-        
-        <div className="grid grid-2" style={{gap: 24}}>
-          {TUTORIALS.map((t) => (
-            <article className="module-card" key={t.id} style={{padding: 0, overflow: 'hidden'}}>
-              { false && <div style={{position: 'relative', width: '100%', aspectRatio: '16 / 9', background: '#000', borderBottom: '1px solid var(--border)'}}>
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
-                  title={t.name}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  style={{position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0}}
-                />
-              </div> }
-              <div style={{padding: 28, display: 'flex', flexDirection: 'column', flex: 1}}>
-                <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
-                  <div className="module-icon" style={{margin: 0}}><TutorialIcon kind={t.id} /></div>
-                  <div className="module-name" style={{marginBottom: 0}}>{t.code}</div>
-                </div>
-                <h3>{t.name}</h3>
-                <p>{t.desc}</p>
-                { false && <ul className="module-feat">{t.feats.map((f, i) => <li key={i}>{f}</li>)}</ul> }
-                <a href={`https://www.youtube.com/watch?v=${t.videoId}`} target="_blank" rel="noopener" className="module-link">
-                  Watch on YouTube <span>→</span>
-                </a>
-              </div>
-            </article>
+    <div className="tutorial-chips" role="tablist" aria-label="Filter tutorials">
+      {chips.map((c) => (
+        <button
+          key={c.id}
+          type="button"
+          role="tab"
+          aria-selected={filter === c.id}
+          className={`pill tutorial-chip${filter === c.id ? ' pill-cyan' : ''}`}
+          onClick={() => onChange(c.id)}>
+          {c.name} <span className="tutorial-chip-count">{c.soon ? '· Soon' : c.count}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+const tutorialNumber = (i) => String(i + 1).padStart(2, '0');
+
+export function Tutorials({filter = 'all'}) {
+  const sections = TUTORIAL_SECTIONS.filter((s) => filter === 'all' || filter === s.id);
+
+  return (
+    <section className="section tutorials-list" style={{background: 'var(--bg-1)'}}>
+      <div className="itoss-container-wide tutorials-layout">
+        <TutorialsSidebar sections={sections} />
+        <div className="tutorials-content">
+          {sections.map((s) => (
+            <div className="tutorial-section" id={s.id} key={s.id}>
+              <span className="eyebrow">{s.eyebrow}</span>
+              <h2 className="h2">{s.name}</h2>
+              <p className="tutorial-section-desc">{s.desc}</p>
+              <TutorialGrid sectionId={s.id} tutorials={TUTORIALS.filter((t) => t.section === s.id)} />
+            </div>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+// Desktop-only sticky index (hidden via CSS on smaller screens).
+// Highlights the section currently in view; starts on the first one so SSR output is deterministic.
+function TutorialsSidebar({sections}) {
+  const [active, setActive] = useState(sections[0]?.id);
+
+  useEffect(() => {
+    setActive(sections[0]?.id);
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      {rootMargin: '-100px 0px -60% 0px'},
+    );
+    sections.forEach((s) => {
+      const el = document.getElementById(s.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [sections.map((s) => s.id).join()]);
+
+  return (
+    <aside className="tutorials-sidebar" aria-label="Tutorial sections">
+      <div className="tutorials-sidebar-label">On this page</div>
+      <nav>
+        {sections.map((s) => (
+          <div className="tutorials-sidebar-group" key={s.id}>
+            <a href={`#${s.id}`} className={`tutorials-sidebar-section${active === s.id ? ' active' : ''}`}>{s.name}</a>
+            <ol>
+              {TUTORIALS.filter((t) => t.section === s.id).map((t, i) => (
+                <li key={t.videoId || t.name} className={t.comingSoon ? 'soon' : undefined}>
+                  <a href={`#${s.id}-${tutorialNumber(i)}`} title={t.name}>
+                    <span className="tutorials-sidebar-num">{tutorialNumber(i)}</span>
+                    <span className="tutorials-sidebar-title">{t.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+function TutorialGrid({sectionId, tutorials}) {
+  return (
+    <div className="grid grid-2" style={{gap: 24}}>
+      {tutorials.map((t, i) => (
+        <article id={`${sectionId}-${tutorialNumber(i)}`} className={`module-card tutorial-card${t.comingSoon ? ' tutorial-card-soon' : ''}`} key={t.videoId || t.name} style={{padding: 0, overflow: 'hidden'}}>
+          { false && <div style={{position: 'relative', width: '100%', aspectRatio: '16 / 9', background: '#000', borderBottom: '1px solid var(--border)'}}>
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${t.videoId}`}
+              title={t.name}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0}}
+            />
+          </div> }
+          <div style={{padding: 28, display: 'flex', flexDirection: 'column', flex: 1}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
+              <div className="module-icon" style={{margin: 0}}><TutorialIcon kind={t.id} /></div>
+              <div className="module-name" style={{marginBottom: 0}}>
+                Tutorial / {tutorialNumber(i)}{t.comingSoon && ' · Coming soon'}
+              </div>
+            </div>
+            <h3>{t.name}</h3>
+            <p>{t.desc}</p>
+            { false && <ul className="module-feat">{t.feats.map((f, i) => <li key={i}>{f}</li>)}</ul> }
+            {t.comingSoon ? (
+              <span className="module-link tutorial-soon-link">Coming soon</span>
+            ) : (
+              <a href={`https://www.youtube.com/watch?v=${t.videoId}`} target="_blank" rel="noopener" className="module-link">
+                Watch on YouTube <span>→</span>
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
   );
 }
 export function TutorialIcon({kind}) {

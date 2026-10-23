@@ -1,9 +1,11 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import {Tutorials, BigCTA} from '@site/src/components/site/Sections';
+import {Tutorials, TutorialChips, useTutorialFilter, BigCTA} from '@site/src/components/site/Sections';
 
 export default function TutorialsPage() {
+  const [filter, setFilter] = useTutorialFilter();
+
   return (
     <Layout title="Tutorials" description="ITOSS es self-hosted por diseño. Empezás gratis, sin licencias por host.">
       <main>
@@ -13,9 +15,10 @@ export default function TutorialsPage() {
             <span className="eyebrow" style={{justifyContent: 'center'}}>Tutorials</span>
             <h1 className="h1">Learn ITOSS <span className="brand-grad-text">by watching</span></h1>
             <p className="lede">Short, practical video guides that take you from a fresh install to a fully operational, multi-client operational management platform — step by step.</p>
+            <TutorialChips filter={filter} onChange={setFilter} />
           </div>
-        </section>        
-        <Tutorials/>
+        </section>
+        <Tutorials filter={filter} />
         <BigCTA />
       </main>
     </Layout>

@@ -84,102 +84,119 @@ export const COMPLETE_OPERATIONS = [
   }
 ];
 
+export const TUTORIAL_SECTIONS = [
+  {id: 'getting-started', eyebrow: 'New to ITOSS', name: 'Getting Started', desc: 'Your first steps with ITOSS — from a fresh install to your first monitored product.'},
+  {id: 'support', eyebrow: 'Operators & NOC teams', name: 'For Support Users', desc: 'Day-to-day operation: dashboards, components, companies, reports and notifications.'},
+  {id: 'designers', eyebrow: 'Architects & integrators', name: 'For Solution Designers', desc: 'Design and model monitoring solutions: profiles, templates and integrations.'},
+];
+
+// Labels ("Tutorial / NN") are numbered per section at render time.
+// comingSoon entries render without a link and are excluded from the filter counts.
 export const TUTORIALS = [
   {
     id: 'quickstart',
+    section: 'getting-started',
     videoId: 'ulBqyvKqFtU',
-    code: 'TUTORIAL / 01',
     name: 'Quick Start with ITOSS',
     desc: 'It demonstrates how to quickly set up ITOSS, add a technology product, and view its operational status through the platform\'s dashboards and control panels.',
     feats: ['Component creation & configuration', 'Multi-tenant organization', 'Operational monitoring dashboard', 'Dashboard entry management'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'JYgYTiDZHjA',
-    code: 'TUTORIAL / 02',
     name: 'Operation with ITOSS',
     desc: 'See how ITOSS turns real-time monitoring into a single operational dashboard—track every component\'s status, drill into the details, and act on issues before they escalate.',
     feats: ['Visual operational dashboards', 'Prioritized dashboard entries', 'Full monitoring context', 'Drill-down component view'],
   },
     {
     id: 'quickstart',
+    section: 'support',
     videoId: 'xskvpWTIRZQ',
-    code: 'TUTORIAL / 03',
     name: 'General Status dashboard',
     desc: 'See how the ITOSS general status dashboard gives you a high-level view of your managed components—track up/down status at a glance, explore it grouped by company, location or component type, drill down for detail, and filter by environment or by the systems you own.',
     feats: ['High-level status overview', 'Group by company, location or type', 'Drill-down navigation', 'Environment & ownership filters'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'aaCI89imzkA',
-    code: 'TUTORIAL / 04',
     name: 'Operational Dashboard',
     desc: 'See how ITOSS operational dashboards give support teams everything they need to manage their components—switch between container, component-type, metric-category and list views, watch live indicators for component status, entry priority and management quality, and filter down to the situations that need action.',
     feats: ['Multiple operational views', 'Live status & priority indicators', 'Management-quality scoring', 'Custom filtered views'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'srAuHq0ETmc',
-    code: 'TUTORIAL / 05',
     name: 'Component Dashboard - Part 1',
     desc: 'Dive into the ITOSS component dashboard for a centralized, single-component view of your infrastructure—check real-time status and life-cycle history, drill down into attended and pending monitor entries, log user notes tied to specific events, and visualize how each component relates to and depends on the rest of your environment.',
     feats: ['Centralized single-component view', 'Life-cycle & state history', 'Attended entries drill-down', 'User notes & annotations', 'Component relationship graph'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'JsC9hgXlPFw',
-    code: 'TUTORIAL / 06',
     name: 'Component Dashboard - Part 2',
     desc: 'Continue the tour of the ITOSS component dashboard with its deeper operational tools—switch metrics between chart and table views, browse historical performance data with selectable time ranges and export it to CSV, review availability timelines and full configuration attributes, and use the toolbar\'s audited diagnostic commands, external app links, maintenance scheduling and component settings to manage the component end-to-end.',
     feats: ['Chart & table visualization toggle', 'Historical performance data & CSV export', 'Audited diagnostic commands & external tools', 'Maintenance scheduling & component settings', 'Monitor status & management reports'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'rYWY-JB-8Ow',
-    code: 'TUTORIAL / 07',
     name: 'Company Dashboard',
     desc: 'Explore the ITOSS Company Dashboard to monitor an organization’s technology footprint, activity, component health, and lifecycle. Search companies, review key metrics, filter components, build custom operational dashboards, and generate executive-level reports.',
     feats: ['Company search & quick access', 'Activity summary cards (tickets, logs, notes, lifecycle changes)', 'Consolidated component health by type & management profile', 'Full component inventory with advanced filtering', 'Custom dashboards & executive-level reports'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'oVQjWH9cZ_4',
-    code: 'TUTORIAL / 08',
     name: 'Component Lifecycle',
     desc: 'Manage the complete component life cycle in ITOSS, from deployment to retirement, with stage dashboards, transition reports, and controlled, auditable actions.',
     feats: ['Life cycle dashboard with stage indicators (delivery, operations, maintenance, out of service, end of service)', 'Monthly trend charts & month-over-month comparisons', '3-month transition reports for promotions & end-of-service retirements', 'Dedicated per-stage consoles with filtering, individual & bulk actions', 'Controlled, auditable state transitions for full life cycle traceability'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'EI1rnpueiUA',
-    code: 'TUTORIAL / 09',
     name: 'Companies, Work Groups & Contacts',
     desc: 'Create and manage the core entities of a managed services environment in ITOSS: companies, support work groups, and customer contacts. Together they are the foundation for customer management, support responsibilities, and service ownership.',
     feats: ['Central access from Configuration to the company, work group and contact consoles', 'Company creation by type (e.g. customer) with required name and location fields', 'Add several companies to a pending list and save them together', 'Work groups that define support team structure and set who owns each component', 'Contacts that link each managed service to its customer stakeholders, and can be edited at any time'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'UrFQ5j_oQzM',
-    code: 'TUTORIAL / 10',
     name: 'Managing Components',
     desc: 'Create and manage components in ITOSS, the main objects the platform operates on. Each component stands for a technology, service or abstract entity whose key operational indicators are collected, monitored and analyzed.',
     feats: ['Central access from Configuration to the components management console', 'Component creation by type (e.g. Linux), with connection fields such as ICMP target and SSH credentials shown automatically for each type', 'Add several components with the same administrative settings to a pending list and create them together', 'Links to tenants, company, location, contact, management profile, collector and the responsible work group or owner', 'Lifecycle control: new components start in the delivery stage so their monitors can be tested before they move into operation'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'EMFT5XaJqO4',
-    code: 'TUTORIAL / 11',
     name: 'Reports',
     desc: 'Explore the reports available to support users in ITOSS. They cover ITOSS entities, historical metrics, managed events and other operational data, so support teams can analyze performance, monitor services and make informed decisions.',
     feats: ['Central access to the reporting console from Explore › Reports', 'Reports grouped by area of interest: entities, metrics, events and service activities', 'Inventory reports on components, their relationships and configuration details', 'Access by role, and every report can be customized by ITOSS administrators', 'Statistics by technology type, filtered by company or location', 'Export to CSV for further analysis, or to HTML for managers and executives'],
   },
   {
     id: 'quickstart',
+    section: 'support',
     videoId: 'GD6tFaaARNA',
-    code: 'TUTORIAL / 12',
     name: 'Notifications',
     desc: 'Learn how notifications work in ITOSS. They alert support teams to critical operational situations, so the right people know about important events in time and can respond quickly to keep services reliable.',
     feats: ['Notification area at the top right of the interface, next to the search box', 'Bell icon with a counter badge showing the number of active notifications', 'Open the panel to review active notifications and see details of each event', 'Created by actions in the monitors\' operational logic when a condition needs attention', 'Notifications stay active for up to 4 hours, then are removed for good', 'Dismiss one notification or clear them all; this only changes your own view, not what other users see'],
+  },
+  // Example entry — set videoId and drop comingSoon once the video is published
+  {
+    id: 'quickstart',
+    section: 'designers',
+    videoId: 'pe-fi7WOGIU',
+    name: 'Component Type Creation',
+    desc: 'Learn how to create component types in ITOSS, the base for managing a new technology. A component type holds the connection parameters, management profiles, monitoring logic and other elements needed to run that technology in ITOSS.',
+    feats: ['Open the component types console from Main menu > System > Types > Components', 'Build a hierarchy of component types, for example Container > Kubernetes > Cluster, Node and Pod', 'Add custom attributes such as a Notes text field to store administrative or service information', 'Assign instrumentations that set how ITOSS connects and collects data: REST, REST SSL and REST mTLS PEM', 'Create a "Notify To" multilist attribute so the component can send notifications', 'Set the Notify To values to Contact, Support User, Workgroup and Manager to choose who receives notifications'],
   }
 ];
 
