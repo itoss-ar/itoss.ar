@@ -64,54 +64,44 @@ Create the file:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: itoss-readonly
+  name: itoss-readonly
 rules:
-- apiGroups: [""]
-  resources:
-    - nodes
-    - namespaces
-    - pods
-    - services
-    - endpoints
-    - events
-    - persistentvolumes
-    - persistentvolumeclaims
-  verbs:
-    - get
-    - list
-    - watch
-- apiGroups: ["apps"]
-  resources:
-    - deployments
-    - statefulsets
-    - daemonsets
-    - replicasets
-  verbs:
-    - get
-    - list
-    - watch
-- apiGroups: ["batch"]
-  resources:
-    - jobs
-    - cronjobs
-  verbs:
-    - get
-    - list
-    - watch
-- apiGroups: ["networking.k8s.io"]
-  resources:
-    - ingresses
-  verbs:
-    - get
-    - list
-    - watch
-- apiGroups: ["metrics.k8s.io"]
-  resources:
-    - nodes
-    - pods
-  verbs:
-    - get
-    - list
+  - apiGroups: [""]
+    resources:
+      - nodes
+      - namespaces
+      - pods
+      - services
+      - endpoints
+      - events
+      - persistentvolumes
+      - persistentvolumeclaims
+    verbs: ["get", "list", "watch"]
+
+  - apiGroups: ["apps"]
+    resources:
+      - deployments
+      - statefulsets
+      - daemonsets
+      - replicasets
+    verbs: ["get", "list", "watch"]
+
+  - apiGroups: ["batch"]
+    resources:
+      - jobs
+      - cronjobs
+    verbs: ["get", "list", "watch"]
+
+  - apiGroups: ["networking.k8s.io"]
+    resources:
+      - ingresses
+    verbs: ["get", "list", "watch"]
+
+  - apiGroups: ["metrics.k8s.io"]
+    resources:
+      - nodes
+      - pods
+    verbs: ["get", "list"]
 ```
 
 Apply it:
@@ -132,15 +122,15 @@ Create the file:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: itoss-readonly-binding
+  name: itoss-readonly-binding
 subjects:
-- kind: ServiceAccount
-  name: itoss-reader
-  namespace: kube-system
+  - kind: ServiceAccount
+    name: itoss-reader
+    namespace: kube-system
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: itoss-readonly
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: itoss-readonly
 ```
 
 Apply it:
@@ -295,18 +285,20 @@ Group: monitoring
 ## Step 3 - Create the Kubernetes CSR
 
 ```bash
+CSR_BASE64=$(base64 -w0 < itoss.csr)
+
 cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
-  name: itoss-csr
+  name: itoss-csr
 spec:
-  groups:
-  - system:authenticated
-  request: $(cat itoss.csr | base64 -w0)
-  signerName: kubernetes.io/kube-apiserver-client
-  usages:
-  - client auth
+  groups:
+    - system:authenticated
+  request: ${CSR_BASE64}
+  signerName: kubernetes.io/kube-apiserver-client
+  usages:
+    - client auth
 EOF
 ```
 
@@ -363,15 +355,15 @@ Create:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: itoss-certificate-binding
+  name: itoss-certificate-binding
 subjects:
-- kind: User
-  name: itoss
-  apiGroup: rbac.authorization.k8s.io
+  - kind: User
+    name: itoss
+    apiGroup: rbac.authorization.k8s.io
 roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: itoss-readonly
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: itoss-readonly
 ```
 
 Apply it:
