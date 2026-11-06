@@ -1,5 +1,4 @@
-
-# SSH Certificate Authentication for ITOSS (Linux)
+# SSH Certificate Authentication for ITOSS
 
 ## Overview
 
