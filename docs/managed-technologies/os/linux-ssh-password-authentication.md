@@ -1,151 +1,229 @@
-# SSH Password Authentication Configuration for ITOSS
+---
+title: SSH Password Authentication for ITOSS (Linux)
+sidebar_label: SSH - Password
+sidebar_position: 1
+---
+
+# SSH Password Authentication for ITOSS (Linux)
 
 ## Overview
 
-This document describes the complete procedure for configuring SSH password-based authentication for ITOSS remote monitoring and automation tasks.
+This document describes how to configure an SSH CT that authenticates against a Linux server with a user and a password (`ssh_authenticationType` = `PASSWORD`).
 
-Password authentication should be used only when SSH key-based authentication is not available or cannot be implemented due to operational constraints. While simpler to deploy, password authentication introduces additional security considerations regarding credential storage, rotation, and transmission.
+This is the default authentication type and the way SSH CTs worked before ITOSS 8.8.0. Existing SSH CTs already use it and need no changes.
 
----
+Use this type when the server accepts password logins and no key or certificate is available. For unattended monitoring, key-based authentication is recommended:
+
+- [SSH Private Key Authentication](linux-ssh-private-key-authentication.md)
+- [SSH Private Key with Passphrase Authentication](linux-ssh-private-key-passphrase-authentication.md)
+- [SSH Certificate Authentication](linux-ssh-certificate-authentication.md)
+
+The example uses the fictional company Acme and its legacy server `srv-legacy-03.acme.local`.
 
 # Architecture Overview
 
-```text
-+----------------------+
-|        ITOSS         |
-| Credential Repository|
-+----------+-----------+
-           |
-           | Retrieve encrypted password
-           |
-           v
-+----------------------+
-|    Java SSH Client   |
-+----------+-----------+
-           |
-           | Password Authentication
-           |
-           v
-+----------------------+
-| Target Linux Server  |
-+----------------------+
 ```
-
----
++-------------------------------+
+|        ITOSS Manager          |
+|  CT: ssh_password (encrypted) |
++---------------+---------------+
+                |
+                | Password encrypted with ITOSS_CRYPTO_KEY
+                v
++-------------------------------+
+|       ITOSS Collector         |
+|  Decrypts in memory           |
++---------------+---------------+
+                |
+                | Password authentication
+                v
++-------------------------------+
+|      Target Linux Server      |
+|  PasswordAuthentication yes   |
++-------------------------------+
+```
 
 # Prerequisites
 
-- Linux server with OpenSSH Server installed.
+- Linux server with OpenSSH Server installed and running.
+
 - Administrative access to the target server.
-- Network connectivity between ITOSS and the monitored system.
-- ITOSS credential repository available.
-- SSH service enabled on the target server.
+
+- Network connectivity between the ITOSS collector and the monitored system (TCP 22 by default).
+
+- The same `ITOSS_CRYPTO_KEY` on the ITOSS manager and collector.
 
 Verify SSH service status:
 
-```bash
+```
 sudo systemctl status sshd
 ```
 
 or
 
-```bash
+```
 sudo systemctl status ssh
 ```
 
----
-
 # Step 1 - Create a Dedicated Monitoring User
 
-Create a dedicated account for ITOSS monitoring activities.
+On the target server:
 
-```bash
+```
 sudo useradd -m -s /bin/bash itoss
-```
-
-Assign a password:
-
-```bash
 sudo passwd itoss
-```
-
-Example:
-
-```text
-New password:
-Retype new password:
-passwd: password updated successfully
 ```
 
 Verify the account:
 
-```bash
+```
 id itoss
 ```
 
 Example output:
 
-```text
+```
 uid=1002(itoss) gid=1002(itoss) groups=1002(itoss)
 ```
 
----
+# Step 2 - Allow Password Authentication
 
-# Step 2 - Verify Password Authentication is Enabled
+Edit the SSH configuration:
 
-Review SSH configuration:
-
-```bash
+```
 sudo vi /etc/ssh/sshd_config
 ```
 
-Verify the following settings:
+Ensure:
 
-```text
+```
 PasswordAuthentication yes
-ChallengeResponseAuthentication no
-PubkeyAuthentication yes
 ```
 
-Password authentication may coexist with public key authentication.
+Validate and reload:
 
-Validate configuration:
-
-```bash
+```
 sudo sshd -t
-```
-
-Reload SSH service:
-
-```bash
 sudo systemctl reload sshd
 ```
 
----
+# Step 3 - Validate the SSH Connection
 
-# Step 3 - Test Interactive Authentication
+From the ITOSS host:
 
-Validate access before configuring ITOSS.
-
-```bash
-ssh itoss@target-server
+```
+ssh itoss@srv-legacy-03.acme.local id -un
 ```
 
-Expected result:
+The command prompts for the password and must return:
 
-```text
-itoss@target-server's password:
+```
+itoss
 ```
 
-After entering the password:
+# Step 4 - Configure Limited Sudo Access (Optional)
 
-```text
-Last login: ...
-[itoss@target-server]$
+If monitoring requires elevated privileges, grant only the required commands:
+
+```
+sudo visudo
 ```
 
----
+Example:
+
+```
+itoss ALL=(root) NOPASSWD: /usr/bin/systemctl, /usr/bin/journalctl
+```
+
+Validate:
+
+```
+sudo -l -U itoss
+```
+
+# Step 5 - Configure the CT in ITOSS
+
+```
+ssh_target             : srv-legacy-03.acme.local
+ssh_user               : itoss
+ssh_port               : 22
+ssh_authenticationType : PASSWORD
+ssh_password           : <the user's password>
+ssh_identityFile       : N/A
+```
+
+Where:
+
+- `ssh_password` is stored encrypted and is never shown again.
+
+- `ssh_identityFile` does not apply and is set to `N/A`. The CT form requires every field.
+
+# Password Rotation Procedure
+
+Change the password on the target server:
+
+```
+sudo passwd itoss
+```
+
+Update `ssh_password` in the CT.
+
+Validate that the CT returns to normal status.
+
+# Troubleshooting
+
+## Messages in the ITOSS Monitor
+
+| Situation | Message in the monitor |
+|---|---|
+| Wrong password, or the server does not accept passwords | `Auth fail` |
+| Different `ITOSS_CRYPTO_KEY` on the manager and the collector | The collector cannot decrypt the password and authentication fails |
+
+## Permission denied (password)
+
+Verify that password authentication is enabled and that the account is not locked:
+
+```
+sudo sshd -T | grep -i passwordauthentication
+sudo passwd -S itoss
+```
+
+`LK` in the second command means the password is locked.
+
+## Enable SSH Debug Mode
+
+Client side:
+
+```
+ssh -vvv itoss@srv-legacy-03.acme.local
+```
+
+Server side:
+
+```
+sudo journalctl -u sshd -f
+```
+
+# Compatibility with Existing Installations
+
+- Existing SSH CTs use `PASSWORD` and keep working unchanged after upgrading to 8.8.0.
+
+- If a CT has an old, manually entered value in `ssh_authenticationType`, or the field is empty, it is treated as `PASSWORD`, as before 8.8.0.
+
+# Security Best Practices
+
+- Create a dedicated account for ITOSS.
+
+- Use a long, random password and rotate it periodically.
+
+- Restrict sudo permissions to the minimum required.
+
+- Restrict source IP addresses with the firewall whenever possible.
+
+- Audit SSH authentication events.
+
+- Move to key or certificate authentication when feasible.
 
 # Conclusion
 
-Password authentication can be securely used by ITOSS when credentials are stored encrypted, decrypted only in memory, and managed according to established security policies. However, SSH key-based authentication remains the preferred approach due to its stronger security model, reduced operational overhead, and better suitability for large-scale monitoring environments.
+Password authentication keeps existing SSH CTs working unchanged. For new installations and unattended monitoring, key-based or certificate-based authentication is the recommended method.

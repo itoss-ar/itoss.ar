@@ -58,8 +58,10 @@ const sidebars = {
             label: 'Linux',
             link: {type: 'doc', id: 'managed-technologies/os/linux'},
             items: [
-              'managed-technologies/os/linux-ssh-key-based-authentication',
               'managed-technologies/os/linux-ssh-password-authentication',
+              'managed-technologies/os/linux-ssh-private-key-authentication',
+              'managed-technologies/os/linux-ssh-private-key-passphrase-authentication',
+              'managed-technologies/os/linux-ssh-certificate-authentication',
             ],
           },
 
@@ -69,6 +71,10 @@ const sidebars = {
             link: {type: 'doc', id: 'managed-technologies/microsoft-windows-server/windows'},
             items: [
               'managed-technologies/microsoft-windows-server/managed-windows-server-tasks',
+              'managed-technologies/microsoft-windows-server/windows-ssh-password-authentication',
+              'managed-technologies/microsoft-windows-server/windows-ssh-private-key-authentication',
+              'managed-technologies/microsoft-windows-server/windows-ssh-private-key-passphrase-authentication',
+              'managed-technologies/microsoft-windows-server/windows-ssh-certificate-authentication',
             ],
           },
 
