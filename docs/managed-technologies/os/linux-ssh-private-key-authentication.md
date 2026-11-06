@@ -1,10 +1,4 @@
----
-title: SSH Private Key Authentication for ITOSS (Linux)
-sidebar_label: SSH - Private Key
-sidebar_position: 2
----
-
-# SSH Private Key Authentication for ITOSS (Linux)
+# SSH Private Key Authentication for ITOSS
 
 ## Overview
 

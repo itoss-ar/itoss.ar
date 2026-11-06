@@ -1,10 +1,4 @@
----
-title: SSH Certificate Authentication for ITOSS (Windows)
-sidebar_label: SSH - Certificate
-sidebar_position: 4
----
-
-# SSH Certificate Authentication for ITOSS (Windows)
+# SSH Certificate Authentication for ITOSS
 
 ## Overview
 

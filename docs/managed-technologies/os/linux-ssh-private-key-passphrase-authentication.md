@@ -1,10 +1,4 @@
----
-title: SSH Private Key with Passphrase Authentication for ITOSS (Linux)
-sidebar_label: SSH - Private Key with Passphrase
-sidebar_position: 3
----
-
-# SSH Private Key with Passphrase Authentication for ITOSS (Linux)
+# SSH Private Key with Passphrase Authentication for ITOSS
 
 ## Overview
 

@@ -1,10 +1,4 @@
----
-title: SSH Private Key Authentication for ITOSS (Windows)
-sidebar_label: SSH - Private Key
-sidebar_position: 2
----
-
-# SSH Private Key Authentication for ITOSS (Windows)
+# SSH Private Key Authentication for ITOSS
 
 ## Overview
 

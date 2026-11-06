@@ -1,8 +1,3 @@
----
-title: SSH Certificate Authentication for ITOSS (Linux)
-sidebar_label: SSH - Certificate
-sidebar_position: 4
----
 
 # SSH Certificate Authentication for ITOSS (Linux)
 

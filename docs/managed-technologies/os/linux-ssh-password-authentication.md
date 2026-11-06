@@ -1,10 +1,4 @@
----
-title: SSH Password Authentication for ITOSS (Linux)
-sidebar_label: SSH - Password
-sidebar_position: 1
----
-
-# SSH Password Authentication for ITOSS (Linux)
+# SSH Password Authentication for ITOSS
 
 ## Overview
 
