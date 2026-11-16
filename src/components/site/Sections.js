@@ -275,8 +275,11 @@ function TutorialGrid({sectionId, tutorials}) {
             <h3>{t.name}</h3>
             <p>{t.desc}</p>
             { false && <ul className="module-feat">{t.feats.map((f, i) => <li key={i}>{f}</li>)}</ul> }
-            {t.comingSoon ? (
-              <span className="module-link tutorial-soon-link">Coming soon</span>
+            {t.requiresSubscription ? (
+              <a className="module-link module-link--locked" href="/contact">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{verticalAlign: '-2px', marginRight: 6}} aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V7a4 4 0 0 1 8 0v4" /></svg>
+                Available with an ITOSS support subscription <span>→</span>
+              </a>
             ) : (
               <a href={`https://www.youtube.com/watch?v=${t.videoId}`} target="_blank" rel="noopener" className="module-link">
                 Watch on YouTube <span>→</span>
