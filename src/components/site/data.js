@@ -203,6 +203,7 @@ export const TUTORIALS = [
     id: 'quickstart',
     section: 'designers',
     videoId: 'pe-fi7WOGIU',
+    requiresSubscription: true,
     name: 'Component Type Creation',
     desc: 'Learn how to create component types in ITOSS, the base for managing a new technology. A component type holds the connection parameters, management profiles, monitoring logic and other elements needed to run that technology in ITOSS.',
     feats: ['Open the component types console from Main menu > System > Types > Components', 'Build a hierarchy of component types, for example Container > Kubernetes > Cluster, Node and Pod', 'Add custom attributes such as a Notes text field to store administrative or service information', 'Assign instrumentations that set how ITOSS connects and collects data: REST, REST SSL and REST mTLS PEM', 'Create a "Notify To" multilist attribute so the component can send notifications', 'Set the Notify To values to Contact, Support User, Workgroup and Manager to choose who receives notifications'],
